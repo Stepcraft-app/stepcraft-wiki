@@ -207,6 +207,19 @@ async function getMdxFiles(dir: string): Promise<string[]> {
   return files
 }
 
+// Definición del tipo para los datos de búsqueda de items
+interface ItemSearchData {
+  slug: string;
+  title: string;
+  description: string;
+  content: string;
+  _searchMeta: {
+    cleanContent: string;
+    headings: string[];
+    keywords: (string | undefined)[];
+  };
+}
+
 function generateItemsSearchData() {
   try {
     // Dynamic import of items data
@@ -214,7 +227,7 @@ function generateItemsSearchData() {
     delete require.cache[itemsPath]
     const { allItems } = require(itemsPath)
     
-    const itemsSearchData = []
+    const itemsSearchData: ItemSearchData[] = []
     
     // Convert each item to search data format
     Object.values(allItems).forEach((item: any) => {

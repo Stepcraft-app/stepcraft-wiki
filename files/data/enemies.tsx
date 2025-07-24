@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { createEnemyComponent } from '../src/components/encounters/enemyFactory';
 
 export type Enemy = {
   name: string;
@@ -10,6 +9,11 @@ export type Enemy = {
   atk: number;
   def: number;
 };
+
+export const createEnemyComponent = (enemyKey: string) => {
+  
+};
+
 
 // Create all enemy components
 const GreenSlime = createEnemyComponent('green_slime');
