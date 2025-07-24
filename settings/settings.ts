@@ -1,25 +1,29 @@
-export const url = "https://rubix-documents.vercel.app"
-export const siteicon = "/icon.png"
+export const url = "https://stepcraft-wiki.vercel.app"
+export const siteicon = "/assets/icon.png"
 
 export const gtm = "GTM-XXXXXXX"
-export const gtmconnected = true
+export const gtmconnected = false
 
-export const sitename = "Documents"
+export const sitename = "Stepcraft Wiki"
 export const description =
-  "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements."
+  "Your complete guide to the world of Stepcraft. Discover characters, skills, quests, items, locations, enemies, and everything you need to master your adventure in this comprehensive wiki."
 export const keywords = [
-  "Next.js",
-  "documentation",
-  "Rubix Studios",
-  "open source",
-  "SEO",
+  "stepcraft",
+  "wiki",
+  "game guide",
+  "rpg",
+  "mobile game",
+  "skills",
+  "quests",
+  "characters",
+  "items",
 ]
 export const urlimage = "/images/og-image.png"
-export const imagealt = "Rubix Studios Documentation"
-export const twitterhandle = "@RubixStudios"
+export const imagealt = "Stepcraft Wiki - Complete Game Guide"
+export const twitterhandle = "@StepCraftGame"
 
-export const companyname = "Rubix Studios"
-export const companylink = "https://rubixstudios.com.au"
+export const companyname = "Stepcraft"
+export const companylink = "https://stepcraft.app"
 
 export const branding = true
 export const rightsidebar = true

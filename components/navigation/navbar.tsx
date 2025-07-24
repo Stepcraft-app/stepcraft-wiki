@@ -1,8 +1,5 @@
-import Link from "next/link"
-import { GitHubLink, Navigations } from "@/settings/navigation"
-import { LuArrowUpRight, LuGithub } from "react-icons/lu"
+import { Navigations } from "@/settings/navigation"
 
-import { buttonVariants } from "@/components/ui/button"
 import { SheetClose } from "@/components/ui/sheet"
 import Anchor from "@/components/navigation/anchor"
 import { Logo } from "@/components/navigation/logo"
@@ -26,20 +23,9 @@ export function Navbar() {
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3 flex-1 justify-end max-w-2xl">
           <Search />
           <div className="flex gap-2 sm:ml-0">
-            {GitHubLink.href && (
-              <Link
-                href={GitHubLink.href}
-                className={buttonVariants({ variant: "outline", size: "icon" })}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View the repository on GitHub"
-              >
-                <LuGithub className="h-[1.1rem] w-[1.1rem]" />
-              </Link>
-            )}
             <ModeToggle />
           </div>
         </div>
@@ -59,13 +45,8 @@ export function NavMenu({ isSheet = false }) {
             absolute
             className="flex items-center gap-1 text-sm"
             href={item.href}
-            target={item.external ? "_blank" : undefined}
-            rel={item.external ? "noopener noreferrer" : undefined}
           >
-            {item.title}{" "}
-            {item.external && (
-              <LuArrowUpRight className="h-3 w-3 align-super" strokeWidth={3} />
-            )}
+            {item.title}
           </Anchor>
         )
         return isSheet ? (

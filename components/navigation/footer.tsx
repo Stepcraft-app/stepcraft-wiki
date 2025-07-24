@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 import { Company } from "@/lib/meta"
@@ -14,22 +13,7 @@ export function Footer() {
           </Link>
           .
         </p>
-        {Company.branding !== false && (
-          <div className="hidden text-center md:block">
-            <Link
-              className="font-semibold"
-              href="https://rubixstudios.com.au"
-              target="_blank"
-            >
-              <Image
-                src="/logo.svg"
-                alt="Rubix Studios Logo"
-                width={30}
-                height={30}
-              />
-            </Link>
-          </div>
-        )}
+        
       </div>
     </footer>
   )

@@ -14,7 +14,8 @@
     "update": "npx npm-check-updates -u && npm install && npm run clean",
     "generate-content-json": "ts-node scripts/content.ts",
     "generate-content-json:ide": "node -r esbuild-register scripts/content.ts",
-    "prepare": "husky"
+    "prepare": "husky",
+    "copy-skills": "bash copy-skills.sh"
   },
   "dependencies": {
     "@next/third-parties": "^15.4.2",

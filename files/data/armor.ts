@@ -1,0 +1,508 @@
+import { Item } from './items';
+
+type HeadArmorKey =
+  | 'tempest_head'
+  | 'copper_helm'
+  | 'iron_helm'
+  | 'silver_helm'
+  | 'gold_helm'
+  | 'blue_helm'
+  | 'red_helm';
+
+export const headArmors: Record<HeadArmorKey, Item> = {
+  tempest_head: {
+    key: 'tempest_head',
+    name: 'Leather Helm of the Tempest',
+    setId: 'tempest',
+    description: 'Ancient winds whisper forgotten druidic secrets to the wearer.',
+    icon: require('../assets/resources/crafting/light_armour/helm/tempest_helm.png'),
+    equipLocation: 'helmet',
+    type: 'wearable',
+    classLocked: ['druid', 'ranger'],
+    levelLocked: 100,
+    stats: {
+      hp: 81,
+      def: 26,
+    },
+  },
+  copper_helm: {
+    key: 'copper_helm',
+    name: 'Copper Helm',
+    icon: require('../assets/resources/smithing/copper_helm.png'),
+    type: 'wearable',
+    equipLocation: 'helmet',
+    price: 434,
+    stats: {
+      hp: 3,
+      def: 2,
+    },
+  },
+  iron_helm: {
+    key: 'iron_helm',
+    name: 'Iron Helm',
+    icon: require('../assets/resources/smithing/iron_helm.png'),
+    type: 'wearable',
+    equipLocation: 'helmet',
+    price: 1023,
+    stats: {
+      hp: 6,
+      def: 3,
+    },
+  },
+  silver_helm: {
+    key: 'silver_helm',
+    name: 'Silver Helm',
+    icon: require('../assets/resources/smithing/silver_helm.png'),
+    type: 'wearable',
+    equipLocation: 'helmet',
+    price: 2263,
+    stats: {
+      hp: 12,
+      def: 5,
+    },
+  },
+  gold_helm: {
+    key: 'gold_helm',
+    name: 'Gold Helm',
+    icon: require('../assets/resources/smithing/gold_helm.png'),
+    type: 'wearable',
+    equipLocation: 'helmet',
+    price: 4898,
+    stats: {
+      hp: 20,
+      def: 8,
+    },
+  },
+  blue_helm: {
+    key: 'blue_helm',
+    name: 'Blue Helm',
+    icon: require('../assets/resources/smithing/blue_helm.png'),
+    type: 'wearable',
+    equipLocation: 'helmet',
+    price: 10261,
+    stats: {
+      hp: 32,
+      def: 12,
+    },
+  },
+  red_helm: {
+    key: 'red_helm',
+    name: 'Red Helm',
+    icon: require('../assets/resources/smithing/red_helm.png'),
+    type: 'wearable',
+    equipLocation: 'helmet',
+    price: 21111,
+    stats: {
+      hp: 52,
+      def: 18,
+    },
+  },
+};
+
+type ChestArmorKey =
+  | 'tempest_chest'
+  | 'copper_chest'
+  | 'iron_chest'
+  | 'silver_chest'
+  | 'gold_chest'
+  | 'blue_chest'
+  | 'red_chest';
+
+export const chestArmors: Record<ChestArmorKey, Item> = {
+  tempest_chest: {
+    key: 'tempest_chest',
+    name: 'Leather Mantle of the Tempest',
+    setId: 'tempest',
+    description: 'Woven with threads of captured thunder, it hums with elemental fury',
+    itemClass: 'light',
+    icon: require('../assets/resources/crafting/light_armour/chest/tempest_chest.png'),
+    equipLocation: 'chest',
+    type: 'wearable',
+    classLocked: ['druid', 'ranger'],
+    levelLocked: 100,
+    stats: {
+      hp: 158,
+      def: 52,
+    },
+  },
+  copper_chest: {
+    key: 'copper_chest',
+    name: 'Copper Chest',
+    icon: require('../assets/resources/smithing/copper_chest.png'),
+    type: 'wearable',
+    equipLocation: 'chest',
+    price: 434,
+    stats: {
+      hp: 7,
+      def: 3,
+    },
+  },
+  iron_chest: {
+    key: 'iron_chest',
+    name: 'Iron Chest',
+    icon: require('../assets/resources/smithing/iron_chest.png'),
+    type: 'wearable',
+    equipLocation: 'chest',
+    price: 1023,
+    stats: {
+      hp: 12,
+      def: 6,
+    },
+  },
+  silver_chest: {
+    key: 'silver_chest',
+    name: 'Silver Chest',
+    icon: require('../assets/resources/smithing/silver_chest.png'),
+    type: 'wearable',
+    equipLocation: 'chest',
+    price: 2263,
+    stats: {
+      hp: 23,
+      def: 10,
+    },
+  },
+  gold_chest: {
+    key: 'gold_chest',
+    name: 'Gold Chest',
+    icon: require('../assets/resources/smithing/gold_chest.png'),
+    type: 'wearable',
+    equipLocation: 'chest',
+    price: 4898,
+    stats: {
+      hp: 20,
+      def: 8,
+    },
+  },
+  blue_chest: {
+    key: 'blue_chest',
+    name: 'Blue Chest',
+    icon: require('../assets/resources/smithing/blue_chest.png'),
+    type: 'wearable',
+    equipLocation: 'chest',
+    price: 10261,
+    stats: {
+      hp: 63,
+      def: 24,
+    },
+  },
+  red_chest: {
+    key: 'red_chest',
+    name: 'Red Chest',
+    icon: require('../assets/resources/smithing/red_chest.png'),
+    type: 'wearable',
+    equipLocation: 'chest',
+    price: 21111,
+    stats: {
+      hp: 102,
+      def: 36,
+    },
+  },
+};
+
+type GlovesArmorKey =
+  | 'tempest_gloves'
+  | 'copper_gloves'
+  | 'iron_gloves'
+  | 'silver_gloves'
+  | 'gold_gloves'
+  | 'blue_gloves'
+  | 'red_gloves';
+
+export const glovesArmors: Record<GlovesArmorKey, Item> = {
+  tempest_gloves: {
+    key: 'tempest_gloves',
+    name: 'Leather Gloves of the Tempest',
+    setId: 'tempest',
+    description: 'Lightning dances between your fingers with each gesture of power.',
+    itemClass: 'light',
+    icon: require('../assets/resources/crafting/light_armour/gloves/tempest_gloves.png'),
+    equipLocation: 'gloves',
+    type: 'wearable',
+    classLocked: ['druid', 'ranger'],
+    levelLocked: 100,
+    stats: {
+      hp: 35,
+    },
+  },
+  copper_gloves: {
+    key: 'copper_gloves',
+    name: 'Copper Gloves',
+    icon: require('../assets/resources/smithing/copper_gloves.png'),
+    type: 'wearable',
+    equipLocation: 'gloves',
+    price: 434,
+    stats: {
+      hp: 2,
+    },
+  },
+  iron_gloves: {
+    key: 'iron_gloves',
+    name: 'Iron Gloves',
+    icon: require('../assets/resources/smithing/iron_gloves.png'),
+    type: 'wearable',
+    equipLocation: 'gloves',
+    price: 1023,
+    stats: {
+      hp: 3,
+    },
+  },
+  silver_gloves: {
+    key: 'silver_gloves',
+    name: 'Silver Gloves',
+    icon: require('../assets/resources/smithing/silver_gloves.png'),
+    type: 'wearable',
+    equipLocation: 'gloves',
+    price: 2263,
+    stats: {
+      hp: 5,
+    },
+  },
+  gold_gloves: {
+    key: 'gold_gloves',
+    name: 'Gold Gloves',
+    icon: require('../assets/resources/smithing/gold_gloves.png'),
+    type: 'wearable',
+    equipLocation: 'gloves',
+    price: 4898,
+    stats: {
+      hp: 9,
+    },
+  },
+  blue_gloves: {
+    key: 'blue_gloves',
+    name: 'Blue Gloves',
+    icon: require('../assets/resources/smithing/blue_gloves.png'),
+    type: 'wearable',
+    equipLocation: 'gloves',
+    price: 10261,
+    stats: {
+      hp: 15,
+    },
+  },
+  red_gloves: {
+    key: 'red_gloves',
+    name: 'Red Gloves',
+    icon: require('../assets/resources/smithing/red_gloves.png'),
+    type: 'wearable',
+    equipLocation: 'gloves',
+    price: 21111,
+    stats: {
+      hp: 23,
+    },
+  },
+};
+
+type LegArmorKey =
+  | 'tempest_legs'
+  | 'copper_legs'
+  | 'iron_legs'
+  | 'silver_legs'
+  | 'gold_legs'
+  | 'blue_legs'
+  | 'red_legs';
+
+export const legArmors: Record<LegArmorKey, Item> = {
+  tempest_legs: {
+    key: 'tempest_legs',
+    name: 'Leather Leggings of the Tempest',
+    setId: 'tempest',
+    description: 'Each stride echoes with distant thunder, granting swiftness of the storm.',
+    icon: require('../assets/resources/crafting/light_armour/legs/tempest_legs.png'),
+    equipLocation: 'legs',
+    type: 'wearable',
+    classLocked: ['druid', 'ranger'],
+    levelLocked: 100,
+    stats: {
+      hp: 113,
+      def: 36,
+    },
+  },
+  copper_legs: {
+    key: 'copper_legs',
+    name: 'Copper Legs',
+    icon: require('../assets/resources/smithing/copper_legs.png'),
+    type: 'wearable',
+    equipLocation: 'legs',
+    price: 434,
+    stats: {
+      hp: 5,
+      def: 2,
+    },
+  },
+  iron_legs: {
+    key: 'iron_legs',
+    name: 'Iron Legs',
+    icon: require('../assets/resources/smithing/iron_legs.png'),
+    type: 'wearable',
+    equipLocation: 'legs',
+    price: 1023,
+    stats: {
+      hp: 9,
+      def: 4,
+    },
+  },
+  silver_legs: {
+    key: 'silver_legs',
+    name: 'Silver Legs',
+    icon: require('../assets/resources/smithing/silver_legs.png'),
+    type: 'wearable',
+    equipLocation: 'legs',
+    price: 2263,
+    stats: {
+      hp: 16,
+      def: 7,
+    },
+  },
+  gold_legs: {
+    key: 'gold_legs',
+    name: 'Gold Legs',
+    icon: require('../assets/resources/smithing/gold_legs.png'),
+    type: 'wearable',
+    equipLocation: 'legs',
+    price: 4898,
+    stats: {
+      hp: 28,
+      def: 11,
+    },
+  },
+  blue_legs: {
+    key: 'blue_legs',
+    name: 'Blue Legs',
+    icon: require('../assets/resources/smithing/blue_legs.png'),
+    type: 'wearable',
+    equipLocation: 'legs',
+    price: 10261,
+    stats: {
+      hp: 45,
+      def: 17,
+    },
+  },
+  red_legs: {
+    key: 'red_legs',
+    name: 'Red Legs',
+    icon: require('../assets/resources/smithing/red_legs.png'),
+    type: 'wearable',
+    equipLocation: 'legs',
+    price: 21111,
+    stats: {
+      hp: 73,
+      def: 25,
+    },
+  },
+};
+
+type BootsArmorKey =
+  | 'tempest_boots'
+  | 'copper_boots'
+  | 'iron_boots'
+  | 'silver_boots'
+  | 'gold_boots'
+  | 'blue_boots'
+  | 'red_boots';
+
+export const bootsArmors: Record<BootsArmorKey, Item> = {
+  tempest_boots: {
+    key: 'tempest_boots',
+    name: 'Leather Boots of the Tempest',
+    setId: 'tempest',
+    description: 'Storm winds carry your steps, leaving no trace on sacred ground.',
+    icon: require('../assets/resources/crafting/light_armour/boots/tempest_boots.png'),
+    equipLocation: 'boots',
+    type: 'wearable',
+    classLocked: ['druid', 'ranger'],
+    levelLocked: 100,
+    stats: {
+      hp: 63,
+      def: 16,
+      agilityPercent: 1.5,
+    },
+  },
+  copper_boots: {
+    key: 'copper_boots',
+    name: 'Copper Boots',
+    icon: require('../assets/resources/smithing/copper_boots.png'),
+    type: 'wearable',
+    equipLocation: 'boots',
+    price: 434,
+    stats: {
+      hp: 3,
+      def: 1,
+      agilityPercent: 1.05,
+    },
+  },
+  iron_boots: {
+    key: 'iron_boots',
+    name: 'Iron Boots',
+    icon: require('../assets/resources/smithing/iron_boots.png'),
+    type: 'wearable',
+    equipLocation: 'boots',
+    price: 1023,
+    stats: {
+      hp: 5,
+      def: 2,
+      agilityPercent: 1.1,
+    },
+  },
+  silver_boots: {
+    key: 'silver_boots',
+    name: 'Silver Boots',
+    icon: require('../assets/resources/smithing/silver_boots.png'),
+    type: 'wearable',
+    equipLocation: 'boots',
+    price: 2263,
+    stats: {
+      hp: 9,
+      def: 3,
+      agilityPercent: 1.15,
+    },
+  },
+  gold_boots: {
+    key: 'gold_boots',
+    name: 'Gold Boots',
+    icon: require('../assets/resources/smithing/gold_boots.png'),
+    type: 'wearable',
+    equipLocation: 'boots',
+    price: 4898,
+    stats: {
+      hp: 15,
+      def: 5,
+      agilityPercent: 1.2,
+    },
+  },
+  blue_boots: {
+    key: 'blue_boots',
+    name: 'Blue Boots',
+    icon: require('../assets/resources/smithing/blue_boots.png'),
+    type: 'wearable',
+    equipLocation: 'boots',
+    price: 10261,
+    stats: {
+      hp: 25,
+      def: 7,
+      agilityPercent: 1.25,
+    },
+  },
+  red_boots: {
+    key: 'red_boots',
+    name: 'Red Boots',
+    icon: require('../assets/resources/smithing/red_boots.png'),
+    type: 'wearable',
+    equipLocation: 'boots',
+    price: 21111,
+    stats: {
+      hp: 40,
+      def: 11,
+      agilityPercent: 1.3,
+    },
+  },
+};
+
+type ArmorKey = HeadArmorKey | ChestArmorKey | GlovesArmorKey | LegArmorKey | BootsArmorKey;
+
+export const allArmor: Record<ArmorKey, Item> = {
+  ...headArmors,
+  ...chestArmors,
+  ...glovesArmors,
+  ...legArmors,
+  ...bootsArmors,
+};

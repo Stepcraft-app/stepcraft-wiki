@@ -207,6 +207,57 @@ async function getMdxFiles(dir: string): Promise<string[]> {
   return files
 }
 
+function generateItemsSearchData() {
+  try {
+    // Dynamic import of items data
+    const itemsPath = path.resolve(process.cwd(), "files/data/items.ts")
+    delete require.cache[itemsPath]
+    const { allItems } = require(itemsPath)
+    
+    const itemsSearchData = []
+    
+    // Convert each item to search data format
+    Object.values(allItems).forEach((item: any) => {
+      const searchableContent = [
+        item.name,
+        item.description || '',
+        item.type,
+        item.itemClass || '',
+        item.equipLocation || '',
+        // Convert stats to searchable text
+        item.stats ? Object.entries(item.stats).map(([key, value]) => `${key}: ${value}`).join(', ') : '',
+        item.statBoost ? Object.entries(item.statBoost.stats).map(([key, value]) => `${key}: ${value}`).join(', ') : '',
+        item.classLocked ? item.classLocked.join(', ') : '',
+        item.levelLocked ? `level ${item.levelLocked}` : '',
+      ].filter(Boolean).join(' ')
+      
+      itemsSearchData.push({
+        slug: `/items#${item.key}`,
+        title: item.name,
+        description: item.description || `${item.type} - ${item.itemClass || 'item'}`,
+        content: searchableContent,
+        _searchMeta: {
+          cleanContent: searchableContent.toLowerCase(),
+          headings: [item.name, item.type],
+          keywords: [
+            item.name,
+            item.type,
+            item.itemClass,
+            item.equipLocation,
+            ...(item.classLocked || []),
+            ...(item.stats ? Object.keys(item.stats) : []),
+          ].filter(Boolean)
+        }
+      })
+    })
+    
+    return itemsSearchData
+  } catch (error) {
+    console.error("Error generating items search data:", error)
+    return []
+  }
+}
+
 async function convertMdxToJson() {
   try {
     await ensureDirectoryExists(outputDir)
@@ -219,11 +270,17 @@ async function convertMdxToJson() {
       combinedData.push(jsonData)
     }
 
+    // Add items data to search
+    const itemsData = generateItemsSearchData()
+    combinedData.push(...itemsData)
+
     const combinedOutputPath = path.join(outputDir, "documents.json")
     await fs.writeFile(
       combinedOutputPath,
       JSON.stringify(combinedData, null, 2)
     )
+    
+    console.log(`Generated search data with ${combinedData.length} entries (${itemsData.length} items)`)
   } catch (err) {
     console.error("Error processing MDX files:", err)
   }

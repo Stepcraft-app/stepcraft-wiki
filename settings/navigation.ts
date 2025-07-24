@@ -1,17 +1,19 @@
-import { PageRoutes } from "@/lib/pageroutes"
-
 export const Navigations = [
   {
-    title: "Docs",
-    href: `/docs${PageRoutes[0].href}`,
+    title: "Getting Started",
+    href: "/docs/getting-started",
   },
   {
-    title: "Home",
-    href: "https://rubixstudios.com.au",
-    external: true,
+    title: "Characters",
+    href: "/docs/characters",
+  },
+  {
+    title: "Items",
+    href: "/docs/items",
   },
 ]
 
 export const GitHubLink = {
-  href: "https://github.com/rubixvi/rubix-documents",
+  href: "",
 }
+

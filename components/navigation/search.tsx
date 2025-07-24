@@ -119,10 +119,10 @@ export default function Search() {
         }}
       >
         <DialogTrigger asChild>
-          <div className="relative max-w-md flex-1 cursor-pointer">
+          <div className="relative max-w-2xl flex-1 cursor-pointer">
             <LuSearch className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-neutral-500 dark:text-neutral-400" />
             <Input
-              className="bg-background h-9 w-full rounded-md border pr-4 pl-10 text-sm shadow md:w-full"
+              className="bg-background h-10 w-full rounded-md border pr-4 pl-10 text-sm shadow md:w-full"
               placeholder="Search"
               type="search"
             />
