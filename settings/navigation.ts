@@ -11,6 +11,10 @@ export const Navigations = [
     title: "Items",
     href: "/docs/items",
   },
+  {
+    title: "Resources",
+    href: "/docs/resources",
+  },
 ]
 
 export const GitHubLink = {
