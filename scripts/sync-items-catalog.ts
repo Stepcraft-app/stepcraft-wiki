@@ -208,12 +208,12 @@ function generateCategoryTable(items: any[], category: string): string {
   switch (category) {
     case 'Tools':
       table = `
-## Tools - Complete Collection (${items.length} items)
+## Tools 
 
 All gathering tools across different tiers for various skills. Each tier unlocks access to higher-level resources.
 
-| Tool | Name | Tier | Materials Accessed | HP | Efficiency | Price | Link |
-|------|------|------|-------------------|----|-----------:|------:|------|
+| Tool | Name | Tier | Materials Accessed | HP | Efficiency | Price |
+|:----:|:-----|:----:|:------------------:|:--:|:----------:|:-----:|
 `;
       items.forEach(item => {
         const tier = getTierFromPrice(item.price);
@@ -221,50 +221,50 @@ All gathering tools across different tiers for various skills. Each tier unlocks
         const hp = item.stats?.hp || '-';
         const efficiency = item.stats?.efficiency || '-';
         const price = item.price ? item.price.toLocaleString() : '-';
-        table += `| ![${item.name}](${item.icon}) | **[${item.name}](/docs/items/individual/${item.key})** | ${tier} | ${materials} | ${hp} | ${efficiency} | ${price} | [View Details](/docs/items/individual/${item.key}) |\n`;
+        table += `| <img src="${item.icon}" alt="${item.name}" width="32" height="32" style={{margin: 0}} /> | **[${item.name}](/docs/items/individual/${item.key})** | ${tier} | ${materials} | ${hp} | ${efficiency} | ${price} |\n`;
       });
       break;
       
     case 'Food':
       table = `
-## Food - Complete Collection (${items.length} items)
+## Food 
 
 Essential sustenance for your adventures, from basic bread to elaborate dinners. Each food item provides health restoration.
 
-| Food Item | Name | HP Restored | Type | Link |
-|-----------|------|------------|------|------|
+| Food Item | Name | HP Restored | Type |
+|:---------:|:-----|:-----------:|:----:|
 `;
       items.forEach(item => {
         const hp = item.stats?.hp || item.statBoost?.stats?.hp || '-';
         const type = item.equipLocation === 'food' ? 'Food' : 'Consumable';
-        table += `| ![${item.name}](${item.icon}) | **[${item.name}](/docs/items/individual/${item.key})** | ❤️ +${hp} HP | ${type} | [View Details](/docs/items/individual/${item.key}) |\n`;
+        table += `| <img src="${item.icon}" alt="${item.name}" width="32" height="32" style={{margin: 0}} /> | **[${item.name}](/docs/items/individual/${item.key})** | ❤️ +${hp} HP | ${type} |\n`;
       });
       break;
       
     case 'Potions':
       table = `
-## Potions - Complete Collection (${items.length} items)
+## Potions 
 
 Powerful alchemical creations that provide temporary stat boosts and special effects.
 
-| Potion | Name | Effects | Type | Link |
-|--------|------|---------|------|------|
+| Potion | Name | Effects | Type |
+|:------:|:-----|:-------:|:----:|
 `;
       items.forEach(item => {
         const effects = formatPotionEffects(item);
         const type = item.equipLocation === 'potion' ? 'Potion' : 'Consumable';
-        table += `| ![${item.name}](${item.icon}) | **[${item.name}](/docs/items/individual/${item.key})** | ${effects} | ${type} | [View Details](/docs/items/individual/${item.key}) |\n`;
+        table += `| <img src="${item.icon}" alt="${item.name}" width="32" height="32" style={{margin: 0}} /> | **[${item.name}](/docs/items/individual/${item.key})** | ${effects} | ${type} |\n`;
       });
       break;
       
     case 'Rings':
       table = `
-## Rings - Complete Collection (${items.length} items)
+## Rings
 
 Master craftsmen create these powerful trinkets to enhance your combat abilities.
 
-| Ring | Name | HP | ATK | DEF | Crit | Price | Link |
-|------|------|----|----|-----|------|-------|------|
+| Ring | Name | HP | ATK | DEF | Crit | Price |
+|:----:|:-----|:--:|:---:|:---:|:----:|:-----:|
 `;
       items.forEach(item => {
         const hp = item.stats?.hp ? `+${item.stats.hp}` : '-';
@@ -272,18 +272,18 @@ Master craftsmen create these powerful trinkets to enhance your combat abilities
         const def = item.stats?.def ? `+${item.stats.def}` : '-';
         const crit = item.stats?.critChance ? `+${item.stats.critChance}%` : '-';
         const price = item.price ? item.price.toLocaleString() : '-';
-        table += `| ![${item.name}](${item.icon}) | **[${item.name}](/docs/items/individual/${item.key})** | ${hp} | ${atk} | ${def} | ${crit} | ${price} | [View Details](/docs/items/individual/${item.key}) |\n`;
+        table += `| <img src="${item.icon}" alt="${item.name}" width="32" height="32" style={{margin: 0}} /> | **[${item.name}](/docs/items/individual/${item.key})** | ${hp} | ${atk} | ${def} | ${crit} | ${price} |\n`;
       });
       break;
       
     case 'Amulets':
       table = `
-## Amulets - Complete Collection (${items.length} items)
+## Amulets
 
 Mystical necklaces that channel ancient powers to enhance your abilities.
 
-| Amulet | Name | HP | ATK | DEF | Crit | Price | Link |
-|--------|------|----|----|-----|------|-------|------|
+| Amulet | Name | HP | ATK | DEF | Crit | Price |
+|:------:|:-----|:--:|:---:|:---:|:----:|:-----:|
 `;
       items.forEach(item => {
         const hp = item.stats?.hp ? `+${item.stats.hp}` : '-';
@@ -291,18 +291,18 @@ Mystical necklaces that channel ancient powers to enhance your abilities.
         const def = item.stats?.def ? `+${item.stats.def}` : '-';
         const crit = item.stats?.critChance ? `+${item.stats.critChance}%` : '-';
         const price = item.price ? item.price.toLocaleString() : '-';
-        table += `| ![${item.name}](${item.icon}) | **[${item.name}](/docs/items/individual/${item.key})** | ${hp} | ${atk} | ${def} | ${crit} | ${price} | [View Details](/docs/items/individual/${item.key}) |\n`;
+        table += `| <img src="${item.icon}" alt="${item.name}" width="32" height="32" style={{margin: 0}} /> | **[${item.name}](/docs/items/individual/${item.key})** | ${hp} | ${atk} | ${def} | ${crit} | ${price} |\n`;
       });
       break;
       
     case 'Armor':
       table = `
-## Armor - Complete Collection (${items.length} items)
+## Armor
 
 Protective equipment to keep you safe in dangerous adventures.
 
-| Armor | Name | Type | HP | ATK | DEF | Price | Link |
-|-------|------|------|----|----|-----|-------|------|
+| Armor | Name | Type | HP | ATK | DEF | Price |
+|:-----:|:-----|:----:|:--:|:---:|:---:|:-----:|
 `;
       items.forEach(item => {
         const armorType = item.equipLocation || 'Equipment';
@@ -310,18 +310,18 @@ Protective equipment to keep you safe in dangerous adventures.
         const atk = item.stats?.atk ? `+${item.stats.atk}` : '-';
         const def = item.stats?.def ? `+${item.stats.def}` : '-';
         const price = item.price ? item.price.toLocaleString() : '-';
-        table += `| ![${item.name}](${item.icon}) | **[${item.name}](/docs/items/individual/${item.key})** | ${armorType} | ${hp} | ${atk} | ${def} | ${price} | [View Details](/docs/items/individual/${item.key}) |\n`;
+        table += `| <img src="${item.icon}" alt="${item.name}" width="32" height="32" style={{margin: 0}} /> | **[${item.name}](/docs/items/individual/${item.key})** | ${armorType} | ${hp} | ${atk} | ${def} | ${price} |\n`;
       });
       break;
       
     case 'Weapons':
       table = `
-## Weapons - Complete Collection (${items.length} items)
+## Weapons
 
 Combat weapons and tools for battle and defense.
 
-| Weapon | Name | Type | HP | ATK | DEF | Price | Link |
-|--------|------|------|----|----|-----|-------|------|
+| Weapon | Name | Type | HP | ATK | DEF | Price |
+|:------:|:-----|:----:|:--:|:---:|:---:|:-----:|
 `;
       items.forEach(item => {
         const weaponType = item.equipLocation || item.itemClass || 'Weapon';
@@ -329,21 +329,21 @@ Combat weapons and tools for battle and defense.
         const atk = item.stats?.atk ? `+${item.stats.atk}` : '-';
         const def = item.stats?.def ? `+${item.stats.def}` : '-';
         const price = item.price ? item.price.toLocaleString() : '-';
-        table += `| ![${item.name}](${item.icon}) | **[${item.name}](/docs/items/individual/${item.key})** | ${weaponType} | ${hp} | ${atk} | ${def} | ${price} | [View Details](/docs/items/individual/${item.key}) |\n`;
+        table += `| <img src="${item.icon}" alt="${item.name}" width="32" height="32" style={{margin: 0}} /> | **[${item.name}](/docs/items/individual/${item.key})** | ${weaponType} | ${hp} | ${atk} | ${def} | ${price} |\n`;
       });
       break;
       
     default:
       // Generic table for other categories
       table = `
-## ${category} - Complete Collection (${items.length} items)
+## ${category}
 
-| Item | Name | Description | Link |
-|------|------|-------------|------|
+| Item | Name | Description |
+|:----:|:-----|:-----------:|
 `;
       items.forEach(item => {
         const description = item.description || `A ${item.type} item in Stepcraft`;
-        table += `| ![${item.name}](${item.icon}) | **[${item.name}](/docs/items/individual/${item.key})** | ${description} | [View Details](/docs/items/individual/${item.key}) |\n`;
+        table += `| <img src="${item.icon}" alt="${item.name}" width="32" height="32" style={{margin: 0}} /> | **[${item.name}](/docs/items/individual/${item.key})** | ${description} |\n`;
       });
       break;
   }
@@ -406,32 +406,16 @@ function generateCatalogContent(groupedItems: Record<string, any[]>, totalItems:
   // Generate all category tables
   const categoryTables = categoryOrder.filter(cat => groupedItems[cat]?.length > 0).map(category => {
     return generateCategoryTable(groupedItems[category], category);
-  }).join('\n\n---\n\n');
+  }).join('\n\n');
   
   return `---
 title: Complete Items Catalog
 description: Complete catalog of all items, weapons, armor, tools, consumables, and accessories in Stepcraft - ${totalItems} items with stats and images
 ---
 
-# Complete Items Catalog
-
-Discover every single item available in Stepcraft. This comprehensive catalog includes all tools, weapons, armor, food, potions, rings, amulets, and special items with their complete statistics, requirements, and visual assets.
-
-<div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg p-4 mb-8">
-  <div className="flex items-center gap-3 mb-2">
-    <span className="text-2xl">📊</span>
-    <h3 className="font-semibold text-blue-800 dark:text-blue-200">Complete Database</h3>
-  </div>
-  <p className="text-blue-700 dark:text-blue-300">
-    This catalog contains every item from the game files - ${totalItems} unique items with complete statistics, images, and descriptions. Each item links to its individual detail page.
-  </p>
-</div>
-
 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
 ${categoryCards}
 </div>
-
----
 
 ${categoryTables}
 
@@ -508,7 +492,7 @@ async function syncItemsCatalog() {
     console.log(`✅ Successfully updated items catalog!`);
     console.log(`📁 Updated: ${itemsIndexPath}`);
     console.log(`📊 Total items: ${items.length}`);
-    console.log(`🔗 All items now link to individual pages at /items/individual/[item-key]`);
+    console.log(`🔗 All items now link to individual pages at /docs/items/individual/[item-key]`);
     
   } catch (error) {
     console.error('❌ Error syncing items catalog:', error);

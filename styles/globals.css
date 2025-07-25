@@ -134,6 +134,55 @@
   margin: 0 !important;
 }
 
+/* Remove default 2rem margins from images in tables and typography */
+@layer utilities {
+  .prose table img,
+  .prose td img,
+  .prose th img,
+  .typography table img,
+  .typography td img,
+  .typography th img {
+    margin: 0 !important;
+  }
+
+  /* More specific overrides for typography plugin margins - force highest specificity */
+  html .typography img,
+  html .prose img,
+  html .prose :where(img):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+  html .typography :where(img):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+  body .typography img,
+  body .prose img {
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Extra fallback - target all images in any prose-style content */
+  [class*="prose"] img,
+  [class*="typography"] img {
+    margin: 0 !important;
+  }
+}
+
+/* Ultimate override - highest possible specificity for table images */
+@layer components {
+  html body div.typography table td img,
+  html body div.prose table td img,
+  html body .typography table td img,
+  html body .prose table td img {
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Global image override for all table contexts */
+table img {
+  margin: 0 !important;
+}
+
 .prose ul > li::marker {
   color: hsl(0, 0%, 29%);
 }
