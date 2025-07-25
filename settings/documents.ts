@@ -17,11 +17,7 @@ export const Documents: Paths[] = [
       {
         title: "Races",
         href: "/races",
-      },
-      {
-        title: "Classes",
-        href: "/classes",
-      },
+      },      
     ],
   },
   {
