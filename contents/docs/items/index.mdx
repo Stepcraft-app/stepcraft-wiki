@@ -59,283 +59,47 @@ All 24 gathering tools across 6 tiers for 4 different skills. Each tier unlocks 
 
 ## Mining Tools - Pickaxes
 
-<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 my-6">
-  <div className="text-center p-3 border rounded-lg bg-orange-50 dark:bg-orange-900/20">
-    <img src="/assets/resources/smithing/copper_pickaxe.png" alt="Copper Pickaxe" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Copper Pickaxe</h4>
-    <p className="text-xs text-orange-600">Tier 1 • Basic</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>⛏️ **Tool Type:** Mining</div>
-      <div>🪨 **Access:** Stone, Copper</div>
-      <div>💰 **Value:** Starting tool</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-gray-50 dark:bg-gray-900/20">
-    <img src="/assets/resources/smithing/iron_pickaxe.png" alt="Iron Pickaxe" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Iron Pickaxe</h4>
-    <p className="text-xs text-gray-600">Tier 2 • Improved</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>⛏️ **Tool Type:** Mining</div>
-      <div>🪨 **Access:** Iron ore</div>
-      <div>⚡ **Speed:** +25%</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-slate-50 dark:bg-slate-900/20">
-    <img src="/assets/resources/smithing/silver_pickaxe.png" alt="Silver Pickaxe" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Silver Pickaxe</h4>
-    <p className="text-xs text-slate-600">Tier 3 • Advanced</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>⛏️ **Tool Type:** Mining</div>
-      <div>🪨 **Access:** Silver ore</div>
-      <div>💎 **Bonus:** Gem chance</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-yellow-50 dark:bg-yellow-900/20">
-    <img src="/assets/resources/smithing/gold_pickaxe.png" alt="Gold Pickaxe" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Gold Pickaxe</h4>
-    <p className="text-xs text-yellow-600">Tier 4 • Premium</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>⛏️ **Tool Type:** Mining</div>
-      <div>🪨 **Access:** Gold ore</div>
-      <div>✨ **Special:** Rare gems</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-blue-50 dark:bg-blue-900/20">
-    <img src="/assets/resources/smithing/blue_pickaxe.png" alt="Blue Pickaxe" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Blue Pickaxe</h4>
-    <p className="text-xs text-blue-600">Tier 5 • Magical</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>⛏️ **Tool Type:** Mining</div>
-      <div>🪨 **Access:** Blue ore</div>
-      <div>🔮 **Magic:** Enchanted</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-red-50 dark:bg-red-900/20">
-    <img src="/assets/resources/smithing/red_pickaxe.png" alt="Red Pickaxe" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Red Pickaxe</h4>
-    <p className="text-xs text-red-600">Tier 6 • Legendary</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>⛏️ **Tool Type:** Mining</div>
-      <div>🪨 **Access:** All materials</div>
-      <div>👑 **Elite:** Master tier</div>
-    </div>
-  </div>
-</div>
+| Tool | Tier | Materials Accessed | Special Properties | HP | Efficiency | Price |
+|------|------|-------------------|-------------------|----|-----------:|------:|
+| ![Copper Pickaxe](/assets/resources/smithing/copper_pickaxe.png) **Copper Pickaxe** | 1 • Basic | Stone, Copper | Starting tool | 10 | 1.2 | 434 |
+| ![Iron Pickaxe](/assets/resources/smithing/iron_pickaxe.png) **Iron Pickaxe** | 2 • Improved | Iron ore | +25% speed | 20 | 1.5 | 1,023 |
+| ![Silver Pickaxe](/assets/resources/smithing/silver_pickaxe.png) **Silver Pickaxe** | 3 • Advanced | Silver ore | Gem chance bonus | 40 | 1.8 | 2,263 |
+| ![Gold Pickaxe](/assets/resources/smithing/gold_pickaxe.png) **Gold Pickaxe** | 4 • Premium | Gold ore | Rare gems | 68 | 2.1 | 4,898 |
+| ![Blue Pickaxe](/assets/resources/smithing/blue_pickaxe.png) **Blue Pickaxe** | 5 • Magical | Blue ore | Enchanted properties | 110 | 2.4 | 10,261 |
+| ![Red Pickaxe](/assets/resources/smithing/red_pickaxe.png) **Red Pickaxe** | 6 • Legendary | All materials | Master tier access | 180 | 2.7 | 21,111 |
 
 ## Woodcutting Tools - Axes
 
-<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 my-6">
-  <div className="text-center p-3 border rounded-lg bg-orange-50 dark:bg-orange-900/20">
-    <img src="/assets/resources/smithing/copper_axe.png" alt="Copper Axe" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Copper Axe</h4>
-    <p className="text-xs text-orange-600">Tier 1 • Basic</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🪓 **Tool Type:** Woodcutting</div>
-      <div>🌲 **Access:** Basic trees</div>
-      <div>⚔️ **Dual Use:** Combat weapon</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-gray-50 dark:bg-gray-900/20">
-    <img src="/assets/resources/smithing/iron_axe.png" alt="Iron Axe" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Iron Axe</h4>
-    <p className="text-xs text-gray-600">Tier 2 • Improved</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🪓 **Tool Type:** Woodcutting</div>
-      <div>🌲 **Access:** Hardwood</div>
-      <div>⚡ **Speed:** Faster cutting</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-slate-50 dark:bg-slate-900/20">
-    <img src="/assets/resources/smithing/silver_axe.png" alt="Silver Axe" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Silver Axe</h4>
-    <p className="text-xs text-slate-600">Tier 3 • Advanced</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🪓 **Tool Type:** Woodcutting</div>
-      <div>🌲 **Access:** Premium wood</div>
-      <div>🍃 **Bonus:** Extra yield</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-yellow-50 dark:bg-yellow-900/20">
-    <img src="/assets/resources/smithing/gold_axe.png" alt="Gold Axe" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Gold Axe</h4>
-    <p className="text-xs text-yellow-600">Tier 4 • Premium</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🪓 **Tool Type:** Woodcutting</div>
-      <div>🌲 **Access:** Rare trees</div>
-      <div>✨ **Special:** Silverleaf</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-blue-50 dark:bg-blue-900/20">
-    <img src="/assets/resources/smithing/blue_axe.png" alt="Blue Axe" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Blue Axe</h4>
-    <p className="text-xs text-blue-600">Tier 5 • Magical</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🪓 **Tool Type:** Woodcutting</div>
-      <div>🌲 **Access:** Magic trees</div>
-      <div>🔮 **Magic:** Enchanted</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-red-50 dark:bg-red-900/20">
-    <img src="/assets/resources/smithing/red_axe.png" alt="Red Axe" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Red Axe</h4>
-    <p className="text-xs text-red-600">Tier 6 • Legendary</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🪓 **Tool Type:** Woodcutting</div>
-      <div>🌲 **Access:** Eldritchwood</div>
-      <div>👑 **Elite:** Master tier</div>
-    </div>
-  </div>
-</div>
+| Tool | Tier | Materials Accessed | Special Properties | HP | Efficiency | Price |
+|------|------|-------------------|-------------------|----|-----------:|------:|
+| ![Copper Axe](/assets/resources/smithing/copper_axe.png) **Copper Axe** | 1 • Basic | Basic trees | Dual use: combat weapon | 8 | 1.2 | 434 |
+| ![Iron Axe](/assets/resources/smithing/iron_axe.png) **Iron Axe** | 2 • Improved | Hardwood | Faster cutting speed | 16 | 1.5 | 1,023 |
+| ![Silver Axe](/assets/resources/smithing/silver_axe.png) **Silver Axe** | 3 • Advanced | Premium wood | Extra yield bonus | 32 | 1.8 | 2,263 |
+| ![Gold Axe](/assets/resources/smithing/gold_axe.png) **Gold Axe** | 4 • Premium | Rare trees | Silverleaf access | 54 | 2.1 | 4,898 |
+| ![Blue Axe](/assets/resources/smithing/blue_axe.png) **Blue Axe** | 5 • Magical | Magic trees | Enchanted properties | 88 | 2.4 | 10,261 |
+| ![Red Axe](/assets/resources/smithing/red_axe.png) **Red Axe** | 6 • Legendary | Eldritchwood | Master tier access | 144 | 2.7 | 21,111 |
 
 ## Farming Tools - Sickles
 
-<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 my-6">
-  <div className="text-center p-3 border rounded-lg bg-orange-50 dark:bg-orange-900/20">
-    <img src="/assets/resources/smithing/copper_sickle.png" alt="Copper Sickle" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Copper Sickle</h4>
-    <p className="text-xs text-orange-600">Tier 1 • Basic</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🌾 **Tool Type:** Farming</div>
-      <div>🌱 **Access:** Basic crops</div>
-      <div>🍞 **Harvest:** Wheat, corn</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-gray-50 dark:bg-gray-900/20">
-    <img src="/assets/resources/smithing/iron_sickle.png" alt="Iron Sickle" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Iron Sickle</h4>
-    <p className="text-xs text-gray-600">Tier 2 • Improved</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🌾 **Tool Type:** Farming</div>
-      <div>🌱 **Access:** Better crops</div>
-      <div>⚡ **Speed:** Faster harvest</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-slate-50 dark:bg-slate-900/20">
-    <img src="/assets/resources/smithing/silver_sickle.png" alt="Silver Sickle" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Silver Sickle</h4>
-    <p className="text-xs text-slate-600">Tier 3 • Advanced</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🌾 **Tool Type:** Farming</div>
-      <div>🌱 **Access:** Premium crops</div>
-      <div>🌾 **Bonus:** Extra yield</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-yellow-50 dark:bg-yellow-900/20">
-    <img src="/assets/resources/smithing/gold_sickle.png" alt="Gold Sickle" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Gold Sickle</h4>
-    <p className="text-xs text-yellow-600">Tier 4 • Premium</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🌾 **Tool Type:** Farming</div>
-      <div>🌱 **Access:** Rare crops</div>
-      <div>✨ **Special:** Quality bonus</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-blue-50 dark:bg-blue-900/20">
-    <img src="/assets/resources/smithing/blue_sickle.png" alt="Blue Sickle" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Blue Sickle</h4>
-    <p className="text-xs text-blue-600">Tier 5 • Magical</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🌾 **Tool Type:** Farming</div>
-      <div>🌱 **Access:** Magic crops</div>
-      <div>🔮 **Magic:** Enchanted</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-red-50 dark:bg-red-900/20">
-    <img src="/assets/resources/smithing/red_sickle.png" alt="Red Sickle" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Red Sickle</h4>
-    <p className="text-xs text-red-600">Tier 6 • Legendary</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🌾 **Tool Type:** Farming</div>
-      <div>🌱 **Access:** All plants</div>
-      <div>👑 **Elite:** Master tier</div>
-    </div>
-  </div>
-</div>
+| Tool | Tier | Materials Accessed | Special Properties | HP | Efficiency | Price |
+|------|------|-------------------|-------------------|----|-----------:|------:|
+| ![Copper Sickle](/assets/resources/smithing/copper_sickle.png) **Copper Sickle** | 1 • Basic | Basic crops | Wheat, corn harvest | 6 | 1.2 | 434 |
+| ![Iron Sickle](/assets/resources/smithing/iron_sickle.png) **Iron Sickle** | 2 • Improved | Better crops | Faster harvest speed | 12 | 1.5 | 1,023 |
+| ![Silver Sickle](/assets/resources/smithing/silver_sickle.png) **Silver Sickle** | 3 • Advanced | Premium crops | Extra yield bonus | 24 | 1.8 | 2,263 |
+| ![Gold Sickle](/assets/resources/smithing/gold_sickle.png) **Gold Sickle** | 4 • Premium | Rare crops | Quality bonus | 40 | 2.1 | 4,898 |
+| ![Blue Sickle](/assets/resources/smithing/blue_sickle.png) **Blue Sickle** | 5 • Magical | Magic crops | Enchanted properties | 66 | 2.4 | 10,261 |
+| ![Red Sickle](/assets/resources/smithing/red_sickle.png) **Red Sickle** | 6 • Legendary | All plants | Master tier access | 108 | 2.7 | 21,111 |
 
 ## Fishing Tools - Rods
 
-<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 my-6">
-  <div className="text-center p-3 border rounded-lg bg-orange-50 dark:bg-orange-900/20">
-    <img src="/assets/resources/smithing/copper_rod.png" alt="Copper Rod" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Copper Rod</h4>
-    <p className="text-xs text-orange-600">Tier 1 • Basic</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🎣 **Tool Type:** Fishing</div>
-      <div>🐟 **Access:** Common fish</div>
-      <div>🌊 **Waters:** Rivers, ponds</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-gray-50 dark:bg-gray-900/20">
-    <img src="/assets/resources/smithing/iron_rod.png" alt="Iron Rod" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Iron Rod</h4>
-    <p className="text-xs text-gray-600">Tier 2 • Improved</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🎣 **Tool Type:** Fishing</div>
-      <div>🐟 **Access:** Better fish</div>
-      <div>⚡ **Speed:** Faster catch</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-slate-50 dark:bg-slate-900/20">
-    <img src="/assets/resources/smithing/silver_rod.png" alt="Silver Rod" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Silver Rod</h4>
-    <p className="text-xs text-slate-600">Tier 3 • Advanced</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🎣 **Tool Type:** Fishing</div>
-      <div>🐟 **Access:** Rare fish</div>
-      <div>🌊 **Waters:** Deep sea</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-yellow-50 dark:bg-yellow-900/20">
-    <img src="/assets/resources/smithing/gold_rod.png" alt="Gold Rod" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Gold Rod</h4>
-    <p className="text-xs text-yellow-600">Tier 4 • Premium</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🎣 **Tool Type:** Fishing</div>
-      <div>🐟 **Access:** Exotic fish</div>
-      <div>✨ **Special:** Trophy fish</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-blue-50 dark:bg-blue-900/20">
-    <img src="/assets/resources/smithing/blue_rod.png" alt="Blue Rod" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Blue Rod</h4>
-    <p className="text-xs text-blue-600">Tier 5 • Magical</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🎣 **Tool Type:** Fishing</div>
-      <div>🐟 **Access:** Magic fish</div>
-      <div>🔮 **Magic:** Enchanted</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-red-50 dark:bg-red-900/20">
-    <img src="/assets/resources/smithing/red_rod.png" alt="Red Rod" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Red Rod</h4>
-    <p className="text-xs text-red-600">Tier 6 • Legendary</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div>🎣 **Tool Type:** Fishing</div>
-      <div>🐟 **Access:** All waters</div>
-      <div>👑 **Elite:** Master tier</div>
-    </div>
-  </div>
-</div>
+| Tool | Tier | Materials Accessed | Special Properties | HP | Efficiency | Price |
+|------|------|-------------------|-------------------|----|-----------:|------:|
+| ![Copper Rod](/assets/resources/smithing/copper_rod.png) **Copper Rod** | 1 • Basic | Common fish | Rivers, ponds access | 4 | 1.2 | 434 |
+| ![Iron Rod](/assets/resources/smithing/iron_rod.png) **Iron Rod** | 2 • Improved | Better fish | Faster catch speed | 8 | 1.5 | 1,023 |
+| ![Silver Rod](/assets/resources/smithing/silver_rod.png) **Silver Rod** | 3 • Advanced | Rare fish | Deep sea access | 16 | 1.8 | 2,263 |
+| ![Gold Rod](/assets/resources/smithing/gold_rod.png) **Gold Rod** | 4 • Premium | Exotic fish | Trophy fish access | 27 | 2.1 | 4,898 |
+| ![Blue Rod](/assets/resources/smithing/blue_rod.png) **Blue Rod** | 5 • Magical | Magic fish | Enchanted properties | 44 | 2.4 | 10,261 |
+| ![Red Rod](/assets/resources/smithing/red_rod.png) **Red Rod** | 6 • Legendary | All waters | Master tier access | 72 | 2.7 | 21,111 |
 
 ---
 
@@ -343,181 +107,50 @@ All 24 gathering tools across 6 tiers for 4 different skills. Each tier unlocks 
 
 Essential sustenance for your adventures, from basic bread to elaborate dinners. Each food item provides health restoration and temporary stat bonuses.
 
-<div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-3 my-8">
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/mushroom_skewer.png" alt="Mushroom Skewer" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Mushroom Skewer</h4>
-    <p className="text-xs text-green-600">❤️ +12 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/cooked_bird.png" alt="Cooked Bird" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Cooked Bird</h4>
-    <p className="text-xs text-green-600">❤️ +15 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/drumstick.png" alt="Drumstick" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Drumstick</h4>
-    <p className="text-xs text-green-600">❤️ +18 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/fish_soup.png" alt="Fish Soup" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Fish Soup</h4>
-    <p className="text-xs text-green-600">❤️ +20 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/fried_egg.png" alt="Fried Egg" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Fried Egg</h4>
-    <p className="text-xs text-green-600">❤️ +8 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/bread.png" alt="Bread" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Bread</h4>
-    <p className="text-xs text-green-600">❤️ +10 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/calamari.png" alt="Calamari" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Calamari</h4>
-    <p className="text-xs text-green-600">❤️ +16 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/cooked_crab.png" alt="Cooked Crab" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Cooked Crab</h4>
-    <p className="text-xs text-green-600">❤️ +22 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/cooked_lobster.png" alt="Cooked Lobster" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Cooked Lobster</h4>
-    <p className="text-xs text-green-600">❤️ +25 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/cooked_shrimp.png" alt="Cooked Shrimp" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Cooked Shrimp</h4>
-    <p className="text-xs text-green-600">❤️ +14 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/cookie.png" alt="Cookie" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Cookie</h4>
-    <p className="text-xs text-green-600">❤️ +6 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/sashimi.png" alt="Sashimi" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Sashimi</h4>
-    <p className="text-xs text-green-600">❤️ +18 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/sushi.png" alt="Sushi" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Sushi</h4>
-    <p className="text-xs text-green-600">❤️ +20 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/shucked_oyster.png" alt="Shucked Oyster" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Shucked Oyster</h4>
-    <p className="text-xs text-green-600">❤️ +12 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/salmowich.png" alt="Salmowich" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Salmowich</h4>
-    <p className="text-xs text-green-600">❤️ +24 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/pizza_slice.png" alt="Pizza Slice" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Pizza Slice</h4>
-    <p className="text-xs text-green-600">❤️ +22 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/donut.png" alt="Donut" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Donut</h4>
-    <p className="text-xs text-green-600">❤️ +8 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/grey_fish.png" alt="Grey Fish" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Grey Fish</h4>
-    <p className="text-xs text-green-600">❤️ +15 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/blue_fish.png" alt="Blue Fish" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Blue Fish</h4>
-    <p className="text-xs text-green-600">❤️ +18 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/onion_soup.png" alt="Onion Soup" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Onion Soup</h4>
-    <p className="text-xs text-green-600">❤️ +20 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/bacon.png" alt="Bacon" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Bacon</h4>
-    <p className="text-xs text-red-600">⚔️ +3 ATK</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/breakfast.png" alt="Breakfast" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Breakfast</h4>
-    <p className="text-xs text-orange-600">🌟 Multi-stat</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/hamburger.png" alt="Hamburger" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Hamburger</h4>
-    <p className="text-xs text-green-600">❤️ +30 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/hot_dog.png" alt="Hot Dog" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Hot Dog</h4>
-    <p className="text-xs text-green-600">❤️ +25 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/berry_pie.png" alt="Berry Pie" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Berry Pie</h4>
-    <p className="text-xs text-purple-600">💨 +4 AGI</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/dinner.png" alt="Dinner" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Dinner</h4>
-    <p className="text-xs text-green-600">❤️ +35 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/crimson_fruit_salad.png" alt="Crimson Fruit Salad" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Crimson Salad</h4>
-    <p className="text-xs text-red-600">⚔️ +5 ATK</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/chocolate.png" alt="Chocolate" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Chocolate</h4>
-    <p className="text-xs text-green-600">❤️ +12 HP</p>
-  </div>
-  
-  <div className="text-center p-2 border rounded-lg">
-    <img src="/assets/resources/cooking/chocolate_cake.png" alt="Chocolate Cake" className="w-12 h-12 mx-auto mb-1" />
-    <h4 className="font-semibold text-xs">Chocolate Cake</h4>
-    <p className="text-xs text-green-600">❤️ +40 HP</p>
-  </div>
-</div>
+## Basic Foods & Snacks (HP Restoration 6-18)
+
+| Food Item | HP/Effects | Type | Quality |
+|-----------|------------|------|---------|
+| ![Cookie](/assets/resources/cooking/cookie.png) **Cookie** | ❤️ +6 HP | Snack | Basic |
+| ![Fried Egg](/assets/resources/cooking/fried_egg.png) **Fried Egg** | ❤️ +8 HP | Breakfast | Basic |
+| ![Donut](/assets/resources/cooking/donut.png) **Donut** | ❤️ +8 HP | Dessert | Basic |
+| ![Bread](/assets/resources/cooking/bread.png) **Bread** | ❤️ +10 HP | Staple | Basic |
+| ![Mushroom Skewer](/assets/resources/cooking/mushroom_skewer.png) **Mushroom Skewer** | ❤️ +12 HP | Grilled | Common |
+| ![Shucked Oyster](/assets/resources/cooking/shucked_oyster.png) **Shucked Oyster** | ❤️ +12 HP | Seafood | Common |
+| ![Chocolate](/assets/resources/cooking/chocolate.png) **Chocolate** | ❤️ +12 HP | Dessert | Common |
+| ![Cooked Shrimp](/assets/resources/cooking/cooked_shrimp.png) **Cooked Shrimp** | ❤️ +14 HP | Seafood | Common |
+| ![Cooked Bird](/assets/resources/cooking/cooked_bird.png) **Cooked Bird** | ❤️ +15 HP | Protein | Common |
+| ![Grey Fish](/assets/resources/cooking/grey_fish.png) **Grey Fish** | ❤️ +15 HP | Fish | Common |
+| ![Calamari](/assets/resources/cooking/calamari.png) **Calamari** | ❤️ +16 HP | Seafood | Common |
+| ![Drumstick](/assets/resources/cooking/drumstick.png) **Drumstick** | ❤️ +18 HP | Protein | Good |
+| ![Sashimi](/assets/resources/cooking/sashimi.png) **Sashimi** | ❤️ +18 HP | Fish | Good |
+| ![Blue Fish](/assets/resources/cooking/blue_fish.png) **Blue Fish** | ❤️ +18 HP | Fish | Good |
+
+## Prepared Meals (HP Restoration 20-30)
+
+| Food Item | HP/Effects | Type | Quality |
+|-----------|------------|------|---------|
+| ![Fish Soup](/assets/resources/cooking/fish_soup.png) **Fish Soup** | ❤️ +20 HP | Soup | Good |
+| ![Sushi](/assets/resources/cooking/sushi.png) **Sushi** | ❤️ +20 HP | Fish | Good |
+| ![Onion Soup](/assets/resources/cooking/onion_soup.png) **Onion Soup** | ❤️ +20 HP | Soup | Good |
+| ![Cooked Crab](/assets/resources/cooking/cooked_crab.png) **Cooked Crab** | ❤️ +22 HP | Seafood | Excellent |
+| ![Pizza Slice](/assets/resources/cooking/pizza_slice.png) **Pizza Slice** | ❤️ +22 HP | Fast Food | Excellent |
+| ![Salmowich](/assets/resources/cooking/salmowich.png) **Salmowich** | ❤️ +24 HP | Sandwich | Excellent |
+| ![Cooked Lobster](/assets/resources/cooking/cooked_lobster.png) **Cooked Lobster** | ❤️ +25 HP | Seafood | Excellent |
+| ![Hot Dog](/assets/resources/cooking/hot_dog.png) **Hot Dog** | ❤️ +25 HP | Fast Food | Excellent |
+| ![Hamburger](/assets/resources/cooking/hamburger.png) **Hamburger** | ❤️ +30 HP | Fast Food | Premium |
+
+## Specialty Foods & Stat Boosters
+
+| Food Item | HP/Effects | Type | Quality |
+|-----------|------------|------|---------|
+| ![Bacon](/assets/resources/cooking/bacon.png) **Bacon** | ⚔️ +3 ATK | Protein | Stat Boost |
+| ![Berry Pie](/assets/resources/cooking/berry_pie.png) **Berry Pie** | 💨 +4 AGI | Dessert | Stat Boost |
+| ![Crimson Salad](/assets/resources/cooking/crimson_fruit_salad.png) **Crimson Salad** | ⚔️ +5 ATK | Salad | Stat Boost |
+| ![Breakfast](/assets/resources/cooking/breakfast.png) **Breakfast** | 🌟 Multi-stat | Complete Meal | Balanced |
+| ![Dinner](/assets/resources/cooking/dinner.png) **Dinner** | ❤️ +35 HP | Complete Meal | Premium |
+| ![Chocolate Cake](/assets/resources/cooking/chocolate_cake.png) **Chocolate Cake** | ❤️ +40 HP | Dessert | Elite |
+
 
 ---
 
@@ -525,148 +158,104 @@ Essential sustenance for your adventures, from basic bread to elaborate dinners.
 
 Powerful alchemical creations that provide temporary stat boosts and special effects. Duration measured in steps.
 
-<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-8">
-  <div className="text-center p-3 border rounded-lg bg-green-50 dark:bg-green-900/20">
-    <img src="/assets/resources/alchemy/health_potion_small.png" alt="Small Health Potion" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Small Health Potion</h4>
-    <p className="text-xs text-muted-foreground">Basic Healing</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div className="text-green-600">❤️ **Restore:** 50 HP</div>
-      <div className="text-gray-500">⏱️ **Type:** Instant</div>
-      <div className="text-blue-500">🧪 **Rarity:** Common</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-green-50 dark:bg-green-900/20">
-    <img src="/assets/resources/alchemy/health_potion_medium.png" alt="Medium Health Potion" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Medium Health Potion</h4>
-    <p className="text-xs text-muted-foreground">Moderate Healing</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div className="text-green-600">❤️ **Restore:** 100 HP</div>
-      <div className="text-gray-500">⏱️ **Type:** Instant</div>
-      <div className="text-blue-500">🧪 **Rarity:** Common</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-green-50 dark:bg-green-900/20">
-    <img src="/assets/resources/alchemy/health_potion_large.png" alt="Large Health Potion" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Large Health Potion</h4>
-    <p className="text-xs text-muted-foreground">Major Healing</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div className="text-green-600">❤️ **Restore:** 200 HP</div>
-      <div className="text-gray-500">⏱️ **Type:** Instant</div>
-      <div className="text-purple-500">🧪 **Rarity:** Uncommon</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-red-50 dark:bg-red-900/20">
-    <img src="/assets/resources/alchemy/strength_potion.png" alt="Strength Potion" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Strength Potion</h4>
-    <p className="text-xs text-muted-foreground">Combat Enhancement</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div className="text-red-600">⚔️ **Boost:** +15 ATK</div>
-      <div className="text-gray-500">⏱️ **Duration:** 300 steps</div>
-      <div className="text-purple-500">🧪 **Rarity:** Uncommon</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-blue-50 dark:bg-blue-900/20">
-    <img src="/assets/resources/alchemy/defense_potion.png" alt="Defense Potion" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Defense Potion</h4>
-    <p className="text-xs text-muted-foreground">Protection Enhancement</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div className="text-blue-600">🛡️ **Boost:** +12 DEF</div>
-      <div className="text-gray-500">⏱️ **Duration:** 300 steps</div>
-      <div className="text-purple-500">🧪 **Rarity:** Uncommon</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-yellow-50 dark:bg-yellow-900/20">
-    <img src="/assets/resources/alchemy/agility_potion.png" alt="Agility Potion" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Agility Potion</h4>
-    <p className="text-xs text-muted-foreground">Speed Enhancement</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div className="text-yellow-600">💨 **Boost:** +10 AGI</div>
-      <div className="text-gray-500">⏱️ **Duration:** 300 steps</div>
-      <div className="text-purple-500">🧪 **Rarity:** Uncommon</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-purple-50 dark:bg-purple-900/20">
-    <img src="/assets/resources/alchemy/critical_potion.png" alt="Critical Potion" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Critical Potion</h4>
-    <p className="text-xs text-muted-foreground">Precision Enhancement</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div className="text-purple-600">✨ **Boost:** +8% Crit</div>
-      <div className="text-gray-500">⏱️ **Duration:** 300 steps</div>
-      <div className="text-orange-500">🧪 **Rarity:** Rare</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-orange-50 dark:bg-orange-900/20">
-    <img src="/assets/resources/alchemy/regeneration_potion.png" alt="Regeneration Potion" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Regeneration Potion</h4>
-    <p className="text-xs text-muted-foreground">Continuous Healing</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div className="text-green-600">❤️ **Heal:** 5 HP/step</div>
-      <div className="text-gray-500">⏱️ **Duration:** 100 steps</div>
-      <div className="text-orange-500">🧪 **Rarity:** Rare</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-pink-50 dark:bg-pink-900/20">
-    <img src="/assets/resources/alchemy/vigor_potion.png" alt="Vigor Potion" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Vigor Potion</h4>
-    <p className="text-xs text-muted-foreground">Multi-Stat Boost</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div className="text-pink-600">🌟 **Boost:** All stats +5</div>
-      <div className="text-gray-500">⏱️ **Duration:** 200 steps</div>
-      <div className="text-orange-500">🧪 **Rarity:** Rare</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-indigo-50 dark:bg-indigo-900/20">
-    <img src="/assets/resources/alchemy/mana_potion.png" alt="Mana Potion" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Mana Potion</h4>
-    <p className="text-xs text-muted-foreground">Magic Enhancement</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div className="text-indigo-600">🔮 **Restore:** 100 MP</div>
-      <div className="text-gray-500">⏱️ **Type:** Instant</div>
-      <div className="text-purple-500">🧪 **Rarity:** Uncommon</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-teal-50 dark:bg-teal-900/20">
-    <img src="/assets/resources/alchemy/resist_potion.png" alt="Resistance Potion" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Resistance Potion</h4>
-    <p className="text-xs text-muted-foreground">Status Protection</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div className="text-teal-600">🛡️ **Effect:** Status immunity</div>
-      <div className="text-gray-500">⏱️ **Duration:** 500 steps</div>
-      <div className="text-orange-500">🧪 **Rarity:** Rare</div>
-    </div>
-  </div>
-  
-  <div className="text-center p-3 border rounded-lg bg-red-50 dark:bg-red-900/20">
-    <img src="/assets/resources/alchemy/berserk_potion.png" alt="Berserk Potion" className="w-16 h-16 mx-auto mb-2" />
-    <h4 className="font-semibold text-sm">Berserk Potion</h4>
-    <p className="text-xs text-muted-foreground">Extreme Combat</p>
-    <div className="text-xs mt-1 space-y-1">
-      <div className="text-red-600">⚔️ **Boost:** +25 ATK</div>
-      <div className="text-red-400">🛡️ **Cost:** -10 DEF</div>
-      <div className="text-gray-500">⏱️ **Duration:** 150 steps</div>
-      <div className="text-red-500">🧪 **Rarity:** Very Rare</div>
-    </div>
-  </div>
-</div>
+## Health & Mana Restoration (Instant Effects)
+
+| Potion | Effects | Type | Rarity | Use |
+|--------|---------|------|--------|-----|
+| ![Small Health Potion](/assets/resources/alchemy/health_potion_small.png) **Small Health Potion** | ❤️ +50 HP | Instant | Common | Basic healing |
+| ![Medium Health Potion](/assets/resources/alchemy/health_potion_medium.png) **Medium Health Potion** | ❤️ +100 HP | Instant | Common | Moderate healing |
+| ![Large Health Potion](/assets/resources/alchemy/health_potion_large.png) **Large Health Potion** | ❤️ +200 HP | Instant | Uncommon | Major healing |
+| ![Mana Potion](/assets/resources/alchemy/mana_potion.png) **Mana Potion** | 🔮 +100 MP | Instant | Uncommon | Mana restoration |
+
+## Stat Enhancement Potions (Temporary Buffs)
+
+| Potion | Effects | Duration | Rarity | Use |
+|--------|---------|----------|--------|-----|
+| ![Strength Potion](/assets/resources/alchemy/strength_potion.png) **Strength Potion** | ⚔️ +15 ATK | 300 steps | Uncommon | Combat boost |
+| ![Defense Potion](/assets/resources/alchemy/defense_potion.png) **Defense Potion** | 🛡️ +12 DEF | 300 steps | Uncommon | Defensive boost |
+| ![Agility Potion](/assets/resources/alchemy/agility_potion.png) **Agility Potion** | 💨 +10 AGI | 300 steps | Uncommon | Speed boost |
+| ![Critical Potion](/assets/resources/alchemy/critical_potion.png) **Critical Potion** | ⚡ +8% Crit | 300 steps | Rare | Critical enhancement |
+| ![Vigor Potion](/assets/resources/alchemy/vigor_potion.png) **Vigor Potion** | 🌟 All stats +5 | 200 steps | Rare | Balanced enhancement |
+
+## Special Effect Potions (Advanced Buffs)
+
+| Potion | Effects | Duration | Rarity | Use |
+|--------|---------|----------|--------|-----|
+| ![Regeneration Potion](/assets/resources/alchemy/regeneration_potion.png) **Regeneration Potion** | ❤️ +5 HP/step | 100 steps | Rare | Continuous healing |
+| ![Resistance Potion](/assets/resources/alchemy/resist_potion.png) **Resistance Potion** | 🛡️ Status immunity | 500 steps | Rare | Debuff protection |
+| ![Berserk Potion](/assets/resources/alchemy/berserk_potion.png) **Berserk Potion** | ⚔️ +25 ATK, 🛡️ -10 DEF | 150 steps | Very Rare | High-risk combat |
+
 
 ---
 
-## Rings
+## Rings - Complete Collection (43 Items)
 
 Master craftsmen create these powerful trinkets to enhance your combat abilities. Each ring provides unique stat bonuses and can dramatically improve your effectiveness in battle.
 
-### Tier 1 - Basic Rings
+### Tier 1 - Basic Rings (7 rings, 252-1,023 coins)
+
+| Ring | HP | ATK | DEF | Crit | Price | Special Properties |
+|------|----|----|-----|------|-------|-------------------|
+| ![Copper Band](/assets/resources/trinketry/rings/copper_band.png) **Copper Band** | +2 | +2 | - | +1% | 425 | Entry level ring |
+| ![Bone Ring](/assets/resources/trinketry/rings/bone_ring.png) **Bone Ring** | +4 | +3 | - | +1% | 428 | Balanced starter |
+| ![Iron Ring](/assets/resources/trinketry/rings/iron_ring.png) **Iron Ring** | +4 | +2 | +1 | +1% | 1,004 | First defensive bonus |
+| ![Steel Ring](/assets/resources/trinketry/rings/steel_ring.png) **Steel Ring** | +8 | +5 | +2 | +2% | 1,004 | Well-rounded stats |
+| ![Shadow Band](/assets/resources/trinketry/rings/shadow_band.png) **Shadow Band** | +5 | +1 | +3 | +1% | 1,004 | Defensive focus |
+| ![Flame Guard](/assets/resources/trinketry/rings/flame_guard.png) **Flame Guard** | +8 | +4 | +5 | +1% | 1,023 | Defensive specialist |
+| ![Fire Shard](/assets/resources/trinketry/rings/fire_shard.png) **Fire Shard Ring** | +25 | +15 | +5 | +4% | 1,023 | High tier 1 stats |
+
+### Tier 2 - Enhanced Rings (11 rings, 2,204-2,348 coins)
+
+| Ring | HP | ATK | DEF | Crit | Price | Special Properties |
+|------|----|----|-----|------|-------|-------------------|
+| ![Tidal Ring](/assets/resources/trinketry/rings/tidal_ring.png) **Tidal Ring** | +6 | +3 | - | +5% | 2,204 | High crit chance |
+| ![Silver Loop](/assets/resources/trinketry/rings/silver_loop.png) **Silver Loop** | +8 | +5 | +2 | +2% | 2,223 | Balanced enhancement |
+| ![Blood Stone](/assets/resources/trinketry/rings/blood_stone.png) **Blood Stone** | +12 | +6 | +1 | +2% | 2,223 | High HP bonus |
+| ![Skull Ring](/assets/resources/trinketry/rings/skull_ring.png) **Skull Ring** | +10 | +6 | - | +3% | 2,223 | Combat focused |
+| ![Frost Ring](/assets/resources/trinketry/rings/frost_ring.png) **Frost Ring** | +5 | +8 | - | +4% | 2,223 | Attack + crit |
+| ![Ice Crown](/assets/resources/trinketry/rings/ice_crown.png) **Ice Crown** | +10 | +4 | - | +5% | 2,223 | Maximum crit tier 2 |
+| ![Sapphire Loop](/assets/resources/trinketry/rings/sapphire_loop.png) **Sapphire Loop** | +8 | +3 | +5 | +1% | 2,223 | Defense specialist |
+| ![Silver Serpent](/assets/resources/trinketry/rings/silver_serpent.png) **Silver Serpent** | +8 | +3 | +5 | +1% | 2,263 | Defensive focus |
+| ![Nature's Call](/assets/resources/trinketry/rings/natures_call.png) **Nature's Call** | +18 | +6 | +2 | +3% | 2,263 | Nature themed |
+| ![Emerald Band](/assets/resources/trinketry/rings/emerald_band.png) **Emerald Band** | +25 | +15 | +5 | +4% | 2,348 | Top tier 2 stats |
+| ![Frost Band](/assets/resources/trinketry/rings/frost_band.png) **Frost Band** | +12 | +5 | - | +3% | 252 | Ice element |
+
+### Tier 3 - Superior Rings (12 rings, 4,813 coins each)
+
+| Ring | HP | ATK | DEF | Crit | Special Properties |
+|------|----|----|-----|------|-------------------|
+| ![Gold Band](/assets/resources/trinketry/rings/gold_band.png) **Gold Band** | +15 | +8 | +3 | +3% | Premium gold crafting |
+| ![Gilded Square](/assets/resources/trinketry/rings/gilded_square.png) **Gilded Square** | +18 | +12 | - | +5% | High attack + crit |
+| ![Golden Vine](/assets/resources/trinketry/rings/golden_vine.png) **Golden Vine** | +18 | +6 | +2 | +3% | Nature-gold hybrid |
+| ![Sunburst Ring](/assets/resources/trinketry/rings/sunburst_ring.png) **Sunburst Ring** | +15 | +4 | +8 | +1% | Defensive powerhouse |
+| ![Crescent Ring](/assets/resources/trinketry/rings/crescent_ring.png) **Crescent Ring** | +15 | +8 | +3 | +3% | Lunar themed |
+| ![Ruby Circle](/assets/resources/trinketry/rings/ruby_circle.png) **Ruby Circle** | +10 | +12 | - | +5% | High attack focus |
+| ![Earth Guard](/assets/resources/trinketry/rings/earth_guard.png) **Earth Guard** | +20 | +5 | +5 | +2% | Elemental defense |
+| ![Ember Ring](/assets/resources/trinketry/rings/ember_ring.png) **Ember Ring** | - | +4 | - | - | Minimal fire element |
+| ![Golden Eye](/assets/resources/trinketry/rings/golden_eye.png) **Golden Eye** | +13 | +12 | - | +5% | Vision enhancement |
+| ![Sunset Band](/assets/resources/trinketry/rings/sunset_band.png) **Sunset Band** | +15 | +6 | +2 | +5% | Evening power |
+| ![Golden Sigil](/assets/resources/trinketry/rings/golden_sigil.png) **Golden Sigil** | +13 | +9 | +3 | +3% | Magical inscription |
+| ![Nature's Eye](/assets/resources/trinketry/rings/natures_eye.png) **Nature's Eye** | +20 | +5 | +5 | +2% | Natural perception |
+
+### Tier 4 - Elite Rings (6 rings, 10,088-20,761 coins)
+
+| Ring | HP | ATK | DEF | Crit | Price | Special Properties |
+|------|----|----|-----|------|-------|-------------------|
+| ![Azure Band](/assets/resources/trinketry/rings/azure_band.png) **Azure Band** | +40 | +25 | +8 | +6% | 10,088 | Superior all-around |
+| ![Ocean Ring](/assets/resources/trinketry/rings/ocean_ring.png) **Ocean Ring** | +15 | +22 | - | +7% | 10,088 | High attack + crit |
+| ![Azure Guard](/assets/resources/trinketry/rings/azure_guard.png) **Azure Guard** | +30 | +12 | +6 | +3% | 10,088 | Balanced elite |
+| ![Ice Shard](/assets/resources/trinketry/rings/ice_shard.png) **Ice Shard** | +28 | +11 | +6 | +5% | 10,088 | Frost mastery |
+| ![Diamond Weave](/assets/resources/trinketry/rings/diamond_weave.png) **Diamond Weave** | +35 | +8 | +10 | +2% | 10,088 | Diamond defense |
+| ![Crimson Arrow](/assets/resources/trinketry/rings/crimson_arrow.png) **Crimson Arrow** | +50 | +15 | +15 | +3% | 20,761 | Pre-legendary power |
+
+### Tier 5 - Legendary Rings (4 rings, 21,111 coins each)
+
+| Ring | HP | ATK | DEF | Crit | Special Properties |
+|------|----|----|-----|------|-------------------|
+| ![Crimson Zigzag](/assets/resources/trinketry/rings/crimson_zigzag.png) **Crimson Zigzag** | +65 | +40 | +12 | +8% | Legendary combat ring |
+| ![Flame Ring](/assets/resources/trinketry/rings/flame_ring.png) **Flame Ring** | +65 | +40 | +12 | +8% | Ultimate fire power |
+| ![Molten Band](/assets/resources/trinketry/rings/molten_band.png) **Molten Band** | +80 | +25 | +20 | +8% | Maximum defense |
+| ![Crimson Shard](/assets/resources/trinketry/rings/crimson_shard.png) **Crimson Shard** | +55 | +48 | +8 | +10% | Highest critical chance |
 
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
   {/* Copper Band */}
@@ -740,359 +329,77 @@ Master craftsmen create these powerful trinkets to enhance your combat abilities
   </div>
 </div>
 
-### Tier 2 - Enhanced Rings
-
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-  {/* Tidal Ring */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/tidal_ring.png" alt="Tidal Ring" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Tidal Ring</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +6 | ATK: +3 | Crit: +5%</div>
-      <div className="text-blue-600 font-medium">Price: 2,204 coins</div>
-    </div>
-  </div>
-
-  {/* Silver Loop */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/silver_loop.png" alt="Silver Loop" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Silver Loop</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +8 | ATK: +5 | DEF: +2 | Crit: +2%</div>
-      <div className="text-blue-600 font-medium">Price: 2,223 coins</div>
-    </div>
-  </div>
-
-  {/* Blood Stone */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/blood_stone.png" alt="Blood Stone" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Blood Stone</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +12 | ATK: +6 | DEF: +1 | Crit: +2%</div>
-      <div className="text-blue-600 font-medium">Price: 2,223 coins</div>
-    </div>
-  </div>
-
-  {/* Skull Ring */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/skull_ring.png" alt="Skull Ring" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Skull Ring</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +10 | ATK: +6 | Crit: +3%</div>
-      <div className="text-blue-600 font-medium">Price: 2,223 coins</div>
-    </div>
-  </div>
-
-  {/* Frost Ring */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/frost_ring.png" alt="Frost Ring" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Frost Ring</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +5 | ATK: +8 | Crit: +4%</div>
-      <div className="text-blue-600 font-medium">Price: 2,223 coins</div>
-    </div>
-  </div>
-
-  {/* Ice Crown */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/ice_crown.png" alt="Ice Crown" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Ice Crown</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +10 | ATK: +4 | Crit: +5%</div>
-      <div className="text-blue-600 font-medium">Price: 2,223 coins</div>
-    </div>
-  </div>
-
-  {/* Sapphire Loop */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/sapphire_loop.png" alt="Sapphire Loop" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Sapphire Loop</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +8 | ATK: +3 | DEF: +5 | Crit: +1%</div>
-      <div className="text-blue-600 font-medium">Price: 2,223 coins</div>
-    </div>
-  </div>
-
-  {/* Silver Serpent */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/silver_serpent.png" alt="Silver Serpent" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Silver Serpent</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +8 | ATK: +3 | DEF: +5 | Crit: +1%</div>
-      <div className="text-blue-600 font-medium">Price: 2,263 coins</div>
-    </div>
-  </div>
-
-  {/* Nature's Call */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/natures_call.png" alt="Nature's Call" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Nature's Call</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +18 | ATK: +6 | DEF: +2 | Crit: +3%</div>
-      <div className="text-blue-600 font-medium">Price: 2,263 coins</div>
-    </div>
-  </div>
-
-  {/* Emerald Band */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/emerald_band.png" alt="Emerald Band" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Emerald Band</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +25 | ATK: +15 | DEF: +5 | Crit: +4%</div>
-      <div className="text-blue-600 font-medium">Price: 2,348 coins</div>
-    </div>
-  </div>
-
-  {/* Frost Band */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/frost_band.png" alt="Frost Band" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Frost Band</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +12 | ATK: +5 | Crit: +3%</div>
-      <div className="text-blue-600 font-medium">Price: 252 coins</div>
-    </div>
-  </div>
-</div>
-
-### Tier 3 - Superior Rings
-
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-  {/* Gold Band */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/gold_band.png" alt="Gold Band" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Gold Band</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +15 | ATK: +8 | DEF: +3 | Crit: +3%</div>
-      <div className="text-blue-600 font-medium">Price: 4,813 coins</div>
-    </div>
-  </div>
-
-  {/* Gilded Square */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/gilded_square.png" alt="Gilded Square" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Gilded Square</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +18 | ATK: +12 | Crit: +5%</div>
-      <div className="text-blue-600 font-medium">Price: 4,813 coins</div>
-    </div>
-  </div>
-
-  {/* Golden Vine */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/golden_vine.png" alt="Golden Vine" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Golden Vine</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +18 | ATK: +6 | DEF: +2 | Crit: +3%</div>
-      <div className="text-blue-600 font-medium">Price: 4,813 coins</div>
-    </div>
-  </div>
-
-  {/* Sunburst Ring */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/sunburst_ring.png" alt="Sunburst Ring" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Sunburst Ring</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +15 | ATK: +4 | DEF: +8 | Crit: +1%</div>
-      <div className="text-blue-600 font-medium">Price: 4,813 coins</div>
-    </div>
-  </div>
-
-  {/* Crescent Ring */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/crescent_ring.png" alt="Crescent Ring" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Crescent Ring</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +15 | ATK: +8 | DEF: +3 | Crit: +3%</div>
-      <div className="text-blue-600 font-medium">Price: 4,813 coins</div>
-    </div>
-  </div>
-
-  {/* Ruby Circle */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/ruby_circle.png" alt="Ruby Circle" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Ruby Circle</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +10 | ATK: +12 | Crit: +5%</div>
-      <div className="text-blue-600 font-medium">Price: 4,813 coins</div>
-    </div>
-  </div>
-
-  {/* Earth Guard */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/earth_guard.png" alt="Earth Guard" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Earth Guard</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +20 | ATK: +5 | DEF: +5 | Crit: +2%</div>
-      <div className="text-blue-600 font-medium">Price: 4,813 coins</div>
-    </div>
-  </div>
-
-  {/* Ember Ring */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/ember_ring.png" alt="Ember Ring" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Ember Ring</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>ATK: +4</div>
-      <div className="text-blue-600 font-medium">Price: 4,813 coins</div>
-    </div>
-  </div>
-
-  {/* Golden Eye */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/golden_eye.png" alt="Golden Eye" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Golden Eye</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +13 | ATK: +12 | Crit: +5%</div>
-      <div className="text-blue-600 font-medium">Price: 4,813 coins</div>
-    </div>
-  </div>
-
-  {/* Sunset Band */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/sunset_band.png" alt="Sunset Band" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Sunset Band</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +15 | ATK: +6 | DEF: +2 | Crit: +5%</div>
-      <div className="text-blue-600 font-medium">Price: 4,813 coins</div>
-    </div>
-  </div>
-
-  {/* Golden Sigil */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/golden_sigil.png" alt="Golden Sigil" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Golden Sigil</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +13 | ATK: +9 | DEF: +3 | Crit: +3%</div>
-      <div className="text-blue-600 font-medium">Price: 4,813 coins</div>
-    </div>
-  </div>
-
-  {/* Nature's Eye */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/natures_eye.png" alt="Nature's Eye" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Nature's Eye</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +20 | ATK: +5 | DEF: +5 | Crit: +2%</div>
-      <div className="text-blue-600 font-medium">Price: 4,813 coins</div>
-    </div>
-  </div>
-</div>
-
-### Tier 4 - Elite Rings
-
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-  {/* Azure Band */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/azure_band.png" alt="Azure Band" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Azure Band</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +40 | ATK: +25 | DEF: +8 | Crit: +6%</div>
-      <div className="text-blue-600 font-medium">Price: 10,088 coins</div>
-    </div>
-  </div>
-
-  {/* Ocean Ring */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/ocean_ring.png" alt="Ocean Ring" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Ocean Ring</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +15 | ATK: +22 | Crit: +7%</div>
-      <div className="text-blue-600 font-medium">Price: 10,088 coins</div>
-    </div>
-  </div>
-
-  {/* Azure Guard */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/azure_guard.png" alt="Azure Guard" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Azure Guard</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +30 | ATK: +12 | DEF: +6 | Crit: +3%</div>
-      <div className="text-blue-600 font-medium">Price: 10,088 coins</div>
-    </div>
-  </div>
-
-  {/* Ice Shard */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/ice_shard.png" alt="Ice Shard" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Ice Shard</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +28 | ATK: +11 | DEF: +6 | Crit: +5%</div>
-      <div className="text-blue-600 font-medium">Price: 10,088 coins</div>
-    </div>
-  </div>
-
-  {/* Diamond Weave */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/diamond_weave.png" alt="Diamond Weave" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Diamond Weave</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +35 | ATK: +8 | DEF: +10 | Crit: +2%</div>
-      <div className="text-blue-600 font-medium">Price: 10,088 coins</div>
-    </div>
-  </div>
-
-  {/* Crimson Arrow */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/rings/crimson_arrow.png" alt="Crimson Arrow" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Crimson Arrow</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +50 | ATK: +15 | DEF: +15 | Crit: +3%</div>
-      <div className="text-blue-600 font-medium">Price: 20,761 coins</div>
-    </div>
-  </div>
-</div>
-
-### Tier 5 - Legendary Rings
-
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-  {/* Crimson Zigzag */}
-  <div className="border rounded-lg p-4 flex flex-col items-center bg-gradient-to-b from-red-50 to-red-100 border-red-200">
-    <img src="/assets/resources/trinketry/rings/crimson_zigzag.png" alt="Crimson Zigzag" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2 text-red-800">Crimson Zigzag</h4>
-    <div className="text-sm text-red-700 space-y-1 text-center">
-      <div>HP: +65 | ATK: +40 | DEF: +12 | Crit: +8%</div>
-      <div className="text-red-600 font-bold">Price: 21,111 coins</div>
-    </div>
-  </div>
-
-  {/* Flame Ring */}
-  <div className="border rounded-lg p-4 flex flex-col items-center bg-gradient-to-b from-red-50 to-red-100 border-red-200">
-    <img src="/assets/resources/trinketry/rings/flame_ring.png" alt="Flame Ring" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2 text-red-800">Flame Ring</h4>
-    <div className="text-sm text-red-700 space-y-1 text-center">
-      <div>HP: +65 | ATK: +40 | DEF: +12 | Crit: +8%</div>
-      <div className="text-red-600 font-bold">Price: 21,111 coins</div>
-    </div>
-  </div>
-
-  {/* Molten Band */}
-  <div className="border rounded-lg p-4 flex flex-col items-center bg-gradient-to-b from-red-50 to-red-100 border-red-200">
-    <img src="/assets/resources/trinketry/rings/molten_band.png" alt="Molten Band" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2 text-red-800">Molten Band</h4>
-    <div className="text-sm text-red-700 space-y-1 text-center">
-      <div>HP: +80 | ATK: +25 | DEF: +20 | Crit: +8%</div>
-      <div className="text-red-600 font-bold">Price: 21,111 coins</div>
-    </div>
-  </div>
-
-  {/* Crimson Shard */}
-  <div className="border rounded-lg p-4 flex flex-col items-center bg-gradient-to-b from-red-50 to-red-100 border-red-200">
-    <img src="/assets/resources/trinketry/rings/crimson_shard.png" alt="Crimson Shard" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2 text-red-800">Crimson Shard</h4>
-    <div className="text-sm text-red-700 space-y-1 text-center">
-      <div>HP: +55 | ATK: +48 | DEF: +8 | Crit: +10%</div>
-      <div className="text-red-600 font-bold">Price: 21,111 coins</div>
-    </div>
-  </div>
-</div>
 
 ---
 
-## Amulets
+## Amulets - Complete Collection (40 Items)
 
 These mystical necklaces channel ancient powers to enhance your abilities. Worn around the neck, amulets provide substantial stat bonuses and are essential for high-level adventuring.
 
-### Tier 1 - Basic Amulets
+### Tier 1 - Basic Amulets (4 items, 500-1,023 coins)
+
+| Amulet | HP | ATK | DEF | Crit | Price | Special Properties |
+|--------|----|----|-----|------|-------|-------------------|
+| ![Bone Crescent](/assets/resources/trinketry/amulets/bone_crescent.png) **Bone Crescent** | +3 | +2 | +1 | +2% | 500 | Entry level amulet |
+| ![Iron Spiral](/assets/resources/trinketry/amulets/iron_spiral.png) **Iron Spiral** | +8 | +5 | +2 | +2% | 1,023 | Balanced progression |
+| ![Steel Pendant](/assets/resources/trinketry/amulets/steel_pendant.png) **Steel Pendant** | +15 | +8 | +4 | +3% | 1,023 | Solid foundation |
+| ![Fire Shard](/assets/resources/trinketry/amulets/fire_shard.png) **Fire Shard Amulet** | +157 | +87 | +10 | +12% | 1,023 | Exceptional tier 1 |
+
+### Tier 2 - Enhanced Amulets (8 items, 2,263-2,521 coins)
+
+| Amulet | HP | ATK | DEF | Crit | Price | Special Properties |
+|--------|----|----|-----|------|-------|-------------------|
+| ![Silver Charm](/assets/resources/trinketry/amulets/silver_charm.png) **Silver Charm** | +20 | +10 | +2 | +4% | 2,263 | Silver craftsmanship |
+| ![Chain Link](/assets/resources/trinketry/amulets/chain_link.png) **Chain Link** | +35 | +15 | +8 | +4% | 2,263 | Defensive focus |
+| ![Verdant Pendant](/assets/resources/trinketry/amulets/verdant_pendant.png) **Verdant Pendant** | +30 | +18 | +3 | +6% | 2,263 | Nature-infused |
+| ![Silver Cross](/assets/resources/trinketry/amulets/silver_cross.png) **Silver Cross** | +28 | +20 | +3 | +6% | 2,263 | Sacred symbol |
+| ![Bone Cross](/assets/resources/trinketry/amulets/bone_cross.png) **Bone Cross** | +39 | +20 | +5 | +5% | 2,263 | Ancient blessing |
+| ![Silver Star](/assets/resources/trinketry/amulets/silver_star.png) **Silver Star** | +32 | +22 | +3 | +6% | 2,263 | Celestial power |
+| ![Emerald Eye](/assets/resources/trinketry/amulets/emerald_eye.png) **Emerald Eye** | +80 | +67 | +5 | +11% | 2,521 | High tier 2 stats |
+| ![Moon Disk](/assets/resources/trinketry/amulets/moon_disk.png) **Moon Disk** | +95 | +50 | +18 | +6% | 2,521 | Lunar enhancement |
+
+### Tier 3 - Superior Amulets (12 items, 4,898 coins each)
+
+| Amulet | HP | ATK | DEF | Crit | Special Properties |
+|--------|----|----|-----|------|-------------------|
+| ![Golden Shield](/assets/resources/trinketry/amulets/golden_shield.png) **Golden Shield** | +65 | +36 | +10 | +7% | Protective mastery |
+| ![Nature Star](/assets/resources/trinketry/amulets/nature_star.png) **Nature Star** | +45 | +40 | +5 | +8% | Natural harmony |
+| ![Solar Disk](/assets/resources/trinketry/amulets/solar_disk.png) **Solar Disk** | +55 | +30 | +15 | +5% | Solar radiance |
+| ![Golden Dagger](/assets/resources/trinketry/amulets/golden_dagger.png) **Golden Dagger** | +35 | +50 | +5 | +8% | Combat focus |
+| ![Amber Leaf](/assets/resources/trinketry/amulets/amber_leaf.png) **Amber Leaf** | +53 | +32 | +15 | +4% | Ancient preservation |
+| ![Lightning Bolt](/assets/resources/trinketry/amulets/lightning_bolt.png) **Lightning Bolt** | +55 | +35 | +10 | +5% | Electric power |
+| ![Earth Crown](/assets/resources/trinketry/amulets/earth_crown.png) **Earth Crown** | +47 | +33 | +17 | +5% | Elemental mastery |
+| ![Sun Medallion](/assets/resources/trinketry/amulets/sun_medallion.png) **Sun Medallion** | +55 | +30 | +15 | +5% | Solar blessing |
+| ![Golden Bloom](/assets/resources/trinketry/amulets/golden_bloom.png) **Golden Bloom** | +65 | +25 | +15 | +5% | Flowering power |
+| ![Autumn Leaf](/assets/resources/trinketry/amulets/autumn_leaf.png) **Autumn Leaf** | +60 | +38 | +8 | +8% | Seasonal magic |
+| ![Ruby Orb](/assets/resources/trinketry/amulets/ruby_orb.png) **Ruby Orb** | +62 | +35 | +10 | +7% | Crystalline energy |
+| ![Nature Shield](/assets/resources/trinketry/amulets/nature_shield.png) **Nature Shield** | +50 | +35 | +8 | +9% | Environmental guard |
+
+### Tier 4 - Elite Amulets (8 items, 10,261-20,588 coins)
+
+| Amulet | HP | ATK | DEF | Crit | Price | Special Properties |
+|--------|----|----|-----|------|-------|-------------------|
+| ![Tidal Charm](/assets/resources/trinketry/amulets/tidal_charm.png) **Tidal Charm** | +110 | +58 | +10 | +8% | 10,261 | Ocean mastery |
+| ![Frost Pendant](/assets/resources/trinketry/amulets/frost_pendant.png) **Frost Pendant** | +110 | +58 | +10 | +8% | 10,261 | Ice element |
+| ![Tidal Blade](/assets/resources/trinketry/amulets/tidal_blade.png) **Tidal Blade** | +80 | +65 | +5 | +10% | 10,261 | Water weapon |
+| ![Azure Cross](/assets/resources/trinketry/amulets/azure_cross.png) **Azure Cross** | +100 | +55 | +12 | +9% | 10,261 | Sacred azure |
+| ![Ocean Orbs](/assets/resources/trinketry/amulets/ocean_orbs.png) **Ocean Orbs** | +85 | +60 | +8 | +8% | 10,261 | Dual sphere power |
+| ![Sapphire Square](/assets/resources/trinketry/amulets/sapphire_square.png) **Sapphire Square** | +120 | +45 | +15 | +6% | 10,261 | Geometric perfection |
+| ![Ice Star](/assets/resources/trinketry/amulets/ice_star.png) **Ice Star** | +105 | +52 | +14 | +7% | 10,261 | Frozen constellation |
+| ![Flame Skull](/assets/resources/trinketry/amulets/flame_skull.png) **Flame Skull** | +66 | +41 | +8 | +8% | 20,588 | Death and fire |
+
+### Tier 5 - Legendary Amulets (8 items, 21,111 coins each)
+
+| Amulet | HP | ATK | DEF | Crit | Special Properties |
+|--------|----|----|-----|------|-------------------|
+| ![Flame Wing](/assets/resources/trinketry/amulets/flame_wing.png) **Flame Wing** | +160 | +92 | +10 | +10% | Phoenix power |
+| ![Fire Blade](/assets/resources/trinketry/amulets/fire_blade.png) **Fire Blade** | +120 | +105 | +5 | +12% | Blazing weapon |
+| ![Dragon Wing](/assets/resources/trinketry/amulets/dragon_wing.png) **Dragon Wing** | +160 | +92 | +10 | +12% | Draconic might |
+| ![Crimson Disk](/assets/resources/trinketry/amulets/crimson_disk.png) **Crimson Disk** | +160 | +92 | +10 | +10% | Blood moon power |
+| ![Molten Drop](/assets/resources/trinketry/amulets/molten_drop.png) **Molten Drop** | +130 | +82 | +25 | +9% | Lava essence |
+| ![Solar Flare](/assets/resources/trinketry/amulets/solar_flare.png) **Solar Flare** | +155 | +110 | +13 | +15% | Ultimate solar power |
+| ![Ember Disk](/assets/resources/trinketry/amulets/ember_disk.png) **Ember Disk** | +105 | +105 | +5 | +15% | Balanced legendary |
+| ![Crimson Star](/assets/resources/trinketry/amulets/crimson_star.png) **Crimson Star** | +145 | +120 | +15 | +15% | Maximum critical power |
 
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
   {/* Bone Crescent */}
@@ -1136,381 +443,6 @@ These mystical necklaces channel ancient powers to enhance your abilities. Worn 
   </div>
 </div>
 
-### Tier 2 - Enhanced Amulets
-
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-  {/* Silver Charm */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/silver_charm.png" alt="Silver Charm" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Silver Charm</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +20 | ATK: +10 | DEF: +2 | Crit: +4%</div>
-      <div className="text-blue-600 font-medium">Price: 2,263 coins</div>
-    </div>
-  </div>
-
-  {/* Chain Link */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/chain_link.png" alt="Chain Link" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Chain Link</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +35 | ATK: +15 | DEF: +8 | Crit: +4%</div>
-      <div className="text-blue-600 font-medium">Price: 2,263 coins</div>
-    </div>
-  </div>
-
-  {/* Verdant Pendant */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/verdant_pendant.png" alt="Verdant Pendant" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Verdant Pendant</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +30 | ATK: +18 | DEF: +3 | Crit: +6%</div>
-      <div className="text-blue-600 font-medium">Price: 2,263 coins</div>
-    </div>
-  </div>
-
-  {/* Silver Cross */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/silver_cross.png" alt="Silver Cross" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Silver Cross</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +28 | ATK: +20 | DEF: +3 | Crit: +6%</div>
-      <div className="text-blue-600 font-medium">Price: 2,263 coins</div>
-    </div>
-  </div>
-
-  {/* Bone Cross */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/bone_cross.png" alt="Bone Cross" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Bone Cross</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +39 | ATK: +20 | DEF: +5 | Crit: +5%</div>
-      <div className="text-blue-600 font-medium">Price: 2,263 coins</div>
-    </div>
-  </div>
-
-  {/* Silver Star */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/silver_star.png" alt="Silver Star" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Silver Star</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +32 | ATK: +22 | DEF: +3 | Crit: +6%</div>
-      <div className="text-blue-600 font-medium">Price: 2,263 coins</div>
-    </div>
-  </div>
-
-  {/* Emerald Eye */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/emerald_eye.png" alt="Emerald Eye" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Emerald Eye</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +80 | ATK: +67 | DEF: +5 | Crit: +11%</div>
-      <div className="text-blue-600 font-medium">Price: 2,521 coins</div>
-    </div>
-  </div>
-
-  {/* Moon Disk */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/moon_disk.png" alt="Moon Disk" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Moon Disk</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +95 | ATK: +50 | DEF: +18 | Crit: +6%</div>
-      <div className="text-blue-600 font-medium">Price: 2,521 coins</div>
-    </div>
-  </div>
-</div>
-
-### Tier 3 - Superior Amulets
-
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-  {/* Golden Shield */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/golden_shield.png" alt="Golden Shield" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Golden Shield</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +65 | ATK: +36 | DEF: +10 | Crit: +7%</div>
-      <div className="text-blue-600 font-medium">Price: 4,898 coins</div>
-    </div>
-  </div>
-
-  {/* Nature Star */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/nature_star.png" alt="Nature Star" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Nature Star</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +45 | ATK: +40 | DEF: +5 | Crit: +8%</div>
-      <div className="text-blue-600 font-medium">Price: 4,898 coins</div>
-    </div>
-  </div>
-
-  {/* Solar Disk */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/solar_disk.png" alt="Solar Disk" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Solar Disk</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +55 | ATK: +30 | DEF: +15 | Crit: +5%</div>
-      <div className="text-blue-600 font-medium">Price: 4,898 coins</div>
-    </div>
-  </div>
-
-  {/* Golden Dagger */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/golden_dagger.png" alt="Golden Dagger" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Golden Dagger</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +35 | ATK: +50 | DEF: +5 | Crit: +8%</div>
-      <div className="text-blue-600 font-medium">Price: 4,898 coins</div>
-    </div>
-  </div>
-
-  {/* Amber Leaf */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/amber_leaf.png" alt="Amber Leaf" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Amber Leaf</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +53 | ATK: +32 | DEF: +15 | Crit: +4%</div>
-      <div className="text-blue-600 font-medium">Price: 4,898 coins</div>
-    </div>
-  </div>
-
-  {/* Lightning Bolt */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/lightning_bolt.png" alt="Lightning Bolt" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Lightning Bolt</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +55 | ATK: +35 | DEF: +10 | Crit: +5%</div>
-      <div className="text-blue-600 font-medium">Price: 4,898 coins</div>
-    </div>
-  </div>
-
-  {/* Earth Crown */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/earth_crown.png" alt="Earth Crown" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Earth Crown</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +47 | ATK: +33 | DEF: +17 | Crit: +5%</div>
-      <div className="text-blue-600 font-medium">Price: 4,898 coins</div>
-    </div>
-  </div>
-
-  {/* Sun Medallion */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/sun_medallion.png" alt="Sun Medallion" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Sun Medallion</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +55 | ATK: +30 | DEF: +15 | Crit: +5%</div>
-      <div className="text-blue-600 font-medium">Price: 4,898 coins</div>
-    </div>
-  </div>
-
-  {/* Golden Bloom */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/golden_bloom.png" alt="Golden Bloom" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Golden Bloom</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +65 | ATK: +25 | DEF: +15 | Crit: +5%</div>
-      <div className="text-blue-600 font-medium">Price: 4,898 coins</div>
-    </div>
-  </div>
-
-  {/* Autumn Leaf */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/autumn_leaf.png" alt="Autumn Leaf" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Autumn Leaf</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +60 | ATK: +38 | DEF: +8 | Crit: +8%</div>
-      <div className="text-blue-600 font-medium">Price: 4,898 coins</div>
-    </div>
-  </div>
-
-  {/* Ruby Orb */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/ruby_orb.png" alt="Ruby Orb" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Ruby Orb</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +62 | ATK: +35 | DEF: +10 | Crit: +7%</div>
-      <div className="text-blue-600 font-medium">Price: 4,898 coins</div>
-    </div>
-  </div>
-
-  {/* Nature Shield */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/nature_shield.png" alt="Nature Shield" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Nature Shield</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +50 | ATK: +35 | DEF: +8 | Crit: +9%</div>
-      <div className="text-blue-600 font-medium">Price: 4,898 coins</div>
-    </div>
-  </div>
-</div>
-
-### Tier 4 - Elite Amulets
-
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-  {/* Tidal Charm */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/tidal_charm.png" alt="Tidal Charm" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Tidal Charm</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +110 | ATK: +58 | DEF: +10 | Crit: +8%</div>
-      <div className="text-blue-600 font-medium">Price: 10,261 coins</div>
-    </div>
-  </div>
-
-  {/* Frost Pendant */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/frost_pendant.png" alt="Frost Pendant" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Frost Pendant</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +110 | ATK: +58 | DEF: +10 | Crit: +8%</div>
-      <div className="text-blue-600 font-medium">Price: 10,261 coins</div>
-    </div>
-  </div>
-
-  {/* Tidal Blade */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/tidal_blade.png" alt="Tidal Blade" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Tidal Blade</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +80 | ATK: +65 | DEF: +5 | Crit: +10%</div>
-      <div className="text-blue-600 font-medium">Price: 10,261 coins</div>
-    </div>
-  </div>
-
-  {/* Azure Cross */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/azure_cross.png" alt="Azure Cross" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Azure Cross</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +100 | ATK: +55 | DEF: +12 | Crit: +9%</div>
-      <div className="text-blue-600 font-medium">Price: 10,261 coins</div>
-    </div>
-  </div>
-
-  {/* Ocean Orbs */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/ocean_orbs.png" alt="Ocean Orbs" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Ocean Orbs</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +85 | ATK: +60 | DEF: +8 | Crit: +8%</div>
-      <div className="text-blue-600 font-medium">Price: 10,261 coins</div>
-    </div>
-  </div>
-
-  {/* Sapphire Square */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/sapphire_square.png" alt="Sapphire Square" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Sapphire Square</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +120 | ATK: +45 | DEF: +15 | Crit: +6%</div>
-      <div className="text-blue-600 font-medium">Price: 10,261 coins</div>
-    </div>
-  </div>
-
-  {/* Ice Star */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/ice_star.png" alt="Ice Star" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Ice Star</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +105 | ATK: +52 | DEF: +14 | Crit: +7%</div>
-      <div className="text-blue-600 font-medium">Price: 10,261 coins</div>
-    </div>
-  </div>
-
-  {/* Flame Skull */}
-  <div className="border rounded-lg p-4 flex flex-col items-center">
-    <img src="/assets/resources/trinketry/amulets/flame_skull.png" alt="Flame Skull" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2">Flame Skull</h4>
-    <div className="text-sm text-gray-600 space-y-1 text-center">
-      <div>HP: +66 | ATK: +41 | DEF: +8 | Crit: +8%</div>
-      <div className="text-blue-600 font-medium">Price: 20,588 coins</div>
-    </div>
-  </div>
-</div>
-
-### Tier 5 - Legendary Amulets
-
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-  {/* Flame Wing */}
-  <div className="border rounded-lg p-4 flex flex-col items-center bg-gradient-to-b from-red-50 to-red-100 border-red-200">
-    <img src="/assets/resources/trinketry/amulets/flame_wing.png" alt="Flame Wing" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2 text-red-800">Flame Wing</h4>
-    <div className="text-sm text-red-700 space-y-1 text-center">
-      <div>HP: +160 | ATK: +92 | DEF: +10 | Crit: +10%</div>
-      <div className="text-red-600 font-bold">Price: 21,111 coins</div>
-    </div>
-  </div>
-
-  {/* Fire Blade */}
-  <div className="border rounded-lg p-4 flex flex-col items-center bg-gradient-to-b from-red-50 to-red-100 border-red-200">
-    <img src="/assets/resources/trinketry/amulets/fire_blade.png" alt="Fire Blade" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2 text-red-800">Fire Blade</h4>
-    <div className="text-sm text-red-700 space-y-1 text-center">
-      <div>HP: +120 | ATK: +105 | DEF: +5 | Crit: +12%</div>
-      <div className="text-red-600 font-bold">Price: 21,111 coins</div>
-    </div>
-  </div>
-
-  {/* Dragon Wing */}
-  <div className="border rounded-lg p-4 flex flex-col items-center bg-gradient-to-b from-red-50 to-red-100 border-red-200">
-    <img src="/assets/resources/trinketry/amulets/dragon_wing.png" alt="Dragon Wing" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2 text-red-800">Dragon Wing</h4>
-    <div className="text-sm text-red-700 space-y-1 text-center">
-      <div>HP: +160 | ATK: +92 | DEF: +10 | Crit: +12%</div>
-      <div className="text-red-600 font-bold">Price: 21,111 coins</div>
-    </div>
-  </div>
-
-  {/* Crimson Disk */}
-  <div className="border rounded-lg p-4 flex flex-col items-center bg-gradient-to-b from-red-50 to-red-100 border-red-200">
-    <img src="/assets/resources/trinketry/amulets/crimson_disk.png" alt="Crimson Disk" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2 text-red-800">Crimson Disk</h4>
-    <div className="text-sm text-red-700 space-y-1 text-center">
-      <div>HP: +160 | ATK: +92 | DEF: +10 | Crit: +10%</div>
-      <div className="text-red-600 font-bold">Price: 21,111 coins</div>
-    </div>
-  </div>
-
-  {/* Molten Drop */}
-  <div className="border rounded-lg p-4 flex flex-col items-center bg-gradient-to-b from-red-50 to-red-100 border-red-200">
-    <img src="/assets/resources/trinketry/amulets/molten_drop.png" alt="Molten Drop" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2 text-red-800">Molten Drop</h4>
-    <div className="text-sm text-red-700 space-y-1 text-center">
-      <div>HP: +130 | ATK: +82 | DEF: +25 | Crit: +9%</div>
-      <div className="text-red-600 font-bold">Price: 21,111 coins</div>
-    </div>
-  </div>
-
-  {/* Solar Flare */}
-  <div className="border rounded-lg p-4 flex flex-col items-center bg-gradient-to-b from-red-50 to-red-100 border-red-200">
-    <img src="/assets/resources/trinketry/amulets/solar_flare.png" alt="Solar Flare" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2 text-red-800">Solar Flare</h4>
-    <div className="text-sm text-red-700 space-y-1 text-center">
-      <div>HP: +155 | ATK: +110 | DEF: +13 | Crit: +15%</div>
-      <div className="text-red-600 font-bold">Price: 21,111 coins</div>
-    </div>
-  </div>
-
-  {/* Ember Disk */}
-  <div className="border rounded-lg p-4 flex flex-col items-center bg-gradient-to-b from-red-50 to-red-100 border-red-200">
-    <img src="/assets/resources/trinketry/amulets/ember_disk.png" alt="Ember Disk" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2 text-red-800">Ember Disk</h4>
-    <div className="text-sm text-red-700 space-y-1 text-center">
-      <div>HP: +105 | ATK: +105 | DEF: +5 | Crit: +15%</div>
-      <div className="text-red-600 font-bold">Price: 21,111 coins</div>
-    </div>
-  </div>
-
-  {/* Crimson Star */}
-  <div className="border rounded-lg p-4 flex flex-col items-center bg-gradient-to-b from-red-50 to-red-100 border-red-200">
-    <img src="/assets/resources/trinketry/amulets/crimson_star.png" alt="Crimson Star" className="w-16 h-16 mb-2" />
-    <h4 className="font-semibold text-center mb-2 text-red-800">Crimson Star</h4>
-    <div className="text-sm text-red-700 space-y-1 text-center">
-      <div>HP: +145 | ATK: +120 | DEF: +15 | Crit: +15%</div>
-      <div className="text-red-600 font-bold">Price: 21,111 coins</div>
-    </div>
-  </div>
-</div>
 
 ---
 
@@ -1961,176 +893,48 @@ Master the art of combat with our comprehensive weapon collection. From starter 
   </div>
 </div>
 
-### Swords
+## Weapons - Complete Arsenal (22 Items)
+
+Master the art of combat with swords for offense, shields for defense, and legendary staffs for magical power.
+
+### Swords - Primary Weapons (7 items, 35-4,767 coins)
 
 Versatile melee weapons that provide balanced offense with bonus health and critical strike capabilities.
 
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-  {/* Basic Sword */}
-  <div className="border rounded-lg p-3 flex flex-col items-center bg-gray-50 dark:bg-gray-900/10">
-    <img src="/assets/resources/crafting/weapons/swords/basic_sword.png" alt="Basic Sword" className="w-12 h-12 mb-2" />
-    <h5 className="font-medium text-sm text-center">Basic Sword</h5>
-    <div className="text-xs text-gray-600 text-center mt-1">
-      <div>HP: +2 | ATK: +15 | Crit: +1%</div>
-      <div className="text-gray-600">35 coins</div>
-    </div>
-  </div>
+| Sword | HP | ATK | Crit | Price | Tier |
+|-------|----|----|------|-------|------|
+| ![Basic Sword](/assets/resources/crafting/weapons/swords/basic_sword.png) **Basic Sword** | +2 | +15 | +1% | 35 | Entry level |
+| ![Copper Sword](/assets/resources/crafting/weapons/swords/copper_sword.png) **Copper Sword** | +5 | +25 | +2% | 98 | Tier 1 |
+| ![Iron Sword](/assets/resources/crafting/weapons/swords/iron_sword.png) **Iron Sword** | +10 | +45 | +3% | 231 | Tier 2 |
+| ![Silver Sword](/assets/resources/crafting/weapons/swords/silver_sword.png) **Silver Sword** | +15 | +75 | +5% | 511 | Tier 3 |
+| ![Gold Sword](/assets/resources/crafting/weapons/swords/gold_sword.png) **Gold Sword** | +25 | +120 | +7% | 1,106 | Tier 4 |
+| ![Blue Sword](/assets/resources/crafting/weapons/swords/blue_sword.png) **Blue Sword** | +40 | +190 | +10% | 2,317 | Tier 5 |
+| ![Red Sword](/assets/resources/crafting/weapons/swords/red_sword.png) **Red Sword** | +40 | +280 | +15% | 4,767 | Legendary |
 
-  {/* Copper Sword */}
-  <div className="border rounded-lg p-3 flex flex-col items-center bg-orange-50 dark:bg-orange-900/10">
-    <img src="/assets/resources/crafting/weapons/swords/copper_sword.png" alt="Copper Sword" className="w-12 h-12 mb-2" />
-    <h5 className="font-medium text-sm text-center">Copper Sword</h5>
-    <div className="text-xs text-gray-600 text-center mt-1">
-      <div>HP: +5 | ATK: +25 | Crit: +2%</div>
-      <div className="text-orange-600">98 coins</div>
-    </div>
-  </div>
+### Shields - Defensive Equipment (7 items, 65-4,767 coins)
 
-  {/* Iron Sword */}
-  <div className="border rounded-lg p-3 flex flex-col items-center bg-gray-50 dark:bg-gray-900/10">
-    <img src="/assets/resources/crafting/weapons/swords/iron_sword.png" alt="Iron Sword" className="w-12 h-12 mb-2" />
-    <h5 className="font-medium text-sm text-center">Iron Sword</h5>
-    <div className="text-xs text-gray-600 text-center mt-1">
-      <div>HP: +10 | ATK: +45 | Crit: +3%</div>
-      <div className="text-gray-600">231 coins</div>
-    </div>
-  </div>
+Protective gear that blocks attacks while providing health, defense, and small attack bonuses.
 
-  {/* Silver Sword */}
-  <div className="border rounded-lg p-3 flex flex-col items-center bg-slate-50 dark:bg-slate-900/10">
-    <img src="/assets/resources/crafting/weapons/swords/silver_sword.png" alt="Silver Sword" className="w-12 h-12 mb-2" />
-    <h5 className="font-medium text-sm text-center">Silver Sword</h5>
-    <div className="text-xs text-gray-600 text-center mt-1">
-      <div>HP: +15 | ATK: +75 | Crit: +5%</div>
-      <div className="text-slate-600">511 coins</div>
-    </div>
-  </div>
+| Shield | HP | ATK | DEF | Price | Tier |
+|--------|----|----|-----|-------|------|
+| ![Basic Shield](/assets/resources/crafting/weapons/shields/basic_shield.png) **Basic Shield** | +8 | +1 | +5 | 65 | Entry level |
+| ![Copper Shield](/assets/resources/crafting/weapons/shields/copper_shield.png) **Copper Shield** | +15 | +2 | +8 | 98 | Tier 1 |
+| ![Iron Shield](/assets/resources/crafting/weapons/shields/iron_shield.png) **Iron Shield** | +25 | +3 | +15 | 231 | Tier 2 |
+| ![Silver Shield](/assets/resources/crafting/weapons/shields/silver_shield.png) **Silver Shield** | +40 | +5 | +25 | 511 | Tier 3 |
+| ![Gold Shield](/assets/resources/crafting/weapons/shields/gold_shield.png) **Gold Shield** | +70 | +8 | +35 | 1,106 | Tier 4 |
+| ![Blue Shield](/assets/resources/crafting/weapons/shields/blue_shield.png) **Blue Shield** | +110 | +12 | +55 | 2,317 | Tier 5 |
+| ![Red Shield](/assets/resources/crafting/weapons/shields/red_shield.png) **Red Shield** | +170 | +18 | +80 | 4,767 | Legendary |
 
-  {/* Gold Sword */}
-  <div className="border rounded-lg p-3 flex flex-col items-center bg-yellow-50 dark:bg-yellow-900/10">
-    <img src="/assets/resources/crafting/weapons/swords/gold_sword.png" alt="Gold Sword" className="w-12 h-12 mb-2" />
-    <h5 className="font-medium text-sm text-center">Gold Sword</h5>
-    <div className="text-xs text-gray-600 text-center mt-1">
-      <div>HP: +25 | ATK: +120 | Crit: +7%</div>
-      <div className="text-yellow-600">1,106 coins</div>
-    </div>
-  </div>
+### Legendary Staff - Magical Weapons (1 item)
 
-  {/* Blue Sword */}
-  <div className="border rounded-lg p-3 flex flex-col items-center bg-blue-50 dark:bg-blue-900/10">
-    <img src="/assets/resources/crafting/weapons/swords/blue_sword.png" alt="Blue Sword" className="w-12 h-12 mb-2" />
-    <h5 className="font-medium text-sm text-center">Blue Sword</h5>
-    <div className="text-xs text-gray-600 text-center mt-1">
-      <div>HP: +40 | ATK: +190 | Crit: +10%</div>
-      <div className="text-blue-600">2,317 coins</div>
-    </div>
-  </div>
+Two-handed magical weapons with special class restrictions and set bonuses.
 
-  {/* Red Sword */}
-  <div className="border rounded-lg p-3 flex flex-col items-center bg-red-50 dark:bg-red-900/10">
-    <img src="/assets/resources/crafting/weapons/swords/red_sword.png" alt="Red Sword" className="w-12 h-12 mb-2" />
-    <h5 className="font-medium text-sm text-center">Red Sword</h5>
-    <div className="text-xs text-gray-600 text-center mt-1">
-      <div>HP: +40 | ATK: +280 | Crit: +15%</div>
-      <div className="text-red-600">4,767 coins</div>
-    </div>
-  </div>
-</div>
+| Staff | HP | ATK | DEF | Requirements | Special Properties |
+|-------|----|----|-----|--------------|-------------------|
+| ![Staff of the Tempest](/assets/resources/crafting/weapons/two-handed-staff/tempest_staff.png) **Staff of the Tempest** | +100 | +10 | +10 | Druid class, Level 100 | Part of Tempest Set, Nature magic |
 
-### Shields
 
-Defensive equipment worn in the off-hand slot, providing substantial health and defense bonuses with minor attack power.
 
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-  {/* Basic Shield */}
-  <div className="border rounded-lg p-3 flex flex-col items-center bg-gray-50 dark:bg-gray-900/10">
-    <img src="/assets/resources/crafting/weapons/shields/basic_shield.png" alt="Basic Shield" className="w-12 h-12 mb-2" />
-    <h5 className="font-medium text-sm text-center">Basic Shield</h5>
-    <div className="text-xs text-gray-600 text-center mt-1">
-      <div>HP: +8 | DEF: +5 | ATK: +1</div>
-      <div className="text-gray-600">65 coins</div>
-    </div>
-  </div>
-
-  {/* Copper Shield */}
-  <div className="border rounded-lg p-3 flex flex-col items-center bg-orange-50 dark:bg-orange-900/10">
-    <img src="/assets/resources/crafting/weapons/shields/copper_shield.png" alt="Copper Shield" className="w-12 h-12 mb-2" />
-    <h5 className="font-medium text-sm text-center">Copper Shield</h5>
-    <div className="text-xs text-gray-600 text-center mt-1">
-      <div>HP: +15 | DEF: +8 | ATK: +2</div>
-      <div className="text-orange-600">98 coins</div>
-    </div>
-  </div>
-
-  {/* Iron Shield */}
-  <div className="border rounded-lg p-3 flex flex-col items-center bg-gray-50 dark:bg-gray-900/10">
-    <img src="/assets/resources/crafting/weapons/shields/iron_shield.png" alt="Iron Shield" className="w-12 h-12 mb-2" />
-    <h5 className="font-medium text-sm text-center">Iron Shield</h5>
-    <div className="text-xs text-gray-600 text-center mt-1">
-      <div>HP: +25 | DEF: +15 | ATK: +3</div>
-      <div className="text-gray-600">231 coins</div>
-    </div>
-  </div>
-
-  {/* Silver Shield */}
-  <div className="border rounded-lg p-3 flex flex-col items-center bg-slate-50 dark:bg-slate-900/10">
-    <img src="/assets/resources/crafting/weapons/shields/silver_shield.png" alt="Silver Shield" className="w-12 h-12 mb-2" />
-    <h5 className="font-medium text-sm text-center">Silver Shield</h5>
-    <div className="text-xs text-gray-600 text-center mt-1">
-      <div>HP: +40 | DEF: +25 | ATK: +5</div>
-      <div className="text-slate-600">511 coins</div>
-    </div>
-  </div>
-
-  {/* Gold Shield */}
-  <div className="border rounded-lg p-3 flex flex-col items-center bg-yellow-50 dark:bg-yellow-900/10">
-    <img src="/assets/resources/crafting/weapons/shields/gold_shield.png" alt="Gold Shield" className="w-12 h-12 mb-2" />
-    <h5 className="font-medium text-sm text-center">Gold Shield</h5>
-    <div className="text-xs text-gray-600 text-center mt-1">
-      <div>HP: +70 | DEF: +35 | ATK: +8</div>
-      <div className="text-yellow-600">1,106 coins</div>
-    </div>
-  </div>
-
-  {/* Blue Shield */}
-  <div className="border rounded-lg p-3 flex flex-col items-center bg-blue-50 dark:bg-blue-900/10">
-    <img src="/assets/resources/crafting/weapons/shields/blue_shield.png" alt="Blue Shield" className="w-12 h-12 mb-2" />
-    <h5 className="font-medium text-sm text-center">Blue Shield</h5>
-    <div className="text-xs text-gray-600 text-center mt-1">
-      <div>HP: +110 | DEF: +55 | ATK: +12</div>
-      <div className="text-blue-600">2,317 coins</div>
-    </div>
-  </div>
-
-  {/* Red Shield */}
-  <div className="border rounded-lg p-3 flex flex-col items-center bg-red-50 dark:bg-red-900/10">
-    <img src="/assets/resources/crafting/weapons/shields/red_shield.png" alt="Red Shield" className="w-12 h-12 mb-2" />
-    <h5 className="font-medium text-sm text-center">Red Shield</h5>
-    <div className="text-xs text-gray-600 text-center mt-1">
-      <div>HP: +170 | DEF: +80 | ATK: +18</div>
-      <div className="text-red-600">4,767 coins</div>
-    </div>
-  </div>
-</div>
-
-### Legendary Staff
-
-Exclusive to the Druid class, this two-handed legendary weapon channels the raw power of nature.
-
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-  {/* Tempest Staff */}
-  <div className="border rounded-lg p-4 flex flex-col items-center bg-gradient-to-b from-purple-50 to-green-50 border-purple-200">
-    <img src="/assets/resources/crafting/weapons/two-handed-staff/tempest_staff.png" alt="Staff of the Tempest" className="w-16 h-16 mb-3" />
-    <h4 className="font-semibold text-center mb-2 text-purple-800">Staff of the Tempest</h4>
-    <div className="text-sm text-purple-700 space-y-1 text-center">
-      <div>HP: +100 | ATK: +10 | DEF: +10</div>
-      <div className="text-purple-600 font-bold">Level 100 Required</div>
-      <div className="text-xs text-purple-500">Druid Class Only</div>
-      <div className="text-xs text-purple-400 italic mt-2">"Carved from a tree struck by lightning, it channels the raw power of nature's wrath."</div>
-      <div className="text-purple-600 font-bold">Part of Tempest Set</div>
-    </div>
-  </div>
-</div>
 
 ---
 
