@@ -12,8 +12,9 @@
     "format:check": "npx prettier --check .",
     "clean": "npm run lint:fix && npm run format && npm run format:check",
     "update": "npx npm-check-updates -u && npm install && npm run clean",
-    "generate-content-json": "ts-node scripts/content.ts",
-    "generate-content-json:ide": "node -r esbuild-register scripts/content.ts",
+    "generate-content-json": "tsx scripts/content.ts",
+    "generate-item-pages": "tsx scripts/generate-item-pages-simple.ts",
+    "generate-all-item-pages": "tsx scripts/generate-all-item-pages.ts",
     "prepare": "husky",
     "copy-skills": "bash copy-skills.sh"
   },
@@ -69,6 +70,7 @@
     "prettier-plugin-tailwindcss": "^0.6.14",
     "tailwindcss": "^4.1.11",
     "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   },
   "engines": {

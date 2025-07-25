@@ -57,6 +57,12 @@ const documentPath = (slug: string) => {
     : path.join(process.cwd(), "/contents/docs/", `${slug}/index.mdx`)
 }
 
+const directDocumentPath = (slug: string) => {
+  return Settings.gitload
+    ? `${GitHubLink.href}/raw/main/contents/docs/${slug}.mdx`
+    : path.join(process.cwd(), "/contents/docs/", `${slug}.mdx`)
+}
+
 const getDocumentPath = (() => {
   const cache = new Map<string, string>()
   return (slug: string) => {
@@ -69,23 +75,36 @@ const getDocumentPath = (() => {
 
 export async function getDocument(slug: string) {
   try {
-    const contentPath = getDocumentPath(slug)
+    let contentPath = getDocumentPath(slug)
     let rawMdx = ""
     let lastUpdated: string | null = null
 
     if (Settings.gitload) {
-      const response = await fetch(contentPath)
+      let response = await fetch(contentPath)
       if (!response.ok) {
-        throw new Error(
-          `Failed to fetch content from GitHub: ${response.statusText}`
-        )
+        // Try direct .mdx file if index.mdx doesn't exist
+        contentPath = directDocumentPath(slug)
+        response = await fetch(contentPath)
+        if (!response.ok) {
+          throw new Error(
+            `Failed to fetch content from GitHub: ${response.statusText}`
+          )
+        }
       }
       rawMdx = await response.text()
       lastUpdated = response.headers.get("Last-Modified") ?? null
     } else {
-      rawMdx = await fs.readFile(contentPath, "utf-8")
-      const stats = await fs.stat(contentPath)
-      lastUpdated = stats.mtime.toISOString()
+      try {
+        rawMdx = await fs.readFile(contentPath, "utf-8")
+        const stats = await fs.stat(contentPath)
+        lastUpdated = stats.mtime.toISOString()
+      } catch (error) {
+        // Try direct .mdx file if index.mdx doesn't exist
+        contentPath = directDocumentPath(slug)
+        rawMdx = await fs.readFile(contentPath, "utf-8")
+        const stats = await fs.stat(contentPath)
+        lastUpdated = stats.mtime.toISOString()
+      }
     }
 
     const parsedMdx = await parseMdx<BaseMdxFrontmatter>(rawMdx)
@@ -116,13 +135,18 @@ export async function getTable(
   let rawMdx = ""
 
   if (Settings.gitload) {
-    const contentPath = `${GitHubLink.href}/raw/main/contents/docs/${slug}/index.mdx`
+    let contentPath = `${GitHubLink.href}/raw/main/contents/docs/${slug}/index.mdx`
     try {
-      const response = await fetch(contentPath)
+      let response = await fetch(contentPath)
       if (!response.ok) {
-        throw new Error(
-          `Failed to fetch content from GitHub: ${response.statusText}`
-        )
+        // Try direct .mdx file if index.mdx doesn't exist
+        contentPath = `${GitHubLink.href}/raw/main/contents/docs/${slug}.mdx`
+        response = await fetch(contentPath)
+        if (!response.ok) {
+          throw new Error(
+            `Failed to fetch content from GitHub: ${response.statusText}`
+          )
+        }
       }
       rawMdx = await response.text()
     } catch (error) {
@@ -130,7 +154,7 @@ export async function getTable(
       return []
     }
   } else {
-    const contentPath = path.join(
+    let contentPath = path.join(
       process.cwd(),
       "/contents/docs/",
       `${slug}/index.mdx`
@@ -141,8 +165,21 @@ export async function getTable(
         rawMdx += chunk
       }
     } catch (error) {
-      console.error("Error reading local file:", error)
-      return []
+      // Try direct .mdx file if index.mdx doesn't exist
+      contentPath = path.join(
+        process.cwd(),
+        "/contents/docs/",
+        `${slug}.mdx`
+      )
+      try {
+        const stream = createReadStream(contentPath, { encoding: "utf-8" })
+        for await (const chunk of stream) {
+          rawMdx += chunk
+        }
+      } catch (error2) {
+        console.error("Error reading local file:", error2)
+        return []
+      }
     }
   }
 
