@@ -32,7 +32,9 @@ interface CraftingInput {
 
 interface CraftingRecipe {
   skill: string;
+  skillKey?: string;
   level?: number;
+  requiredLevel?: number;
   xp?: number;
   steps?: number;
   inputs: CraftingInput[];
