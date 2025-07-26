@@ -22,12 +22,254 @@ interface SkillInfo {
 interface RecipeInfo {
   key: string;
   name: string;
-  inputs: { name: string; amount: number }[];
-  outputs: { name: string; amount: number }[];
+  inputs: { name: string; amount: number; resourceKey: string }[];
+  outputs: { name: string; amount: number; resourceKey: string }[];
   requiredLevel?: number;
   requiredTool?: string;
   xpReward?: number;
   requiredSteps: number;
+}
+
+// Helper function to format display names
+function formatDisplayName(key: string): string {
+  return key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+}
+
+// Helper function to get the URL for an item/resource
+function getItemUrl(itemKey: string): string {
+  // Determine if it's an item or resource based on common patterns
+  // Items typically include tools, armor, weapons, food, etc.
+  const itemKeywords = [
+    'pickaxe', 'axe', 'sickle', 'rod', 'sword', 'shield', 'helm', 'chest', 'legs', 'boots', 'gloves', 'ring', 'amulet', 'potion',
+    'pie', 'cake', 'bread', 'cookie', 'pizza', 'donut', 'spaghetti', 'jam', 'staff'
+  ];
+  const isItem = itemKeywords.some(keyword => itemKey.includes(keyword));
+  
+  // Both items and resources use underscores in their filenames
+  if (isItem) {
+    return `/docs/items/individual/${itemKey}`;
+  } else {
+    return `/docs/resources/individual/${itemKey}`;
+  }
+}
+
+// Helper function to create links to individual item/resource pages
+function createItemLink(itemKey: string, itemName: string): string {
+  return `[${itemName}](${getItemUrl(itemKey)})`;
+}
+
+// Helper function to resolve constant expressions to actual values
+function resolveConstantValue(expression: string): number | undefined {
+  if (!expression) return undefined;
+  
+  // Define the constants based on the skills.ts file
+  const constants: Record<string, number> = {
+    'T0_XP': 10,
+    'T1_XP': 20,
+    'T2_XP': 40,
+    'T3_XP': 80,
+    'T4_XP': 160,
+    'T5_XP': 320,
+    'T6_XP': 640,
+    'T0_STEPS': 50,
+    'T1_STEPS': 75,
+    'T2_STEPS': 100,
+    'T3_STEPS': 125,
+    'T4_STEPS': 150,
+    'T5_STEPS': 175,
+    'T6_STEPS': 200,
+    'T0_LEVEL': 0,
+    'T1_LEVEL': 15,
+    'T2_LEVEL': 30,
+    'T3_LEVEL': 45,
+    'T4_LEVEL': 60,
+    'T5_LEVEL': 75,
+    'T6_LEVEL': 90
+  };
+  
+  // Handle simple constants
+  if (constants[expression]) {
+    return constants[expression];
+  }
+  
+  // Handle expressions like "T0_XP * 2"
+  const multiplyMatch = expression.match(/(\w+)\s*\*\s*(\d+)/);
+  if (multiplyMatch) {
+    const constant = constants[multiplyMatch[1]];
+    const multiplier = parseInt(multiplyMatch[2]);
+    if (constant && multiplier) {
+      return constant * multiplier;
+    }
+  }
+  
+  // Handle literal numbers
+  const literalMatch = expression.match(/^\d+$/);
+  if (literalMatch) {
+    return parseInt(expression);
+  }
+  
+  return undefined;
+}
+
+// Extract recipes from a skill object
+function extractRecipesFromSkill(skillContent: string, skillKey: string, skillName: string): RecipeInfo[] {
+  const recipes: RecipeInfo[] = [];
+  
+  try {
+    // Find recipes array using balanced bracket parsing
+    const recipesStartMatch = skillContent.match(/recipes:\s*\[/);
+    if (!recipesStartMatch) return recipes;
+    
+    const recipesStartIndex = recipesStartMatch.index! + recipesStartMatch[0].length - 1; // Position of the opening [
+    let bracketLevel = 0;
+    let recipesEndIndex = -1;
+    
+    for (let i = recipesStartIndex; i < skillContent.length; i++) {
+      const char = skillContent[i];
+      
+      if (char === '[') {
+        bracketLevel++;
+      } else if (char === ']') {
+        bracketLevel--;
+        if (bracketLevel === 0) {
+          recipesEndIndex = i;
+          break;
+        }
+      }
+    }
+    
+    if (recipesEndIndex === -1) return recipes;
+    
+    const recipesContent = skillContent.substring(recipesStartIndex + 1, recipesEndIndex);
+    
+    // Parse individual recipes using balanced brace parsing
+    const recipeObjects = [];
+    let braceLevel = 0;
+    let recipeStart = -1;
+    
+    for (let i = 0; i < recipesContent.length; i++) {
+      const char = recipesContent[i];
+      
+      if (char === '{') {
+        if (braceLevel === 0) {
+          recipeStart = i;
+        }
+        braceLevel++;
+      } else if (char === '}') {
+        braceLevel--;
+        if (braceLevel === 0 && recipeStart !== -1) {
+          const recipeText = recipesContent.substring(recipeStart, i + 1);
+          recipeObjects.push(recipeText);
+          recipeStart = -1;
+        }
+      }
+    }
+    
+    // Parse each recipe object
+    recipeObjects.forEach(recipeText => {
+      try {
+        const keyMatch = recipeText.match(/key:\s*['"`]([^'"`]+)['"`]/);
+        const nameMatch = recipeText.match(/name:\s*['"`]([^'"`]+)['"`]/);
+        const levelMatch = recipeText.match(/requiredLevel:\s*([^,}\s]+)/);
+        const xpMatch = recipeText.match(/xpReward:\s*([^,}\s]+)/);
+        const stepsMatch = recipeText.match(/requiredSteps:\s*([^,}\s]+)/);
+        const toolMatch = recipeText.match(/requiredTool:\s*['"`]([^'"`]+)['"`]/);
+        
+        if (!keyMatch || !nameMatch) return;
+        
+        const recipeKey = keyMatch[1];
+        const recipeName = nameMatch[1];
+        
+        // Parse inputs using balanced bracket parsing
+        const getArrayContent = (text: string, arrayName: string) => {
+          const startMatch = text.match(new RegExp(`${arrayName}:\\s*\\[`));
+          if (!startMatch) return null;
+          
+          const startIndex = startMatch.index! + startMatch[0].length - 1;
+          let bracketLevel = 0;
+          let endIndex = -1;
+          
+          for (let i = startIndex; i < text.length; i++) {
+            const char = text[i];
+            if (char === '[') bracketLevel++;
+            else if (char === ']') {
+              bracketLevel--;
+              if (bracketLevel === 0) {
+                endIndex = i;
+                break;
+              }
+            }
+          }
+          
+          if (endIndex === -1) return null;
+          return text.substring(startIndex + 1, endIndex);
+        };
+        
+        const inputsContent = getArrayContent(recipeText, 'inputs');
+        const outputContent = getArrayContent(recipeText, 'output');
+        
+        // Parse inputs
+        const inputs: { name: string; amount: number; resourceKey: string }[] = [];
+        if (inputsContent && inputsContent.trim() !== '') {
+          const resourceMatches = inputsContent.match(/{\s*resource:\s*[^}]+}/g);
+          if (resourceMatches) {
+            resourceMatches.forEach(resourceMatch => {
+              const resourceKeyMatch = resourceMatch.match(/resource:\s*(\w+)\[['"`]([^'"`]+)['"`]\]/);
+              const amountMatch = resourceMatch.match(/amount:\s*(\d+)/);
+              if (resourceKeyMatch) {
+                const resourceKey = resourceKeyMatch[2];
+                inputs.push({
+                  name: formatDisplayName(resourceKey),
+                  amount: amountMatch ? parseInt(amountMatch[1]) : 1,
+                  resourceKey: resourceKey
+                });
+              }
+            });
+          }
+        }
+        
+        // Parse outputs
+        const outputs: { name: string; amount: number; resourceKey: string }[] = [];
+        if (outputContent && outputContent.trim() !== '') {
+          const resourceMatches = outputContent.match(/{\s*resource:\s*[^}]+}/g);
+          if (resourceMatches) {
+            resourceMatches.forEach(resourceMatch => {
+              const resourceKeyMatch = resourceMatch.match(/resource:\s*(\w+)\[['"`]([^'"`]+)['"`]\]/);
+              const amountMatch = resourceMatch.match(/amount:\s*(\d+)/);
+              if (resourceKeyMatch) {
+                const resourceKey = resourceKeyMatch[2];
+                outputs.push({
+                  name: formatDisplayName(resourceKey),
+                  amount: amountMatch ? parseInt(amountMatch[1]) : 1,
+                  resourceKey: resourceKey
+                });
+              }
+            });
+          }
+        }
+        
+        const recipe: RecipeInfo = {
+          key: recipeKey,
+          name: recipeName,
+          inputs: inputs,
+          outputs: outputs,
+          requiredLevel: levelMatch ? resolveConstantValue(levelMatch[1]) : undefined,
+          requiredTool: toolMatch ? toolMatch[1] : undefined,
+          xpReward: xpMatch ? resolveConstantValue(xpMatch[1]) : undefined,
+          requiredSteps: stepsMatch ? resolveConstantValue(stepsMatch[1]) || 0 : 0
+        };
+        
+        recipes.push(recipe);
+      } catch (error) {
+        console.error(`Error parsing recipe in ${skillName}:`, error);
+      }
+    });
+    
+  } catch (error) {
+    console.error(`Error extracting recipes from ${skillName}:`, error);
+  }
+  
+  return recipes;
 }
 
 // Extract skill data from skills.ts file
@@ -53,32 +295,55 @@ async function extractSkillsData(): Promise<SkillInfo[]> {
     
     const skillsSection = skillsMatch[1];
     
-    // Parse each skill definition
-    const skillMatches = skillsSection.match(/{\s*key:\s*['"`]([^'"`]+)['"`][\s\S]*?recipes:\s*\[([\s\S]*?)\]\s*,?\s*}/g);
-    if (!skillMatches) return skills;
+    // Use balanced brace parsing to extract complete skill objects
+    const skillObjects = [];
+    let braceLevel = 0;
+    let skillStart = -1;
     
-    skillMatches.forEach(skillMatch => {
-      const keyMatch = skillMatch.match(/key:\s*['"`]([^'"`]+)['"`]/);
-      const nameMatch = skillMatch.match(/name:\s*['"`]([^'"`]+)['"`]/);
-      const iconMatch = skillMatch.match(/icon:\s*(require\([^)]+\))/);
-      const colorMatch = skillMatch.match(/color:\s*['"`]([^'"`]+)['"`]/);
-      const locationNameMatch = skillMatch.match(/location:\s*{\s*name:\s*['"`]([^'"`]+)['"`]/);
-      const locationImageMatch = skillMatch.match(/location:\s*{[^}]*image:\s*(require\([^)]+\))/);
-      const toolNameMatch = skillMatch.match(/tool:\s*{[^}]*name:\s*['"`]([^'"`]+)['"`]/);
-      const xpPerLevelMatch = skillMatch.match(/xpPerLevel:\s*(\d+)/);
-      const xpGrowthFactorMatch = skillMatch.match(/xpGrowthFactor:\s*([\d.]+)/);
-      const recipesMatch = skillMatch.match(/recipes:\s*\[([\s\S]*?)\]/);
+    for (let i = 0; i < skillsSection.length; i++) {
+      const char = skillsSection[i];
+      
+      if (char === '{') {
+        if (braceLevel === 0) {
+          skillStart = i;
+        }
+        braceLevel++;
+      } else if (char === '}') {
+        braceLevel--;
+        if (braceLevel === 0 && skillStart !== -1) {
+          const skillContent = skillsSection.substring(skillStart, i + 1);
+          // Verify this is actually a skill object (has key, name, and recipes)
+          if (skillContent.includes('key:') && skillContent.includes('name:') && skillContent.includes('recipes:')) {
+            skillObjects.push(skillContent);
+          }
+          skillStart = -1;
+        }
+      }
+    }
+    
+    // Parse each skill object
+    skillObjects.forEach(skillContent => {
+      const keyMatch = skillContent.match(/key:\s*['"`]([^'"`]+)['"`]/);
+      const nameMatch = skillContent.match(/name:\s*['"`]([^'"`]+)['"`]/);
+      const iconMatch = skillContent.match(/icon:\s*(require\([^)]+\))/);
+      const colorMatch = skillContent.match(/color:\s*['"`]([^'"`]+)['"`]/);
+      const locationNameMatch = skillContent.match(/location:\s*{\s*name:\s*['"`]([^'"`]+)['"`]/);
+      const locationImageMatch = skillContent.match(/location:\s*{[^}]*image:\s*(require\([^)]+\))/);
+      const toolNameMatch = skillContent.match(/tool:\s*{[^}]*name:\s*['"`]([^'"`]+)['"`]/);
+      const xpPerLevelMatch = skillContent.match(/xpPerLevel:\s*(\d+)/);
+      const xpGrowthFactorMatch = skillContent.match(/xpGrowthFactor:\s*([\d.]+)/);
       
       if (!keyMatch || !nameMatch) return;
       
       const skillKey = keyMatch[1];
+      const skillName = nameMatch[1];
       
-      // Use predefined recipes based on skill key
-      const recipes: RecipeInfo[] = getSkillRecipes(skillKey);
+      // Extract recipes programmatically from this skill
+      const recipes = extractRecipesFromSkill(skillContent, skillKey, skillName);
       
       const skill: SkillInfo = {
         key: skillKey,
-        name: nameMatch[1],
+        name: skillName,
         icon: iconMatch ? extractAssetPath(iconMatch[1]) : '/assets/icons/question.png',
         color: colorMatch ? colorMatch[1] : 'bg-gray-600',
         location: {
@@ -130,70 +395,7 @@ function getSkillDescription(skillKey: string): string {
   return descriptions[skillKey] || 'A skill that contributes to your character\'s development and capabilities in the world of Stepcraft.';
 }
 
-// Get predefined recipes for each skill
-function getSkillRecipes(skillKey: string): RecipeInfo[] {
-  const skillRecipes: Record<string, RecipeInfo[]> = {
-    'mining': [
-      { key: 'stone', name: 'Mine Stone', inputs: [], outputs: [{ name: 'Stone', amount: 1 }], xpReward: 10, requiredSteps: 50 },
-      { key: 'copper_ore', name: 'Mine Copper Ore', inputs: [], outputs: [{ name: 'Copper Ore', amount: 1 }], requiredLevel: 15, xpReward: 20, requiredSteps: 75 },
-      { key: 'iron_ore', name: 'Mine Iron Ore', inputs: [], outputs: [{ name: 'Iron Ore', amount: 1 }], requiredLevel: 30, xpReward: 40, requiredSteps: 100, requiredTool: 'copper' },
-      { key: 'silver_ore', name: 'Mine Silver Ore', inputs: [], outputs: [{ name: 'Silver Ore', amount: 1 }], requiredLevel: 45, xpReward: 80, requiredSteps: 125, requiredTool: 'iron' },
-      { key: 'gold_ore', name: 'Mine Gold Ore', inputs: [], outputs: [{ name: 'Gold Ore', amount: 1 }], requiredLevel: 60, xpReward: 160, requiredSteps: 150, requiredTool: 'silver' },
-      { key: 'blue_ore', name: 'Mine Blue Ore', inputs: [], outputs: [{ name: 'Blue Ore', amount: 1 }], requiredLevel: 75, xpReward: 320, requiredSteps: 175, requiredTool: 'gold' },
-      { key: 'red_ore', name: 'Mine Red Ore', inputs: [], outputs: [{ name: 'Red Ore', amount: 1 }], requiredLevel: 90, xpReward: 640, requiredSteps: 200, requiredTool: 'blue' }
-    ],
-    'smithing': [
-      { key: 'stone_brick', name: 'Carve Stone Brick', inputs: [{ name: 'Stone', amount: 2 }], outputs: [{ name: 'Stone Brick', amount: 1 }], xpReward: 20, requiredSteps: 50 },
-      { key: 'copper_bar', name: 'Smelt Copper Bar', inputs: [{ name: 'Copper Ore', amount: 2 }], outputs: [{ name: 'Copper Bar', amount: 1 }], requiredLevel: 15, xpReward: 40, requiredSteps: 75 },
-      { key: 'iron_bar', name: 'Smelt Iron Bar', inputs: [{ name: 'Iron Ore', amount: 2 }], outputs: [{ name: 'Iron Bar', amount: 1 }], requiredLevel: 30, xpReward: 80, requiredSteps: 100 },
-      { key: 'silver_bar', name: 'Smelt Silver Bar', inputs: [{ name: 'Silver Ore', amount: 2 }], outputs: [{ name: 'Silver Bar', amount: 1 }], requiredLevel: 45, xpReward: 160, requiredSteps: 125 },
-      { key: 'gold_bar', name: 'Smelt Gold Bar', inputs: [{ name: 'Gold Ore', amount: 2 }], outputs: [{ name: 'Gold Bar', amount: 1 }], requiredLevel: 60, xpReward: 320, requiredSteps: 150 },
-      { key: 'blue_bar', name: 'Smelt Blue Bar', inputs: [{ name: 'Blue Ore', amount: 2 }], outputs: [{ name: 'Blue Bar', amount: 1 }], requiredLevel: 75, xpReward: 640, requiredSteps: 175 },
-      { key: 'red_bar', name: 'Smelt Red Bar', inputs: [{ name: 'Red Ore', amount: 2 }], outputs: [{ name: 'Red Bar', amount: 1 }], requiredLevel: 90, xpReward: 1280, requiredSteps: 200 },
-      { key: 'copper_toolhead', name: 'Smelt Copper Toolhead', inputs: [{ name: 'Copper Bar', amount: 2 }], outputs: [{ name: 'Copper Toolhead', amount: 1 }], requiredLevel: 17, xpReward: 48, requiredSteps: 90 }
-    ],
-    'carpentry': [
-      { key: 'crude_plank', name: 'Make Crude Plank', inputs: [{ name: 'Sticks', amount: 5 }], outputs: [{ name: 'Crude Plank', amount: 1 }], xpReward: 20, requiredSteps: 50 },
-      { key: 'birch_plank', name: 'Make Birch Plank', inputs: [{ name: 'Birch Log', amount: 2 }], outputs: [{ name: 'Birch Plank', amount: 1 }], requiredLevel: 15, xpReward: 40, requiredSteps: 75 },
-      { key: 'oak_plank', name: 'Make Oak Plank', inputs: [{ name: 'Oak Log', amount: 2 }], outputs: [{ name: 'Oak Plank', amount: 1 }], requiredLevel: 30, xpReward: 80, requiredSteps: 100 },
-      { key: 'birch_handle', name: 'Make Birch Handle', inputs: [{ name: 'Birch Plank', amount: 2 }], outputs: [{ name: 'Birch Handle', amount: 1 }], requiredLevel: 17, xpReward: 48, requiredSteps: 90 },
-      { key: 'oak_handle', name: 'Make Oak Handle', inputs: [{ name: 'Oak Plank', amount: 2 }], outputs: [{ name: 'Oak Handle', amount: 1 }], requiredLevel: 32, xpReward: 96, requiredSteps: 120 }
-    ],
-    'crafting': [
-      { key: 'copper_pickaxe', name: 'Craft Copper Pickaxe', inputs: [{ name: 'Copper Toolhead', amount: 5 }, { name: 'Birch Handle', amount: 5 }], outputs: [{ name: 'Copper Pickaxe', amount: 1 }], requiredLevel: 15, xpReward: 40, requiredSteps: 75 },
-      { key: 'iron_pickaxe', name: 'Craft Iron Pickaxe', inputs: [{ name: 'Iron Toolhead', amount: 5 }, { name: 'Oak Handle', amount: 5 }], outputs: [{ name: 'Iron Pickaxe', amount: 1 }], requiredLevel: 30, xpReward: 80, requiredSteps: 100 },
-      { key: 'copper_axe', name: 'Craft Copper Axe', inputs: [{ name: 'Copper Toolhead', amount: 5 }, { name: 'Birch Handle', amount: 5 }], outputs: [{ name: 'Copper Axe', amount: 1 }], requiredLevel: 15, xpReward: 40, requiredSteps: 75 }
-    ],
-    'woodcutting': [
-      { key: 'sticks', name: 'Gather Sticks', inputs: [], outputs: [{ name: 'Sticks', amount: 1 }], xpReward: 10, requiredSteps: 50 },
-      { key: 'birch_log', name: 'Cut Birch Log', inputs: [], outputs: [{ name: 'Birch Log', amount: 1 }], requiredLevel: 15, xpReward: 20, requiredSteps: 75 },
-      { key: 'oak_log', name: 'Cut Oak Log', inputs: [], outputs: [{ name: 'Oak Log', amount: 1 }], requiredLevel: 30, xpReward: 40, requiredSteps: 100 }
-    ],
-    'fishing': [
-      { key: 'tilapia', name: 'Catch Tilapia', inputs: [], outputs: [{ name: 'Tilapia', amount: 1 }], xpReward: 10, requiredSteps: 50 },
-      { key: 'bass', name: 'Catch Bass', inputs: [], outputs: [{ name: 'Bass', amount: 1 }], requiredLevel: 15, xpReward: 20, requiredSteps: 75 }
-    ],
-    'cooking': [
-      { key: 'cooked_fish', name: 'Cook Fish', inputs: [{ name: 'Tilapia', amount: 1 }], outputs: [{ name: 'Cooked Fish', amount: 1 }], xpReward: 10, requiredSteps: 50 },
-      { key: 'mushroom_dish', name: 'Cook Mushroom', inputs: [{ name: 'Button Mushroom', amount: 2 }], outputs: [{ name: 'Cooked Mushroom', amount: 1 }], xpReward: 15, requiredSteps: 60 }
-    ],
-    'foraging': [
-      { key: 'button_mushroom', name: 'Gather Button Mushroom', inputs: [], outputs: [{ name: 'Button Mushroom', amount: 1 }], xpReward: 10, requiredSteps: 50 },
-      { key: 'fly_agaric', name: 'Gather Fly Agaric', inputs: [], outputs: [{ name: 'Fly Agaric', amount: 1 }], requiredLevel: 15, xpReward: 20, requiredSteps: 75 }
-    ],
-    'alchemy': [
-      { key: 'health_potion', name: 'Brew Health Potion', inputs: [{ name: 'Fly Agaric', amount: 2 }], outputs: [{ name: 'Health Potion', amount: 1 }], xpReward: 20, requiredSteps: 75 }
-    ],
-    'hunting': [
-      { key: 'hunt_rabbit', name: 'Hunt Rabbit', inputs: [], outputs: [{ name: 'Rabbit Meat', amount: 1 }], xpReward: 15, requiredSteps: 60 }
-    ],
-    'farming': [
-      { key: 'plant_wheat', name: 'Grow Wheat', inputs: [{ name: 'Wheat Seeds', amount: 1 }], outputs: [{ name: 'Wheat', amount: 3 }], xpReward: 25, requiredSteps: 200 }
-    ]
-  };
-  
-  return skillRecipes[skillKey] || [];
-}
+// Removed manual recipe definitions - now using programmatic parsing
 
 // Get skill category for organization
 function getSkillCategory(skillKey: string): string {
@@ -283,12 +485,17 @@ Master these ${skill.recipes.length} recipes to advance your ${skill.name} skill
 ${skill.recipes.map(recipe => {
   const level = recipe.requiredLevel ? `Lv. ${recipe.requiredLevel}` : '-';
   const tool = recipe.requiredTool || '-';
-  const inputs = recipe.inputs.length > 0 ? recipe.inputs.map(input => `${input.amount}x ${input.name}`).join('<br/>') : 'None';
-  const outputs = recipe.outputs.length > 0 ? recipe.outputs.map(output => `${output.amount}x ${output.name}`).join('<br/>') : 'Various';
+  const inputs = recipe.inputs.length > 0 ? recipe.inputs.map(input => `${input.amount}x ${createItemLink(input.resourceKey, input.name)}`).join('<br/>') : 'None';
+  const outputs = recipe.outputs.length > 0 ? recipe.outputs.map(output => `${output.amount}x ${createItemLink(output.resourceKey, output.name)}`).join('<br/>') : 'Various';
   const xp = recipe.xpReward || '-';
   const steps = recipe.requiredSteps;
   
-  return `| **${recipe.name}** | ${level} | ${tool} | ${inputs} | ${outputs} | ${xp} | ${steps} |`;
+  // Create link for recipe name to the main output item/resource
+  const recipeNameLink = recipe.outputs.length > 0 
+    ? `**[${recipe.name}](${getItemUrl(recipe.outputs[0].resourceKey)})**`
+    : `**${recipe.name}**`;
+  
+  return `| <a id="${recipe.key}"></a>${recipeNameLink} | ${level} | ${tool} | ${inputs} | ${outputs} | ${xp} | ${steps} |`;
 }).join('\n')}
 
 ### Recipe Tiers

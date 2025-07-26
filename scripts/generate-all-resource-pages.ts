@@ -9,9 +9,27 @@ interface RecipeInfo {
   name: string;
   skillName: string;
   skillKey: string;
-  output: { name: string; amount: number }[];
+  output: { name: string; amount: number; resourceKey: string }[];
   requiredLevel?: number;
   xpReward?: number;
+}
+
+// Helper function to get the URL for an item/resource
+function getItemUrl(itemKey: string): string {
+  // Determine if it's an item or resource based on common patterns
+  // Items typically include tools, armor, weapons, food, etc.
+  const itemKeywords = [
+    'pickaxe', 'axe', 'sickle', 'rod', 'sword', 'shield', 'helm', 'chest', 'legs', 'boots', 'gloves', 'ring', 'amulet', 'potion',
+    'pie', 'cake', 'bread', 'cookie', 'pizza', 'donut', 'spaghetti', 'jam', 'staff'
+  ];
+  const isItem = itemKeywords.some(keyword => itemKey.includes(keyword));
+  
+  // Both items and resources use underscores in their filenames
+  if (isItem) {
+    return `/docs/items/individual/${itemKey}`;
+  } else {
+    return `/docs/resources/individual/${itemKey}`;
+  }
 }
 
 // Extract recipe data from skills.ts file programmatically
@@ -149,7 +167,7 @@ async function extractRecipeData(): Promise<Map<string, RecipeInfo[]>> {
         i++;
       }
       
-      console.log(`  📝 ${skill.name}: Found ${recipes.length} recipe objects`);
+      // Removed verbose logging for cleaner output
       
       // Parse each recipe
       recipes.forEach((recipeText, recipeIndex) => {
@@ -197,17 +215,11 @@ async function extractRecipeData(): Promise<Map<string, RecipeInfo[]>> {
           const recipeKey = keyMatch[1];
           const recipeName = nameMatch[1];
           
-          console.log(`    🔍 Processing recipe: ${recipeName} (${recipeKey})`);
-          
           // Parse inputs if they exist
           if (inputsContent && inputsContent.trim() !== '') {
-            console.log(`      🔍 Inputs content: "${inputsContent.substring(0, 100)}..."`);
-            
-            // Find all resource references in inputs - improve regex to capture the resource references
+            // Find all resource references in inputs
             const resourceMatches = inputsContent.match(/{\s*resource:\s*[^}]+}/g);
             if (resourceMatches) {
-              console.log(`      🎯 Found ${resourceMatches.length} input resources`);
-              
               resourceMatches.forEach((resourceMatch, inputIndex) => {
                 // Extract the resource key from references like "{ resource: ores['copper_ore'], amount: 2 }"
                 const resourceKeyMatch = resourceMatch.match(/resource:\s*(\w+)\[['"`]([^'"`]+)['"`]\]/);
@@ -217,19 +229,19 @@ async function extractRecipeData(): Promise<Map<string, RecipeInfo[]>> {
                   const resourceKey = resourceKeyMatch[2];
                   const amount = amountMatch ? parseInt(amountMatch[1]) : 1;
                   
-                  console.log(`        📦 Input ${inputIndex + 1}: ${resourceKey} (${amount})`);
-                  
                   // Parse outputs for display
-                  let outputs: { name: string; amount: number }[] = [];
+                  let outputs: { name: string; amount: number; resourceKey: string }[] = [];
                   if (outputContent) {
                     const outputResourceMatches = outputContent.match(/{\s*resource:\s*[^}]+}/g);
                     if (outputResourceMatches) {
                       outputs = outputResourceMatches.map(outputMatch => {
                         const outputKeyMatch = outputMatch.match(/resource:\s*(\w+)\[['"`]([^'"`]+)['"`]\]/);
                         const outputAmountMatch = outputMatch.match(/amount:\s*(\d+)/);
+                        const outputResourceKey = outputKeyMatch ? outputKeyMatch[2] : 'unknown';
                         return {
-                          name: outputKeyMatch ? formatDisplayName(outputKeyMatch[2]) : 'Unknown',
-                          amount: outputAmountMatch ? parseInt(outputAmountMatch[1]) : 1
+                          name: outputKeyMatch ? formatDisplayName(outputResourceKey) : 'Unknown',
+                          amount: outputAmountMatch ? parseInt(outputAmountMatch[1]) : 1,
+                          resourceKey: outputResourceKey
                         };
                       });
                     }
@@ -249,15 +261,9 @@ async function extractRecipeData(): Promise<Map<string, RecipeInfo[]>> {
                     recipesByResource.set(resourceKey, []);
                   }
                   recipesByResource.get(resourceKey)!.push(recipeInfo);
-                  
-                  console.log(`        ✅ Added recipe for resource: ${resourceKey}`);
                 }
               });
-            } else {
-              console.log(`      ❌ No resource matches found in inputs`);
             }
-          } else {
-            console.log(`      ℹ️  Recipe ${recipeName} has no inputs (gathering recipe)`);
           }
         } catch (error) {
           console.error(`Error parsing recipe in ${skill.name}:`, error);
@@ -461,7 +467,12 @@ ${recipes.map(recipe => {
     ? recipe.output.map(out => `${out.amount}x ${out.name}`).join('<br/>') 
     : 'Various items';
   
-  return `| **${recipe.name}** | ${recipe.skillName} | ${levelReq} | ${xpReward} | ${outputs} |`;
+  // Create link to individual item/resource page (the main output of the recipe)
+  const recipeLink = recipe.output.length > 0 
+    ? getItemUrl(recipe.output[0].resourceKey)
+    : `/docs/skills/individual/${recipe.skillKey}#${recipe.key}`;
+  
+  return `| **[${recipe.name}](${recipeLink})** | ${recipe.skillName} | ${levelReq} | ${xpReward} | ${outputs} |`;
 }).join('\n')}
 
 *This resource is required as a crafting material in ${recipes.length} recipe${recipes.length > 1 ? 's' : ''} across ${new Set(recipes.map(r => r.skillName)).size} skill${new Set(recipes.map(r => r.skillName)).size > 1 ? 's' : ''}.*
