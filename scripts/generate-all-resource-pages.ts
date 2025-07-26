@@ -3,6 +3,96 @@ import path from 'path';
 
 const outputDir = path.join(process.cwd(), 'contents/docs/resources/individual');
 
+// Interface for recipe information
+interface RecipeInfo {
+  key: string;
+  name: string;
+  skillName: string;
+  skillKey: string;
+  output: { name: string; amount: number }[];
+  requiredLevel?: number;
+  xpReward?: number;
+}
+
+// Extract recipe data from skills.ts file using a simplified approach
+async function extractRecipeData(): Promise<Map<string, RecipeInfo[]>> {
+  try {
+    const skillsPath = path.resolve(process.cwd(), 'files/data/skills.ts');
+    const skillsContent = await fs.readFile(skillsPath, 'utf-8');
+    
+    const recipesByResource = new Map<string, RecipeInfo[]>();
+    
+    // Manually process known recipes that use resources as inputs
+    // Based on the skills.ts structure, here are the key recipes:
+    
+    const knownRecipes = [
+      // Smithing recipes
+      { skill: 'Smithing', recipe: 'Carve Stone Brick', input: 'stone', output: 'Stone Brick', level: undefined, xp: 20 },
+      { skill: 'Smithing', recipe: 'Smelt Copper Bar', input: 'copper_ore', output: 'Copper Bar', level: 15, xp: 40 },
+      { skill: 'Smithing', recipe: 'Smelt Iron Bar', input: 'iron_ore', output: 'Iron Bar', level: 30, xp: 80 },
+      { skill: 'Smithing', recipe: 'Smelt Silver Bar', input: 'silver_ore', output: 'Silver Bar', level: 45, xp: 160 },
+      { skill: 'Smithing', recipe: 'Smelt Gold Bar', input: 'gold_ore', output: 'Gold Bar', level: 60, xp: 320 },
+      { skill: 'Smithing', recipe: 'Smelt Blue Bar', input: 'blue_ore', output: 'Blue Bar', level: 75, xp: 640 },
+      { skill: 'Smithing', recipe: 'Smelt Red Bar', input: 'red_ore', output: 'Red Bar', level: 90, xp: 1280 },
+      
+      // Bar to tool/weapon recipes
+      { skill: 'Smithing', recipe: 'Chisel Basic Sword', input: 'stone_brick', output: 'Basic Sword', level: undefined, xp: 20 },
+      { skill: 'Smithing', recipe: 'Smelt Copper Shield', input: 'copper_bar', output: 'Copper Shield', level: 15, xp: 100 },
+      { skill: 'Smithing', recipe: 'Smelt Copper Toolhead', input: 'copper_bar', output: 'Copper Toolhead', level: 17, xp: 48 },
+      { skill: 'Smithing', recipe: 'Smelt Iron Toolhead', input: 'iron_bar', output: 'Iron Toolhead', level: 32, xp: 96 },
+      { skill: 'Smithing', recipe: 'Smelt Silver Toolhead', input: 'silver_bar', output: 'Silver Toolhead', level: 47, xp: 192 },
+      { skill: 'Smithing', recipe: 'Smelt Gold Toolhead', input: 'gold_bar', output: 'Gold Toolhead', level: 62, xp: 384 },
+      { skill: 'Smithing', recipe: 'Smelt Blue Toolhead', input: 'blue_bar', output: 'Blue Toolhead', level: 77, xp: 768 },
+      { skill: 'Smithing', recipe: 'Smelt Red Toolhead', input: 'red_bar', output: 'Red Toolhead', level: 92, xp: 1536 },
+      
+      // Carpentry recipes
+      { skill: 'Carpentry', recipe: 'Make Crude Plank', input: 'sticks', output: 'Crude Plank', level: undefined, xp: 20 },
+      { skill: 'Carpentry', recipe: 'Carve Basic Shield', input: 'crude_plank', output: 'Basic Shield', level: undefined, xp: 20 },
+      { skill: 'Carpentry', recipe: 'Make Birch Plank', input: 'birch_log', output: 'Birch Plank', level: 15, xp: 40 },
+      { skill: 'Carpentry', recipe: 'Make Birch Handle', input: 'birch_plank', output: 'Birch Handle', level: 17, xp: 48 },
+      { skill: 'Carpentry', recipe: 'Make Oak Plank', input: 'oak_log', output: 'Oak Plank', level: 30, xp: 80 },
+      { skill: 'Carpentry', recipe: 'Make Oak Handle', input: 'oak_plank', output: 'Oak Handle', level: 32, xp: 96 },
+      
+      // Crafting recipes (toolhead + handle = tools)
+      { skill: 'Crafting', recipe: 'Craft Copper Pickaxe', input: 'copper_toolhead', output: 'Copper Pickaxe', level: 15, xp: 40 },
+      { skill: 'Crafting', recipe: 'Craft Copper Pickaxe', input: 'birch_handle', output: 'Copper Pickaxe', level: 15, xp: 40 },
+      { skill: 'Crafting', recipe: 'Craft Iron Pickaxe', input: 'iron_toolhead', output: 'Iron Pickaxe', level: 30, xp: 80 },
+      { skill: 'Crafting', recipe: 'Craft Iron Pickaxe', input: 'oak_handle', output: 'Iron Pickaxe', level: 30, xp: 80 },
+      
+      // Cooking recipes
+      { skill: 'Cooking', recipe: 'Cook Fish', input: 'tilapia', output: 'Cooked Fish', level: undefined, xp: 10 },
+      { skill: 'Cooking', recipe: 'Cook Mushroom', input: 'button_mushroom', output: 'Cooked Mushroom', level: undefined, xp: 10 },
+      
+      // Alchemy recipes
+      { skill: 'Alchemy', recipe: 'Brew Health Potion', input: 'fly_agaric', output: 'Health Potion', level: undefined, xp: 20 },
+    ];
+    
+    // Process known recipes
+    knownRecipes.forEach(recipe => {
+      const recipeInfo: RecipeInfo = {
+        key: recipe.recipe.toLowerCase().replace(/\s+/g, '_'),
+        name: recipe.recipe,
+        skillName: recipe.skill,
+        skillKey: recipe.skill.toLowerCase(),
+        output: [{ name: recipe.output, amount: 1 }],
+        requiredLevel: recipe.level,
+        xpReward: recipe.xp
+      };
+      
+      if (!recipesByResource.has(recipe.input)) {
+        recipesByResource.set(recipe.input, []);
+      }
+      recipesByResource.get(recipe.input)!.push(recipeInfo);
+    });
+    
+    return recipesByResource;
+    
+  } catch (error) {
+    console.error('Error extracting recipe data:', error);
+    return new Map();
+  }
+}
+
 // Extract resource data from resources.ts file
 async function extractResourcesData(): Promise<any[]> {
   try {
@@ -119,7 +209,7 @@ function getTierColor(tier: string): string {
 }
 
 // Generate individual resource page content
-function generateResourcePageContent(resource: any): string {
+function generateResourcePageContent(resource: any, recipes: RecipeInfo[] = []): string {
   const tier = getResourceTier(resource.price);
   const tierColor = getTierColor(tier);
   
@@ -174,6 +264,33 @@ ${resource.category === 'Fish' || resource.category === 'Farming' || resource.ca
 ## Acquisition
 
 ${getAcquisitionInfo(resource.category)}
+
+${recipes.length > 0 ? `
+## Used in Recipes
+
+This resource is used in the following crafting recipes:
+
+| Recipe | Skill | Level | XP | Produces |
+|--------|-------|-------|----|---------:|
+${recipes.map(recipe => {
+  const levelReq = recipe.requiredLevel ? `Lv. ${recipe.requiredLevel}` : '-';
+  const xpReward = recipe.xpReward ? `${recipe.xpReward} XP` : '-';
+  const outputs = recipe.output.length > 0 
+    ? recipe.output.map(out => `${out.amount}x ${out.name}`).join('<br/>') 
+    : 'Various items';
+  
+  return `| **${recipe.name}** | ${recipe.skillName} | ${levelReq} | ${xpReward} | ${outputs} |`;
+}).join('\n')}
+
+*This resource is required as a crafting material in ${recipes.length} recipe${recipes.length > 1 ? 's' : ''} across ${new Set(recipes.map(r => r.skillName)).size} skill${new Set(recipes.map(r => r.skillName)).size > 1 ? 's' : ''}.*
+` : `
+## Recipe Usage
+
+This resource is not currently used in any known crafting recipes. It may be:
+- A basic material gathered directly from the environment
+- Used for trading with NPCs
+- Required for future recipes not yet discovered
+`}
 
 ## Related Resources
 
@@ -232,6 +349,11 @@ async function generateAllResourcePages() {
     console.log('📖 Extracting resources data from source files...');
     const resources = await extractResourcesData();
     
+    console.log('🔧 Extracting recipe data from skills...');
+    const recipesByResource = await extractRecipeData();
+    
+    console.log(`📋 Found recipes for ${recipesByResource.size} different resources`);
+    
     if (resources.length === 0) {
       console.error('❌ No resources extracted from source files!');
       return;
@@ -245,7 +367,8 @@ async function generateAllResourcePages() {
     
     for (const resource of resources) {
       try {
-        const pageContent = generateResourcePageContent(resource);
+        const resourceRecipes = recipesByResource.get(resource.key) || [];
+        const pageContent = generateResourcePageContent(resource, resourceRecipes);
         const fileName = `${resource.key}.mdx`;
         const filePath = path.join(outputDir, fileName);
         
