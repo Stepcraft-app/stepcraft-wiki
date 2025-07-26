@@ -14,7 +14,7 @@ interface RecipeInfo {
   xpReward?: number;
 }
 
-// Extract recipe data from skills.ts file using a simplified approach
+// Extract recipe data from skills.ts file programmatically
 async function extractRecipeData(): Promise<Map<string, RecipeInfo[]>> {
   try {
     const skillsPath = path.resolve(process.cwd(), 'files/data/skills.ts');
@@ -22,68 +22,250 @@ async function extractRecipeData(): Promise<Map<string, RecipeInfo[]>> {
     
     const recipesByResource = new Map<string, RecipeInfo[]>();
     
-    // Manually process known recipes that use resources as inputs
-    // Based on the skills.ts structure, here are the key recipes:
+    // Helper function to clean up resource/item names for matching
+    const normalizeResourceKey = (rawKey: string): string => {
+      // Remove category prefix and clean up the key
+      return rawKey.replace(/^(ores|bars|logs|planks|handles|toolParts|fish|foraging|hunting|misc|combat|farming|gems|ingredients|food|tools|rings|potions|amulets|questItems|jams|swords|shields|bootsArmors|chestArmors|glovesArmors|headArmors|legArmors|allWeapons)\[['"`]/, '')
+                .replace(/['"`]\]$/, '')
+                .trim();
+    };
     
-    const knownRecipes = [
-      // Smithing recipes
-      { skill: 'Smithing', recipe: 'Carve Stone Brick', input: 'stone', output: 'Stone Brick', level: undefined, xp: 20 },
-      { skill: 'Smithing', recipe: 'Smelt Copper Bar', input: 'copper_ore', output: 'Copper Bar', level: 15, xp: 40 },
-      { skill: 'Smithing', recipe: 'Smelt Iron Bar', input: 'iron_ore', output: 'Iron Bar', level: 30, xp: 80 },
-      { skill: 'Smithing', recipe: 'Smelt Silver Bar', input: 'silver_ore', output: 'Silver Bar', level: 45, xp: 160 },
-      { skill: 'Smithing', recipe: 'Smelt Gold Bar', input: 'gold_ore', output: 'Gold Bar', level: 60, xp: 320 },
-      { skill: 'Smithing', recipe: 'Smelt Blue Bar', input: 'blue_ore', output: 'Blue Bar', level: 75, xp: 640 },
-      { skill: 'Smithing', recipe: 'Smelt Red Bar', input: 'red_ore', output: 'Red Bar', level: 90, xp: 1280 },
-      
-      // Bar to tool/weapon recipes
-      { skill: 'Smithing', recipe: 'Chisel Basic Sword', input: 'stone_brick', output: 'Basic Sword', level: undefined, xp: 20 },
-      { skill: 'Smithing', recipe: 'Smelt Copper Shield', input: 'copper_bar', output: 'Copper Shield', level: 15, xp: 100 },
-      { skill: 'Smithing', recipe: 'Smelt Copper Toolhead', input: 'copper_bar', output: 'Copper Toolhead', level: 17, xp: 48 },
-      { skill: 'Smithing', recipe: 'Smelt Iron Toolhead', input: 'iron_bar', output: 'Iron Toolhead', level: 32, xp: 96 },
-      { skill: 'Smithing', recipe: 'Smelt Silver Toolhead', input: 'silver_bar', output: 'Silver Toolhead', level: 47, xp: 192 },
-      { skill: 'Smithing', recipe: 'Smelt Gold Toolhead', input: 'gold_bar', output: 'Gold Toolhead', level: 62, xp: 384 },
-      { skill: 'Smithing', recipe: 'Smelt Blue Toolhead', input: 'blue_bar', output: 'Blue Toolhead', level: 77, xp: 768 },
-      { skill: 'Smithing', recipe: 'Smelt Red Toolhead', input: 'red_bar', output: 'Red Toolhead', level: 92, xp: 1536 },
-      
-      // Carpentry recipes
-      { skill: 'Carpentry', recipe: 'Make Crude Plank', input: 'sticks', output: 'Crude Plank', level: undefined, xp: 20 },
-      { skill: 'Carpentry', recipe: 'Carve Basic Shield', input: 'crude_plank', output: 'Basic Shield', level: undefined, xp: 20 },
-      { skill: 'Carpentry', recipe: 'Make Birch Plank', input: 'birch_log', output: 'Birch Plank', level: 15, xp: 40 },
-      { skill: 'Carpentry', recipe: 'Make Birch Handle', input: 'birch_plank', output: 'Birch Handle', level: 17, xp: 48 },
-      { skill: 'Carpentry', recipe: 'Make Oak Plank', input: 'oak_log', output: 'Oak Plank', level: 30, xp: 80 },
-      { skill: 'Carpentry', recipe: 'Make Oak Handle', input: 'oak_plank', output: 'Oak Handle', level: 32, xp: 96 },
-      
-      // Crafting recipes (toolhead + handle = tools)
-      { skill: 'Crafting', recipe: 'Craft Copper Pickaxe', input: 'copper_toolhead', output: 'Copper Pickaxe', level: 15, xp: 40 },
-      { skill: 'Crafting', recipe: 'Craft Copper Pickaxe', input: 'birch_handle', output: 'Copper Pickaxe', level: 15, xp: 40 },
-      { skill: 'Crafting', recipe: 'Craft Iron Pickaxe', input: 'iron_toolhead', output: 'Iron Pickaxe', level: 30, xp: 80 },
-      { skill: 'Crafting', recipe: 'Craft Iron Pickaxe', input: 'oak_handle', output: 'Iron Pickaxe', level: 30, xp: 80 },
-      
-      // Cooking recipes
-      { skill: 'Cooking', recipe: 'Cook Fish', input: 'tilapia', output: 'Cooked Fish', level: undefined, xp: 10 },
-      { skill: 'Cooking', recipe: 'Cook Mushroom', input: 'button_mushroom', output: 'Cooked Mushroom', level: undefined, xp: 10 },
-      
-      // Alchemy recipes
-      { skill: 'Alchemy', recipe: 'Brew Health Potion', input: 'fly_agaric', output: 'Health Potion', level: undefined, xp: 20 },
-    ];
+    // Helper function to format display names
+    const formatDisplayName = (key: string): string => {
+      return key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    };
     
-    // Process known recipes
-    knownRecipes.forEach(recipe => {
-      const recipeInfo: RecipeInfo = {
-        key: recipe.recipe.toLowerCase().replace(/\s+/g, '_'),
-        name: recipe.recipe,
-        skillName: recipe.skill,
-        skillKey: recipe.skill.toLowerCase(),
-        output: [{ name: recipe.output, amount: 1 }],
-        requiredLevel: recipe.level,
-        xpReward: recipe.xp
-      };
+    // Extract all skills and their recipes
+    const skillsMatch = skillsContent.match(/export const skills:\s*SkillDef\[\]\s*=\s*\[([\s\S]*?)\];/);
+    if (!skillsMatch) return recipesByResource;
+    
+    const skillsSection = skillsMatch[1];
+    
+    // Parse skills more carefully by looking for complete skill objects
+    const skills: { name: string; key: string; content: string }[] = [];
+    
+    // Look for complete skill objects - they start with { and end with }, containing key, name, and recipes
+    // We need to find balanced braces for complete skill objects
+    const skillObjects = [];
+    let braceLevel = 0;
+    let skillStart = -1;
+    let i = 0;
+    
+    while (i < skillsSection.length) {
+      const char = skillsSection[i];
       
-      if (!recipesByResource.has(recipe.input)) {
-        recipesByResource.set(recipe.input, []);
+      if (char === '{') {
+        if (braceLevel === 0) {
+          skillStart = i;
+        }
+        braceLevel++;
+      } else if (char === '}') {
+        braceLevel--;
+        if (braceLevel === 0 && skillStart !== -1) {
+          const skillContent = skillsSection.substring(skillStart, i + 1);
+          // Verify this is actually a skill object (has key, name, and recipes)
+          if (skillContent.includes('key:') && skillContent.includes('name:') && skillContent.includes('recipes:')) {
+            skillObjects.push(skillContent);
+          }
+          skillStart = -1;
+        }
       }
-      recipesByResource.get(recipe.input)!.push(recipeInfo);
+      i++;
+    }
+    
+    // Extract key and name from each complete skill object
+    skillObjects.forEach(skillContent => {
+      const keyMatch = skillContent.match(/key:\s*['"`]([^'"`]+)['"`]/);
+      const nameMatch = skillContent.match(/name:\s*['"`]([^'"`]+)['"`]/);
+      
+      if (keyMatch && nameMatch) {
+        skills.push({
+          name: nameMatch[1],
+          key: keyMatch[1],
+          content: skillContent
+        });
+      }
     });
+    
+    console.log(`🔍 Found ${skills.length} skills to parse for recipes`);
+    
+    // Parse recipes from each skill
+    skills.forEach(skill => {
+      // Find recipes array using balanced bracket parsing to handle nested arrays
+      const recipesStartMatch = skill.content.match(/recipes:\s*\[/);
+      if (!recipesStartMatch) {
+        console.log(`  ⚠️  ${skill.name}: No recipes array found`);
+        return;
+      }
+      
+      const recipesStartIndex = recipesStartMatch.index! + recipesStartMatch[0].length - 1; // Position of the opening [
+      let bracketLevel = 0;
+      let recipesEndIndex = -1;
+      
+      for (let i = recipesStartIndex; i < skill.content.length; i++) {
+        const char = skill.content[i];
+        
+        if (char === '[') {
+          bracketLevel++;
+        } else if (char === ']') {
+          bracketLevel--;
+          if (bracketLevel === 0) {
+            recipesEndIndex = i;
+            break;
+          }
+        }
+      }
+      
+      if (recipesEndIndex === -1) {
+        console.log(`  ⚠️  ${skill.name}: No recipes array end found`);
+        return;
+      }
+      
+      const recipesContent = skill.content.substring(recipesStartIndex + 1, recipesEndIndex);
+      
+      // Parse individual recipes more carefully
+      // Look for recipe objects by finding balanced braces
+      const recipes = [];
+      let braceLevel = 0;
+      let recipeStart = -1;
+      let i = 0;
+      
+      while (i < recipesContent.length) {
+        const char = recipesContent[i];
+        
+        if (char === '{') {
+          if (braceLevel === 0) {
+            recipeStart = i;
+          }
+          braceLevel++;
+        } else if (char === '}') {
+          braceLevel--;
+          if (braceLevel === 0 && recipeStart !== -1) {
+            const recipeText = recipesContent.substring(recipeStart, i + 1);
+            recipes.push(recipeText);
+            recipeStart = -1;
+          }
+        }
+        i++;
+      }
+      
+      console.log(`  📝 ${skill.name}: Found ${recipes.length} recipe objects`);
+      
+      // Parse each recipe
+      recipes.forEach((recipeText, recipeIndex) => {
+        try {
+          // Extract recipe details
+          const keyMatch = recipeText.match(/key:\s*['"`]([^'"`]+)['"`]/);
+          const nameMatch = recipeText.match(/name:\s*['"`]([^'"`]+)['"`]/);
+          // Use balanced bracket parsing for inputs and outputs
+          const getArrayContent = (text: string, arrayName: string): string | null => {
+            const startMatch = text.match(new RegExp(`${arrayName}:\\s*\\[`));
+            if (!startMatch) return null;
+            
+            const startIndex = startMatch.index! + startMatch[0].length - 1; // Position of the opening [
+            let bracketLevel = 0;
+            let endIndex = -1;
+            
+            for (let i = startIndex; i < text.length; i++) {
+              const char = text[i];
+              
+              if (char === '[') {
+                bracketLevel++;
+              } else if (char === ']') {
+                bracketLevel--;
+                if (bracketLevel === 0) {
+                  endIndex = i;
+                  break;
+                }
+              }
+            }
+            
+            if (endIndex === -1) return null;
+            return text.substring(startIndex + 1, endIndex);
+          };
+          
+          const inputsContent = getArrayContent(recipeText, 'inputs');
+          const outputContent = getArrayContent(recipeText, 'output');
+          const levelMatch = recipeText.match(/requiredLevel:\s*([^,}\s]+)/);
+          const xpMatch = recipeText.match(/xpReward:\s*([^,}\s]+)/);
+          
+          if (!keyMatch || !nameMatch) {
+            console.log(`    ⚠️  Recipe ${recipeIndex + 1}: Missing key or name`);
+            return;
+          }
+          
+          const recipeKey = keyMatch[1];
+          const recipeName = nameMatch[1];
+          
+          console.log(`    🔍 Processing recipe: ${recipeName} (${recipeKey})`);
+          
+          // Parse inputs if they exist
+          if (inputsContent && inputsContent.trim() !== '') {
+            console.log(`      🔍 Inputs content: "${inputsContent.substring(0, 100)}..."`);
+            
+            // Find all resource references in inputs - improve regex to capture the resource references
+            const resourceMatches = inputsContent.match(/{\s*resource:\s*[^}]+}/g);
+            if (resourceMatches) {
+              console.log(`      🎯 Found ${resourceMatches.length} input resources`);
+              
+              resourceMatches.forEach((resourceMatch, inputIndex) => {
+                // Extract the resource key from references like "{ resource: ores['copper_ore'], amount: 2 }"
+                const resourceKeyMatch = resourceMatch.match(/resource:\s*(\w+)\[['"`]([^'"`]+)['"`]\]/);
+                const amountMatch = resourceMatch.match(/amount:\s*(\d+)/);
+                
+                if (resourceKeyMatch) {
+                  const resourceKey = resourceKeyMatch[2];
+                  const amount = amountMatch ? parseInt(amountMatch[1]) : 1;
+                  
+                  console.log(`        📦 Input ${inputIndex + 1}: ${resourceKey} (${amount})`);
+                  
+                  // Parse outputs for display
+                  let outputs: { name: string; amount: number }[] = [];
+                  if (outputContent) {
+                    const outputResourceMatches = outputContent.match(/{\s*resource:\s*[^}]+}/g);
+                    if (outputResourceMatches) {
+                      outputs = outputResourceMatches.map(outputMatch => {
+                        const outputKeyMatch = outputMatch.match(/resource:\s*(\w+)\[['"`]([^'"`]+)['"`]\]/);
+                        const outputAmountMatch = outputMatch.match(/amount:\s*(\d+)/);
+                        return {
+                          name: outputKeyMatch ? formatDisplayName(outputKeyMatch[2]) : 'Unknown',
+                          amount: outputAmountMatch ? parseInt(outputAmountMatch[1]) : 1
+                        };
+                      });
+                    }
+                  }
+                  
+                  const recipeInfo: RecipeInfo = {
+                    key: recipeKey,
+                    name: recipeName,
+                    skillName: skill.name,
+                    skillKey: skill.key,
+                    output: outputs,
+                    requiredLevel: levelMatch ? parseInt(levelMatch[1]) : undefined,
+                    xpReward: xpMatch ? parseInt(xpMatch[1]) : undefined
+                  };
+                  
+                  if (!recipesByResource.has(resourceKey)) {
+                    recipesByResource.set(resourceKey, []);
+                  }
+                  recipesByResource.get(resourceKey)!.push(recipeInfo);
+                  
+                  console.log(`        ✅ Added recipe for resource: ${resourceKey}`);
+                }
+              });
+            } else {
+              console.log(`      ❌ No resource matches found in inputs`);
+            }
+          } else {
+            console.log(`      ℹ️  Recipe ${recipeName} has no inputs (gathering recipe)`);
+          }
+        } catch (error) {
+          console.error(`Error parsing recipe in ${skill.name}:`, error);
+        }
+      });
+    });
+    
+    console.log(`📊 Programmatically found recipes for ${recipesByResource.size} different resources`);
     
     return recipesByResource;
     
@@ -292,6 +474,10 @@ This resource is not currently used in any known crafting recipes. It may be:
 - Required for future recipes not yet discovered
 `}
 
+## Related Skills
+
+${getRelatedSkills(resource.key, resource.category)}
+
 ## Related Resources
 
 Browse more resources from the [${resource.category}](/docs/resources#${resource.category.toLowerCase().replace(' ', '-')}) category or return to the [complete resources catalog](/docs/resources).
@@ -302,6 +488,89 @@ Browse more resources from the [${resource.category}](/docs/resources#${resource
 - [Browse ${resource.category}](/docs/resources#${resource.category.toLowerCase().replace(' ', '-')})
 - [Search All Resources](/search)
 `;
+}
+
+// Get related skills based on resource key and category
+function getRelatedSkills(resourceKey: string, category: string): string {
+  const skillMappings: Record<string, string[]> = {
+    // Ore resources
+    'stone': ['Mining', 'Smithing'],
+    'copper_ore': ['Mining', 'Smithing'],
+    'iron_ore': ['Mining', 'Smithing'],
+    'silver_ore': ['Mining', 'Smithing'],
+    'gold_ore': ['Mining', 'Smithing'],
+    'blue_ore': ['Mining', 'Smithing'],
+    'red_ore': ['Mining', 'Smithing'],
+    
+    // Bar resources
+    'stone_brick': ['Smithing', 'Crafting'],
+    'copper_bar': ['Smithing', 'Crafting'],
+    'iron_bar': ['Smithing', 'Crafting'],
+    'silver_bar': ['Smithing', 'Crafting'],
+    'gold_bar': ['Smithing', 'Crafting'],
+    'blue_bar': ['Smithing', 'Crafting'],
+    'red_bar': ['Smithing', 'Crafting'],
+    
+    // Wood resources
+    'sticks': ['Woodcutting', 'Carpentry'],
+    'birch_log': ['Woodcutting', 'Carpentry'],
+    'oak_log': ['Woodcutting', 'Carpentry'],
+    'birch_plank': ['Carpentry', 'Crafting'],
+    'oak_plank': ['Carpentry', 'Crafting'],
+    'crude_plank': ['Carpentry', 'Crafting'],
+    
+    // Handle resources
+    'birch_handle': ['Carpentry', 'Crafting'],
+    'oak_handle': ['Carpentry', 'Crafting'],
+    
+    // Tool parts
+    'copper_toolhead': ['Smithing', 'Crafting'],
+    'iron_toolhead': ['Smithing', 'Crafting'],
+    'silver_toolhead': ['Smithing', 'Crafting'],
+    'gold_toolhead': ['Smithing', 'Crafting'],
+    'blue_toolhead': ['Smithing', 'Crafting'],
+    'red_toolhead': ['Smithing', 'Crafting'],
+    
+    // Fish resources
+    'tilapia': ['Fishing', 'Cooking'],
+    'bass': ['Fishing', 'Cooking'],
+    
+    // Foraging resources
+    'button_mushroom': ['Foraging', 'Cooking'],
+    'fly_agaric': ['Foraging', 'Alchemy'],
+    
+    // Hunting resources
+    'rabbit_meat': ['Hunting', 'Cooking']
+  };
+  
+  // Get category-based skills
+  const categorySkills: Record<string, string[]> = {
+    'Ores': ['Mining', 'Smithing'],
+    'Bars': ['Smithing', 'Crafting'],
+    'Logs': ['Woodcutting', 'Carpentry'],
+    'Planks': ['Carpentry', 'Crafting'],
+    'Handles': ['Carpentry', 'Crafting'],
+    'Tool Parts': ['Smithing', 'Crafting'],
+    'Fish': ['Fishing', 'Cooking'],
+    'Foraging': ['Foraging', 'Cooking', 'Alchemy'],
+    'Hunting': ['Hunting', 'Cooking'],
+    'Farming': ['Farming', 'Cooking'],
+    'Gems': ['Mining', 'Trinketry'],
+    'Ingredients': ['Foraging', 'Alchemy', 'Cooking'],
+    'Combat': ['Combat', 'Smithing'],
+    'Miscellaneous': ['Crafting']
+  };
+  
+  // Get skills for specific resource or fall back to category
+  const skills = skillMappings[resourceKey] || categorySkills[category] || ['Crafting'];
+  
+  if (skills.length === 0) {
+    return 'This resource may be used across various skills and activities.';
+  }
+  
+  const skillLinks = skills.map(skill => `[${skill}](/docs/skills/individual/${skill.toLowerCase()})`).join(' • ');
+  
+  return `This resource is primarily associated with: ${skillLinks}`;
 }
 
 // Get acquisition information based on category

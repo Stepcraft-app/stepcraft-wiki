@@ -16,9 +16,11 @@
     "generate-item-pages": "tsx scripts/generate-item-pages-simple.ts",
     "generate-all-item-pages": "tsx scripts/generate-all-item-pages.ts",
     "generate-all-resource-pages": "tsx scripts/generate-all-resource-pages.ts",
+    "generate-all-skill-pages": "tsx scripts/generate-all-skill-pages.ts",
     "sync-items-catalog": "tsx scripts/sync-items-catalog.ts",
     "sync-all-items": "tsx scripts/sync-all-items.ts",
     "sync-resources-catalog": "tsx scripts/sync-resources-catalog.ts",
+    "sync-skills-catalog": "tsx scripts/sync-skills-catalog.ts",
     "prepare": "husky",
     "copy-skills": "bash copy-skills.sh"
   },

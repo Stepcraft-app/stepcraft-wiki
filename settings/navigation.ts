@@ -15,6 +15,10 @@ export const Navigations = [
     title: "Resources",
     href: "/docs/resources",
   },
+  {
+    title: "Skills",
+    href: "/docs/skills",
+  },
 ]
 
 export const GitHubLink = {

@@ -34,4 +34,14 @@ export const Documents: Paths[] = [
       },
     ],
   },
+  {
+    title: "Skills",
+    href: "/skills",
+    items: [
+      {
+        title: "Individual Skills",
+        href: "/individual",
+      },
+    ],
+  },
 ]
