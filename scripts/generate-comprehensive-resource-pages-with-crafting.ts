@@ -14,13 +14,32 @@ interface RecipeInfo {
   xpReward?: number;
 }
 
+// Interface for crafting recipe ingredients
+interface CraftingInput {
+  name: string;
+  key: string;
+  amount: number;
+  category: string;
+}
+
+// Interface for crafting recipes (how to make this resource)
+interface CraftingRecipe {
+  skill: string;
+  skillKey: string;
+  requiredLevel: number;
+  inputs: CraftingInput[];
+  xp?: number;
+  steps?: number;
+}
+
 // Helper function to get the URL for an item/resource
 function getItemUrl(itemKey: string): string {
   // Determine if it's an item or resource based on common patterns
   // Items typically include tools, armor, weapons, food, etc.
   const itemKeywords = [
     'pickaxe', 'axe', 'sickle', 'rod', 'sword', 'shield', 'helm', 'chest', 'legs', 'boots', 'gloves', 'ring', 'amulet', 'potion',
-    'pie', 'cake', 'bread', 'cookie', 'pizza', 'donut', 'spaghetti', 'jam', 'staff', 'fries'
+    'pie', 'cake', 'bread', 'cookie', 'pizza', 'donut', 'spaghetti', 'jam', 'staff', 'fries',
+    'guard', 'band', 'charm', 'pendant', 'blade', 'cross', 'orbs', 'square', 'star', 'shard', 'weave'
   ];
   const isItem = itemKeywords.some(keyword => itemKey.includes(keyword));
   
@@ -281,6 +300,599 @@ async function extractRecipeData(): Promise<Map<string, RecipeInfo[]>> {
   }
 }
 
+// Parse crafting recipes from skills.ts (how to make resources)
+async function parseCraftingRecipes(): Promise<Map<string, CraftingRecipe[]>> {
+  const recipesMap = new Map<string, CraftingRecipe[]>();
+  
+  try {
+    const skillsPath = path.resolve(process.cwd(), 'files/data/skills.ts');
+    const skillsContent = await fs.readFile(skillsPath, 'utf-8');
+    
+    // Parse cooking recipes
+    await parseCookingRecipes(skillsContent, recipesMap);
+    
+    // Parse smithing recipes  
+    await parseSmithingRecipes(skillsContent, recipesMap);
+    
+    // Parse crafting skill recipes
+    await parseCraftingSkillRecipes(skillsContent, recipesMap);
+    
+    console.log(`📋 Parsed crafting recipes for ${recipesMap.size} resources`);
+    return recipesMap;
+    
+  } catch (error) {
+    console.error('❌ Error parsing crafting recipes:', error);
+    return new Map();
+  }
+}
+
+// Helper functions
+function getLevelFromConstant(constant: string): number | undefined {
+  const levelMap: Record<string, number> = {
+    'T0_LEVEL': 1,
+    'T1_LEVEL': 15,
+    'T2_LEVEL': 30,
+    'T3_LEVEL': 45,
+    'T4_LEVEL': 60,
+    'T5_LEVEL': 75,
+    'T6_LEVEL': 90
+  };
+  return levelMap[constant];
+}
+
+function parseXpValue(xpStr: string): number | undefined {
+  const numMatch = xpStr.match(/(\d+)/);
+  return numMatch ? parseInt(numMatch[1]) : undefined;
+}
+
+function parseStepsValue(stepsStr: string): number | undefined {
+  const numMatch = stepsStr.match(/(\d+)/);
+  return numMatch ? parseInt(numMatch[1]) : undefined;
+}
+
+// Parse cooking recipes
+async function parseCookingRecipes(skillsContent: string, recipesMap: Map<string, CraftingRecipe[]>): Promise<void> {
+  try {
+    const cookingStartMatch = skillsContent.match(/{\s*key:\s*['"`]cooking['"`][\s\S]*?recipes:\s*\[/);
+    
+    if (cookingStartMatch) {
+      const recipesStartIndex = cookingStartMatch.index! + cookingStartMatch[0].length;
+      
+      // Find matching closing bracket
+      let bracketLevel = 1;
+      let braceLevel = 0;
+      let recipesEndIndex = -1;
+      
+      for (let i = recipesStartIndex; i < skillsContent.length; i++) {
+        const char = skillsContent[i];
+        if (char === '[') {
+          bracketLevel++;
+        } else if (char === ']') {
+          bracketLevel--;
+          if (bracketLevel === 0 && braceLevel === 0) {
+            recipesEndIndex = i;
+            break;
+          }
+        } else if (char === '{') {
+          braceLevel++;
+        } else if (char === '}') {
+          braceLevel--;
+        }
+      }
+      
+      if (recipesEndIndex > -1) {
+        const recipesSection = skillsContent.substring(recipesStartIndex, recipesEndIndex);
+        // Parse individual recipe objects
+        let recipeBraceLevel = 0;
+        let recipeStart = -1;
+        const recipeTexts = [];
+        
+        for (let i = 0; i < recipesSection.length; i++) {
+          const char = recipesSection[i];
+          
+          if (char === '{') {
+            if (recipeBraceLevel === 0) {
+              recipeStart = i;
+            }
+            recipeBraceLevel++;
+          } else if (char === '}') {
+            recipeBraceLevel--;
+            if (recipeBraceLevel === 0 && recipeStart !== -1) {
+              const recipeText = recipesSection.substring(recipeStart, i + 1);
+              recipeTexts.push(recipeText);
+              recipeStart = -1;
+            }
+          }
+        }
+        
+        // Parse each cooking recipe
+        for (const recipeText of recipeTexts) {
+          const outputMatch = recipeText.match(/output:\s*\[\s*{\s*resource:\s*(food|jams)\[['"`]([^'"`]+)['"`]\]/);
+          if (!outputMatch) continue;
+          
+          const itemKey = outputMatch[2];
+          
+          // Parse inputs
+          const inputs: CraftingInput[] = [];
+          const inputsStartMatch = recipeText.match(/inputs:\s*\[/);
+          
+          if (inputsStartMatch) {
+            const inputsStart = inputsStartMatch.index! + inputsStartMatch[0].length;
+            let bracketLevel = 1;
+            let inputsEnd = -1;
+            
+            for (let i = inputsStart; i < recipeText.length; i++) {
+              const char = recipeText[i];
+              if (char === '[') {
+                bracketLevel++;
+              } else if (char === ']') {
+                bracketLevel--;
+                if (bracketLevel === 0) {
+                  inputsEnd = i;
+                  break;
+                }
+              }
+            }
+            
+            if (inputsEnd !== -1) {
+              const inputsContent = recipeText.substring(inputsStart, inputsEnd);
+              const inputMatches = inputsContent.matchAll(/{\s*resource:\s*(\w+)\[['"`]([^'"`]+)['"`]\],\s*amount:\s*(\d+)\s*}/g);
+              
+              for (const inputMatch of inputMatches) {
+                const resourceType = inputMatch[1];
+                const resourceKey = inputMatch[2];
+                const amount = parseInt(inputMatch[3]);
+                
+                inputs.push({
+                  name: resourceKey.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+                  key: resourceKey,
+                  amount: amount,
+                  category: resourceType
+                });
+              }
+            }
+          }
+          
+          // Parse level requirement
+          const levelMatch = recipeText.match(/requiredLevel:\s*(\w+)/);
+          let requiredLevel = 1;
+          if (levelMatch) {
+            requiredLevel = getLevelFromConstant(levelMatch[1]) || 1;
+          }
+          
+          const recipe: CraftingRecipe = {
+            skill: 'Cooking',
+            skillKey: 'cooking',
+            requiredLevel: requiredLevel,
+            inputs: inputs,
+            xp: 3,
+            steps: 3
+          };
+          
+          if (!recipesMap.has(itemKey)) {
+            recipesMap.set(itemKey, []);
+          }
+          recipesMap.get(itemKey)!.push(recipe);
+        }
+      }
+    }
+  } catch (error) {
+    console.error('❌ Error parsing cooking recipes:', error);
+  }
+}
+
+// Parse smithing recipes
+async function parseSmithingRecipes(skillsContent: string, recipesMap: Map<string, CraftingRecipe[]>): Promise<void> {
+  try {
+    const smithingStartMatch = skillsContent.match(/{\s*key:\s*['"`]smithing['"`][\s\S]*?recipes:\s*\[/);
+    
+    if (!smithingStartMatch) {
+      console.log('⚠️  Smithing skill section not found');
+      return;
+    }
+    
+    const smithingStartIndex = smithingStartMatch.index! + smithingStartMatch[0].length;
+    
+    // Find the end using bracket matching
+    let smithingEndIndex = -1;
+    let bracketLevel = 1;
+    let inString = false;
+    let stringChar = '';
+    
+    for (let i = smithingStartIndex; i < skillsContent.length; i++) {
+      const char = skillsContent[i];
+      const prevChar = i > 0 ? skillsContent[i - 1] : '';
+      
+      if (!inString && (char === '"' || char === "'" || char === '`')) {
+        inString = true;
+        stringChar = char;
+      } else if (inString && char === stringChar && prevChar !== '\\') {
+        inString = false;
+        stringChar = '';
+      }
+      
+      if (!inString) {
+        if (char === '[') {
+          bracketLevel++;
+        } else if (char === ']') {
+          bracketLevel--;
+          if (bracketLevel === 0) {
+            smithingEndIndex = i;
+            break;
+          }
+        }
+      }
+    }
+    
+    if (smithingEndIndex === -1) {
+      console.log('⚠️  Could not find end of smithing recipes array');
+      return;
+    }
+    
+    const smithingSection = skillsContent.substring(smithingStartIndex, smithingEndIndex);
+    
+    // Parse individual smithing recipe objects
+    let recipeBraceLevel = 0;
+    let recipeStart = -1;
+    const smithingRecipeTexts = [];
+    
+    for (let i = 0; i < smithingSection.length; i++) {
+      const char = smithingSection[i];
+      
+      if (char === '{') {
+        if (recipeBraceLevel === 0) {
+          recipeStart = i;
+        }
+        recipeBraceLevel++;
+      } else if (char === '}') {
+        recipeBraceLevel--;
+        if (recipeBraceLevel === 0 && recipeStart !== -1) {
+          const recipeText = smithingSection.substring(recipeStart, i + 1);
+          smithingRecipeTexts.push(recipeText);
+          recipeStart = -1;
+        }
+      }
+    }
+    
+    // Parse each smithing recipe
+    for (const recipeText of smithingRecipeTexts) {
+      // Look for outputs that are resources (bars, toolParts, etc.)
+      const outputMatch = recipeText.match(/output:\s*\[\s*{\s*resource:\s*(bars|toolParts|shields|headArmors|chestArmors|legArmors|bootsArmors|glovesArmors)\[['"`]([^'"`]+)['"`]\]/);
+      if (!outputMatch) continue;
+      
+      const itemKey = outputMatch[2];
+      
+      // Parse inputs
+      const inputs: CraftingInput[] = [];
+      const inputsStartMatch = recipeText.match(/inputs:\s*\[/);
+      
+      if (inputsStartMatch) {
+        const inputsStart = inputsStartMatch.index! + inputsStartMatch[0].length;
+        let bracketLevel = 1;
+        let inputsEnd = -1;
+        
+        for (let i = inputsStart; i < recipeText.length; i++) {
+          const char = recipeText[i];
+          if (char === '[') {
+            bracketLevel++;
+          } else if (char === ']') {
+            bracketLevel--;
+            if (bracketLevel === 0) {
+              inputsEnd = i;
+              break;
+            }
+          }
+        }
+        
+        if (inputsEnd !== -1) {
+          const inputsContent = recipeText.substring(inputsStart, inputsEnd);
+          const inputMatches = inputsContent.matchAll(/{\s*resource:\s*(\w+)\[['"`]([^'"`]+)['"`]\],\s*amount:\s*(\d+)\s*}/g);
+          
+          for (const inputMatch of inputMatches) {
+            const resourceType = inputMatch[1];
+            const resourceKey = inputMatch[2];
+            const amount = parseInt(inputMatch[3]);
+            
+            inputs.push({
+              name: resourceKey.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+              key: resourceKey,
+              amount: amount,
+              category: resourceType
+            });
+          }
+        }
+      }
+      
+      // Parse level requirement
+      const levelMatch = recipeText.match(/requiredLevel:\s*(\w+(?:\s*\+\s*\d+)?)/);
+      let requiredLevel = 1;
+      if (levelMatch) {
+        const levelStr = levelMatch[1];
+        if (levelStr.includes('+')) {
+          const parts = levelStr.split('+');
+          const baseLevel = getLevelFromConstant(parts[0].trim()) || 1;
+          const additionalLevel = parseInt(parts[1].trim()) || 0;
+          requiredLevel = baseLevel + additionalLevel;
+        } else {
+          requiredLevel = getLevelFromConstant(levelStr) || 1;
+        }
+      }
+      
+      const recipe: CraftingRecipe = {
+        skill: 'Smithing',
+        skillKey: 'smithing',
+        requiredLevel: requiredLevel,
+        inputs: inputs
+      };
+      
+      if (!recipesMap.has(itemKey)) {
+        recipesMap.set(itemKey, []);
+      }
+      recipesMap.get(itemKey)!.push(recipe);
+    }
+    
+  } catch (error) {
+    console.error('❌ Error parsing smithing recipes:', error);
+  }
+}
+
+// Parse crafting skill recipes
+async function parseCraftingSkillRecipes(skillsContent: string, recipesMap: Map<string, CraftingRecipe[]>): Promise<void> {
+  try {
+    const craftingStartMatch = skillsContent.match(/{\s*key:\s*['"`]crafting['"`][\s\S]*?recipes:\s*\[/);
+    
+    if (!craftingStartMatch) {
+      console.log('⚠️  Crafting skill section not found');
+      return;
+    }
+    
+    const craftingStartIndex = craftingStartMatch.index! + craftingStartMatch[0].length;
+    
+    // Find the end using bracket matching
+    let craftingEndIndex = -1;
+    let bracketLevel = 1;
+    let inString = false;
+    let stringChar = '';
+    
+    for (let i = craftingStartIndex; i < skillsContent.length; i++) {
+      const char = skillsContent[i];
+      const prevChar = i > 0 ? skillsContent[i - 1] : '';
+      
+      if (!inString && (char === '"' || char === "'" || char === '`')) {
+        inString = true;
+        stringChar = char;
+      } else if (inString && char === stringChar && prevChar !== '\\') {
+        inString = false;
+        stringChar = '';
+      }
+      
+      if (!inString) {
+        if (char === '[') {
+          bracketLevel++;
+        } else if (char === ']') {
+          bracketLevel--;
+          if (bracketLevel === 0) {
+            craftingEndIndex = i;
+            break;
+          }
+        }
+      }
+    }
+    
+    if (craftingEndIndex === -1) {
+      console.log('⚠️  Could not find end of crafting recipes array');
+      return;
+    }
+    
+    const craftingSection = skillsContent.substring(craftingStartIndex, craftingEndIndex);
+    
+    // Parse individual crafting recipe objects
+    let recipeBraceLevel = 0;
+    let recipeStart = -1;
+    const craftingRecipeTexts = [];
+    
+    for (let i = 0; i < craftingSection.length; i++) {
+      const char = craftingSection[i];
+      
+      if (char === '{') {
+        if (recipeBraceLevel === 0) {
+          recipeStart = i;
+        }
+        recipeBraceLevel++;
+      } else if (char === '}') {
+        recipeBraceLevel--;
+        if (recipeBraceLevel === 0 && recipeStart !== -1) {
+          const recipeText = craftingSection.substring(recipeStart, i + 1);
+          craftingRecipeTexts.push(recipeText);
+          recipeStart = -1;
+        }
+      }
+    }
+    
+    // Parse each crafting recipe - looking for resource outputs
+    for (const recipeText of craftingRecipeTexts) {
+      // Look for outputs that are resources
+      const outputMatch = recipeText.match(/output:\s*\[\s*{\s*resource:\s*(toolParts|handles|planks|bars)\[['"`]([^'"`]+)['"`]\]/);
+      if (!outputMatch) continue;
+      
+      const itemKey = outputMatch[2];
+      
+      // Parse inputs
+      const inputs: CraftingInput[] = [];
+      const inputsStartMatch = recipeText.match(/inputs:\s*\[/);
+      
+      if (inputsStartMatch) {
+        const inputsStart = inputsStartMatch.index! + inputsStartMatch[0].length;
+        let bracketLevel = 1;
+        let inputsEnd = -1;
+        
+        for (let i = inputsStart; i < recipeText.length; i++) {
+          const char = recipeText[i];
+          if (char === '[') {
+            bracketLevel++;
+          } else if (char === ']') {
+            bracketLevel--;
+            if (bracketLevel === 0) {
+              inputsEnd = i;
+              break;
+            }
+          }
+        }
+        
+        if (inputsEnd !== -1) {
+          const inputsContent = recipeText.substring(inputsStart, inputsEnd);
+          const inputMatches = inputsContent.matchAll(/{\s*resource:\s*(\w+)\[['"`]([^'"`]+)['"`]\],\s*amount:\s*(\d+)\s*}/g);
+          
+          for (const inputMatch of inputMatches) {
+            const resourceType = inputMatch[1];
+            const resourceKey = inputMatch[2];
+            const amount = parseInt(inputMatch[3]);
+            
+            inputs.push({
+              name: resourceKey.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+              key: resourceKey,
+              amount: amount,
+              category: resourceType
+            });
+          }
+        }
+      }
+      
+      // Parse level requirement
+      const levelMatch = recipeText.match(/requiredLevel:\s*(\w+(?:\s*\+\s*\d+)?)/);
+      let requiredLevel = 1;
+      if (levelMatch) {
+        const levelStr = levelMatch[1];
+        if (levelStr.includes('+')) {
+          const parts = levelStr.split('+');
+          const baseLevel = getLevelFromConstant(parts[0].trim()) || 1;
+          const additionalLevel = parseInt(parts[1].trim()) || 0;
+          requiredLevel = baseLevel + additionalLevel;
+        } else {
+          requiredLevel = getLevelFromConstant(levelStr) || 1;
+        }
+      }
+      
+      const recipe: CraftingRecipe = {
+        skill: 'Crafting',
+        skillKey: 'crafting',
+        requiredLevel: requiredLevel,
+        inputs: inputs
+      };
+      
+      if (!recipesMap.has(itemKey)) {
+        recipesMap.set(itemKey, []);
+      }
+      recipesMap.get(itemKey)!.push(recipe);
+    }
+    
+  } catch (error) {
+    console.error('❌ Error parsing crafting recipes:', error);
+  }
+}
+
+// Interface for location information
+interface LocationInfo {
+  id: string;
+  name: string;
+  description: string;
+}
+
+// Parse location data from map.ts
+async function parseLocationData(): Promise<Map<string, LocationInfo[]>> {
+  const resourceLocations = new Map<string, LocationInfo[]>();
+  
+  try {
+    const mapPath = path.resolve(process.cwd(), 'files/data/map.ts');
+    const mapContent = await fs.readFile(mapPath, 'utf-8');
+    
+    // Extract actionDefinitions object
+    const definitionsMatch = mapContent.match(/const actionDefinitions:\s*Record<string,\s*ActionDefinition>\s*=\s*{([\s\S]*?)};/);
+    if (!definitionsMatch) {
+      console.log('⚠️  Action definitions not found in map.ts');
+      return resourceLocations;
+    }
+    
+    
+    const definitionsSection = definitionsMatch[1];
+    
+    // Parse each location definition
+    const locationMatches = definitionsSection.matchAll(/(\w+):\s*{[\s\S]*?id:\s*['"`]([^'"`]+)['"`][\s\S]*?name:\s*['"`]([^'"`]+)['"`][\s\S]*?description:\s*['"`]([^'"`]+)['"`][\s\S]*?allowedActions:\s*{([\s\S]*?)}[\s\S]*?}/g);
+    
+    let locationCount = 0;
+    for (const locationMatch of locationMatches) {
+      locationCount++;
+      const [, , locationId, locationName, locationDescription, allowedActionsSection] = locationMatch;
+      
+      const location: LocationInfo = {
+        id: locationId,
+        name: locationName,
+        description: locationDescription
+      };
+      
+      // Parse allowed actions to find resources
+      const skillMatches = allowedActionsSection.matchAll(/(\w+):\s*\[([\s\S]*?)\]/g);
+      
+      for (const skillMatch of skillMatches) {
+        const [, skillName, resourcesSection] = skillMatch;
+        
+        // Extract resource names from the array
+        const resourceMatches = resourcesSection.matchAll(/['"`]([^'"`]+)['"`]/g);
+        
+        for (const resourceMatch of resourceMatches) {
+          const actionKey = resourceMatch[1];
+          
+          // Map action key to actual resource key using skills data
+          const actualResourceKeys = await mapActionToResources(actionKey, skillName);
+          
+          
+          for (const resourceKey of actualResourceKeys) {
+            if (!resourceLocations.has(resourceKey)) {
+              resourceLocations.set(resourceKey, []);
+            }
+            resourceLocations.get(resourceKey)!.push(location);
+          }
+        }
+      }
+    }
+    
+    console.log(`📍 Parsed location data for ${resourceLocations.size} resources`);
+    return resourceLocations;
+    
+  } catch (error) {
+    console.error('❌ Error parsing location data:', error);
+    return resourceLocations;
+  }
+}
+
+// Map action key from map.ts to actual resource keys from skills.ts
+async function mapActionToResources(actionKey: string, skillName: string): Promise<string[]> {
+  try {
+    const skillsPath = path.resolve(process.cwd(), 'files/data/skills.ts');
+    const skillsContent = await fs.readFile(skillsPath, 'utf-8');
+    
+    // Simple approach: search for all recipe keys that contain the action key
+    const resourceKeys: string[] = [];
+    
+    // Find all recipes in the file that contain the action key
+    const escapedActionKey = actionKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const pattern = new RegExp(`key:\\s*['"\`]([^'"\`]*${escapedActionKey}[^'"\`]*)['"\`]`, 'g');
+    const allRecipeMatches = skillsContent.matchAll(pattern);
+    
+    for (const match of allRecipeMatches) {
+      const recipeKey = match[1];
+      resourceKeys.push(recipeKey);
+      
+    }
+    
+    return resourceKeys;
+    
+  } catch (error) {
+    console.error(`❌ Error mapping action ${actionKey} to resources:`, error);
+    return [];
+  }
+}
+
 // Extract resource data from resources.ts file
 async function extractResourcesData(): Promise<any[]> {
   try {
@@ -397,7 +1009,7 @@ function getTierColor(tier: string): string {
 }
 
 // Generate individual resource page content
-function generateResourcePageContent(resource: any, recipes: RecipeInfo[] = []): string {
+function generateResourcePageContent(resource: any, recipes: RecipeInfo[] = [], craftingRecipes: CraftingRecipe[] = [], locations: LocationInfo[] = []): string {
   const tier = getResourceTier(resource.price);
   const tierColor = getTierColor(tier);
   
@@ -449,9 +1061,36 @@ This resource is commonly used in:
 - **Skill Development**: Used in leveling crafting professions
 ${resource.category === 'Fish' || resource.category === 'Farming' || resource.category === 'Foraging' || resource.category === 'Hunting' ? '- **Consumption**: Can be used as food or ingredient' : ''}
 
+${craftingRecipes.length > 0 ? `
+## Crafting
+
+This resource can be crafted using the following recipe${craftingRecipes.length > 1 ? 's' : ''}:
+
+${craftingRecipes.map(recipe => {
+  const materials = recipe.inputs.map(input => 
+    `- ${input.amount}x [${input.name}](${getItemUrl(input.key)})`
+  ).join('\\n');
+  
+  return `### ${recipe.skill}${recipe.requiredLevel > 1 ? ` (Level ${recipe.requiredLevel} required)` : ''}
+
+**Required Materials:**
+${materials}
+
+${recipe.xp ? `**XP Gained:** ${recipe.xp}` : ''}${recipe.steps ? `${recipe.xp ? ' | ' : ''}**Steps:** ${recipe.steps}` : ''}`;
+}).join('\\n\\n')}
+
+` : ''}
+
 ## Acquisition
 
-${getAcquisitionInfo(resource.category)}
+${getAcquisitionInfo(resource.category)}${locations.length > 0 ? `
+
+### Locations
+
+This resource can be found in the following areas:
+
+${locations.map(location => `**${location.name}**  
+${location.description}`).join('\\n\\n')}` : ''}
 
 ${recipes.length > 0 ? `
 ## Used in Recipes
@@ -632,7 +1271,15 @@ async function generateAllResourcePages() {
     console.log('🔧 Extracting recipe data from skills...');
     const recipesByResource = await extractRecipeData();
     
+    console.log('🔧 Parsing crafting recipes (how to make resources)...');
+    const craftingRecipes = await parseCraftingRecipes();
+    
+    console.log('🗺️  Parsing location data from map...');
+    const locationData = await parseLocationData();
+    
     console.log(`📋 Found recipes for ${recipesByResource.size} different resources`);
+    console.log(`📋 Found crafting recipes for ${craftingRecipes.size} different resources`);
+    console.log(`📍 Found location data for ${locationData.size} different resources`);
     
     if (resources.length === 0) {
       console.error('❌ No resources extracted from source files!');
@@ -648,7 +1295,9 @@ async function generateAllResourcePages() {
     for (const resource of resources) {
       try {
         const resourceRecipes = recipesByResource.get(resource.key) || [];
-        const pageContent = generateResourcePageContent(resource, resourceRecipes);
+        const resourceCraftingRecipes = craftingRecipes.get(resource.key) || [];
+        const resourceLocations = locationData.get(resource.key) || [];
+        const pageContent = generateResourcePageContent(resource, resourceRecipes, resourceCraftingRecipes, resourceLocations);
         const fileName = `${resource.key}.mdx`;
         const filePath = path.join(outputDir, fileName);
         

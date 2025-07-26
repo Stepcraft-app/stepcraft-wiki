@@ -41,7 +41,7 @@ function getItemUrl(itemKey: string): string {
   // Items typically include tools, armor, weapons, food, etc.
   const itemKeywords = [
     'pickaxe', 'axe', 'sickle', 'rod', 'sword', 'shield', 'helm', 'chest', 'legs', 'boots', 'gloves', 'ring', 'amulet', 'potion',
-    'pie', 'cake', 'bread', 'cookie', 'pizza', 'donut', 'spaghetti', 'jam', 'staff'
+    'pie', 'cake', 'bread', 'cookie', 'pizza', 'donut', 'spaghetti', 'jam', 'staff', 'fries'
   ];
   const isItem = itemKeywords.some(keyword => itemKey.includes(keyword));
   
