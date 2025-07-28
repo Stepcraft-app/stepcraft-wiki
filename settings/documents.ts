@@ -30,4 +30,8 @@ export const Documents: Paths[] = [
     title: "Enemies",
     href: "/enemies",    
   },
+  {
+    title: "Map",
+    href: "/map",    
+  },
 ]
