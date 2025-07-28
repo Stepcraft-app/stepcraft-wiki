@@ -26,4 +26,8 @@ export const Documents: Paths[] = [
     title: "Skills",
     href: "/skills",    
   },
+  {
+    title: "Enemies",
+    href: "/enemies",    
+  },
 ]

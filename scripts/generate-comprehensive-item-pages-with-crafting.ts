@@ -1036,8 +1036,6 @@ ${Object.entries(item.statBoost.stats).map(([stat, value]) => `| ${formatDisplay
   const craftingSection = recipes.length > 0
     ? `## Crafting
 
-This item can be crafted using the following recipe${recipes.length > 1 ? 's' : ''}:
-
 ${recipes.map(recipe => `### ${recipe.skill}${recipe.level ? ` (Level ${recipe.level} required)` : ''}
 
 **Required Materials:**
@@ -1066,8 +1064,6 @@ title: ${item.name}
 description: ${item.description || `${item.name} - ${item.category} in Stepcraft`}
 ---
 
-# ${item.name}
-
 <div className="flex items-start gap-6 mb-8">
   <div className="flex-shrink-0">
     <img src="${item.icon}" alt="${item.name}" className="w-24 h-24 border rounded-lg" />
@@ -1092,7 +1088,6 @@ description: ${item.description || `${item.name} - ${item.category} in Stepcraft
 | Property | Value |
 |----------|-------|
 | **Name** | ${item.name} |
-| **Key** | \`${item.key}\` |
 | **Category** | ${item.category} |
 | **Type** | ${formatDisplayName(item.type)} |${item.price > 0 ? `\n| **Price** | ${item.price.toLocaleString()} coins |` : ''}
 ${additionalProperties}
@@ -1104,15 +1099,10 @@ ${item.description}
 
 ${craftingSection}${statsSection}${statBoostSection}
 
-## Related Items
-
-Browse more items from the [${item.category}](/docs/items#${item.category.toLowerCase().replace(/\s+/g, '-')}) category or return to the [complete items catalog](/docs/items).
-
 ## Navigation
 
 - [← Back to Items Catalog](/docs/items)
 - [Browse ${item.category}](/docs/items#${item.category.toLowerCase().replace(/\s+/g, '-')})
-- [Search All Items](/search)
 `;
 }
 
