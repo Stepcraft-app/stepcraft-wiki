@@ -2,23 +2,17 @@ import { Paths } from "@/lib/pageroutes"
 
 export const Documents: Paths[] = [
   {
-    heading: "Getting Started",
-    title: "Welcome to Stepcraft",
+    title: "Getting Started",
     href: "/getting-started",
-  },
-  {
-    spacer: true,
   },
   {
     title: "Characters",
     href: "/characters",
-    heading: "Game Guide",
-    items: [
-      {
-        title: "Races",
-        href: "/races",
-      },      
-    ],
+    
+  },
+  {
+    title: "Races",
+    href: "/characters/races",
   },
   {
     title: "Items",
@@ -26,22 +20,10 @@ export const Documents: Paths[] = [
   },
   {
     title: "Resources",
-    href: "/resources",
-    items: [
-      {
-        title: "Catalog Overview",
-        href: "/catalog",
-      },
-    ],
+    href: "/resources",    
   },
   {
     title: "Skills",
-    href: "/skills",
-    items: [
-      {
-        title: "Individual Skills",
-        href: "/individual",
-      },
-    ],
+    href: "/skills",    
   },
 ]

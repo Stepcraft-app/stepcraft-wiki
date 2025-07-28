@@ -544,7 +544,7 @@ ${getSkillSynergies(skill.key)}
 
 ## Related Content
 
-- [📋 Complete Skills Catalog](/docs/skills) - Browse all skills
+- [📋 Skills Catalog](/docs/skills) - Browse all skills
 - [🔍 Search Skills](/search) - Find specific recipes and techniques
 - [📝 ${skill.category} Skills](/docs/skills#${skill.category.toLowerCase()}) - Browse similar skills
 

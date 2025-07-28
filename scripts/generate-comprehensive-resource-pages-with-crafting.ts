@@ -1130,7 +1130,7 @@ ${getRelatedSkills(resource.key, resource.category)}
 
 ## Related Resources
 
-Browse more resources from the [${resource.category}](/docs/resources#${resource.category.toLowerCase().replace(' ', '-')}) category or return to the [complete resources catalog](/docs/resources).
+Browse more resources from the [${resource.category}](/docs/resources#${resource.category.toLowerCase().replace(' ', '-')}) category or return to the [Resources Catalog](/docs/resources).
 
 ## Navigation
 

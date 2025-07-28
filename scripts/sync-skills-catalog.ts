@@ -193,7 +193,7 @@ ${categoryDescriptions[category] || 'Essential skills for character development.
   return table;
 }
 
-// Generate the complete skills catalog content
+// Generate the Skills Catalog content
 function generateSkillsCatalogContent(groupedSkills: Record<string, SkillInfo[]>, totalSkills: number): string {
   const categoryOrder = ['Gathering', 'Crafting', 'Combat', 'Social', 'Miscellaneous'];
   
@@ -222,7 +222,7 @@ function generateSkillsCatalogContent(groupedSkills: Record<string, SkillInfo[]>
   const totalRecipes = Object.values(groupedSkills).flat().reduce((sum, skill) => sum + skill.recipeCount, 0);
   
   return `---
-title: Complete Skills Catalog
+title: Skills Catalog
 description: Master all ${totalSkills} skills in Stepcraft - from gathering and crafting to combat and social abilities with ${totalRecipes} total recipes
 ---
 

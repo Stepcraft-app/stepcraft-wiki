@@ -167,7 +167,7 @@ function generateCatalogContent(groupedResources: Record<string, any[]>, totalRe
   }).join('\n\n');
   
   return `---
-title: Complete Resources Catalog
+title: Resources Catalog
 description: Complete catalog of all resources, materials, and crafting components in Stepcraft - ${totalResources} resources with prices and images
 ---
 
