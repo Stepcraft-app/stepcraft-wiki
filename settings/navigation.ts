@@ -6,6 +6,6 @@ export const Navigations = [
 ]
 
 export const GitHubLink = {
-  href: "https://github.com/maximilianocespedes/stepcraft-wiki",
+  href: "https://github.com/Stepcraft-app/stepcraft-wiki",
 }
 
