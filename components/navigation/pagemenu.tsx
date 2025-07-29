@@ -10,28 +10,32 @@ export default function PageMenu({ isSheet = false }) {
   if (!pathname.startsWith("/docs")) return null
 
   return (
-    <div className="mt-5 flex flex-col gap-3.5 pb-6">
+    <div className="flex flex-col gap-2 pb-6">
       {Routes.map((item, index) => {
         if ("spacer" in item) {
           return (
-            <div key={`spacer-${index}`} className="my-2 mr-3">
-              <hr className="border-t border-gray-300" />
+            <div key={`spacer-${index}`} className="my-3 mx-2">
+              <hr className="border-t border-border/60" />
             </div>
           )
         }
         return (
-          <div key={item.title + index} className="mb-2">
+          <div key={item.title + index} className="mb-1">
             {item.heading && (
-              <div className="mb-2 text-sm font-bold">{item.heading}</div>
+              <div className="mb-3 px-2 text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                {item.heading}
+              </div>
             )}
-            <SubLink
-              {...{
-                ...item,
-                href: `/docs${item.href}`,
-                level: 0,
-                isSheet,
-              }}
-            />
+            <div className="px-1">
+              <SubLink
+                {...{
+                  ...item,
+                  href: `/docs${item.href}`,
+                  level: 0,
+                  isSheet,
+                }}
+              />
+            </div>
           </div>
         )
       })}

@@ -43,7 +43,11 @@ export default function SubLink(
   const { title, href, items, noLink, level, isSheet } = props
 
   const Comp = (
-    <Anchor activeClassName="text-primary text-sm font-medium" href={href}>
+    <Anchor 
+      activeClassName="text-primary bg-primary/10 border-primary/20" 
+      className="flex items-center gap-2 px-3 py-2 text-sm rounded-lg border border-transparent hover:bg-muted/50 hover:border-border/50 transition-all duration-200 font-medium"
+      href={href}
+    >
       {title}
     </Anchor>
   )
@@ -55,7 +59,7 @@ export default function SubLink(
       Comp
     )
   ) : (
-    <h2 className="text-primary font-medium sm:text-sm">{title}</h2>
+    <h2 className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-foreground bg-muted/30 rounded-lg border border-border/30">{title}</h2>
   )
 
   if (!items) {
@@ -65,14 +69,16 @@ export default function SubLink(
   return (
     <div className="flex w-full flex-col gap-1">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-        <div className="mr-3 flex items-center gap-2 text-sm">
-          {titleOrLink}
+        <div className="flex items-center gap-1">
+          <div className="flex-1">
+            {titleOrLink}
+          </div>
           <CollapsibleTrigger asChild>
-            <Button className="ml-auto h-6 w-6" variant="link" size="icon">
+            <Button className="h-8 w-8 text-muted-foreground hover:text-foreground" variant="ghost" size="icon">
               {!isOpen ? (
-                <LuChevronRight className="h-[0.9rem] w-[0.9rem]" />
+                <LuChevronRight className="h-4 w-4" />
               ) : (
-                <LuChevronDown className="h-[0.9rem] w-[0.9rem]" />
+                <LuChevronDown className="h-4 w-4" />
               )}
               <span className="sr-only">Toggle</span>
             </Button>
@@ -81,8 +87,8 @@ export default function SubLink(
         <CollapsibleContent className="CollapsibleContent">
           <div
             className={cn(
-              "mt-2.5 flex flex-col items-start gap-3 border-l pl-4 text-sm text-neutral-800 dark:text-neutral-300/85",
-              level > 0 && "ml-1 border-l pl-4"
+              "mt-2 flex flex-col gap-1 border-l-2 border-border/40 pl-4 ml-2",
+              level > 0 && "ml-3 border-l-2 border-border/30 pl-3"
             )}
           >
             {items?.map((innerLink) => {
