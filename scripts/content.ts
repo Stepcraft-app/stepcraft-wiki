@@ -107,14 +107,36 @@ function removeCustomComponents() {
 function cleanContentForSearch(content: string): string {
   let cleanedContent = content
 
+  // Remove code blocks first
   cleanedContent = cleanedContent.replace(/```[\s\S]*?```/g, " ")
   cleanedContent = cleanedContent.replace(/`([^`]+)`/g, "$1")
+  
+  // Remove JSX/HTML elements and their attributes (including className, src, alt, etc.)
+  // This handles both self-closing and regular tags
+  cleanedContent = cleanedContent.replace(/<[^>]*>/g, " ")
+  
+  // Remove className and other attributes that might appear without proper tags
+  cleanedContent = cleanedContent.replace(/className\s*=\s*["'][^"']*["']/g, " ")
+  cleanedContent = cleanedContent.replace(/src\s*=\s*["'][^"']*["']/g, " ")
+  cleanedContent = cleanedContent.replace(/alt\s*=\s*["'][^"']*["']/g, " ")
+  cleanedContent = cleanedContent.replace(/href\s*=\s*["'][^"']*["']/g, " ")
+  cleanedContent = cleanedContent.replace(/id\s*=\s*["'][^"']*["']/g, " ")
+  
+  // Remove remaining attribute patterns
+  cleanedContent = cleanedContent.replace(/\w+\s*=\s*["'][^"']*["']/g, " ")
+  
+  // Remove markdown headers
   cleanedContent = cleanedContent.replace(/#{1,6}\s+(.+)/g, "$1")
+  
+  // Remove markdown formatting
   cleanedContent = cleanedContent
     .replace(/\*\*(.+?)\*\*/g, "$1")
     .replace(/_(.+?)_/g, "$1")
 
+  // Convert markdown links to just the text
   cleanedContent = cleanedContent.replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1")
+  
+  // Clean up table formatting
   cleanedContent = cleanedContent.replace(/\|.*\|[\r\n]?/gm, (match) => {
     return match
       .split("|")
@@ -123,17 +145,20 @@ function cleanContentForSearch(content: string): string {
       .join(" ")
   })
 
+  // Remove custom component tags
   cleanedContent = cleanedContent.replace(
     /<(?:Note|Card|Step|FileTree|Folder|File|Mermaid)[^>]*>([\s\S]*?)<\/(?:Note|Card|Step|FileTree|Folder|File|Mermaid)>/g,
     "$1"
   )
 
+  // Clean up list markers and blockquotes
   cleanedContent = cleanedContent
     .replace(/^\s*[-*+]\s+/gm, "")
     .replace(/^\s*\d+\.\s+/gm, "")
     .replace(/^\s*\[[x\s]\]\s+/gm, "")
     .replace(/^\s*>\s+/gm, "")
 
+  // Remove any remaining special characters and normalize whitespace
   cleanedContent = cleanedContent
     .replace(/[^\w\s-:]/g, " ")
     .replace(/\s+/g, " ")
