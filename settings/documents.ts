@@ -7,6 +7,10 @@ export const Documents: Paths[] = [
     heading: "Basics"
   },
   {
+    title: "⚠️ Disclaimer",
+    href: "/disclaimer",
+  },
+  {
     title: "🤝 How to Contribute",
     href: "/how-to-contribute",
   },
@@ -14,25 +18,7 @@ export const Documents: Paths[] = [
     spacer: true
   },
   {
-    title: "👤 Characters & Races",
-    href: "/characters",
-    heading: "Character Creation",
-    items: [
-      {
-        title: "Character Overview",
-        href: "",
-      },
-      {
-        title: "Races",
-        href: "/races",
-      },
-    ]
-  },
-  {
-    spacer: true
-  },
-  {
-    title: "🎯 Skills & Progression",
+    title: "🎯 Skills",
     href: "/skills",
     heading: "Character Development",
     items: [

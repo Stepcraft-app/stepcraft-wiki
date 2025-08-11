@@ -27,6 +27,7 @@ type BaseMdxFrontmatter = {
   title: string
   description: string
   keywords: string
+  lastVerified?: string | Date
 }
 
 async function parseMdx<Frontmatter>(rawMdx: string) {

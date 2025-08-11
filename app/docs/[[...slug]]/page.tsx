@@ -10,6 +10,7 @@ import Feedback from "@/components/navigation/feedback"
 import PageBreadcrumb from "@/components/navigation/pagebreadcrumb"
 import Pagination from "@/components/navigation/pagination"
 import Toc from "@/components/navigation/toc"
+import { LuCheck } from "react-icons/lu"
 
 type PageProps = {
   params: Promise<{ slug: string[] }>
@@ -30,7 +31,16 @@ export default async function Pages({ params }: PageProps) {
         <PageBreadcrumb paths={slug} />
 
         <Typography>
-          <h1 className="!mb-2 text-3xl !font-semibold">{frontmatter.title}</h1>
+          <h1 className="!mb-2 text-3xl !font-semibold flex items-center gap-2">
+            {frontmatter.title}
+            {frontmatter.lastVerified ? (
+              <LuCheck
+                className="size-5 text-emerald-600"
+                title={`Verified on ${frontmatter.lastVerified}`}
+                aria-label="Verified"
+              />
+            ) : null}
+          </h1>
           <p className="-mt-4 text-sm">{frontmatter.description}</p>
           <Separator className="my-6" />
           <section>{content}</section>
