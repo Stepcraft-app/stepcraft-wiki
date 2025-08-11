@@ -85,6 +85,35 @@ Link to other wiki pages:
 [Mining Skill](/docs/skills/individual/mining)
 ```
 
+## ✅ Mark Pages as Verified (lastVerified)
+
+We now support a verification badge to indicate that a page has been recently reviewed by a human contributor.
+
+### What it does
+- When you add `lastVerified` to the page frontmatter, a checkmark icon appears next to the page title.
+- Hovering the icon shows a tooltip like “Verified on YYYY-MM-DD”.
+
+### When to use it
+- After you have reviewed the page for accuracy against the current game version or patch.
+- After updating content that was previously outdated or incomplete.
+
+### Recommended format
+- Use ISO date format: `YYYY-MM-DD` (e.g., `2025-08-10`).
+
+### How to add it
+Add `lastVerified` to the frontmatter at the top of the file:
+
+```markdown
+---
+title: "Your Page Title"
+description: "Brief description for search results"
+keywords: [tag1, tag2]
+lastVerified: 2025-08-10
+---
+```
+
+That’s it — the page will display a green check icon next to the title.
+
 ## 🎯 Page Organization
 
 Our wiki is organized into these main sections:

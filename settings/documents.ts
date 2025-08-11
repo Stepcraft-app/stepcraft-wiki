@@ -7,6 +7,10 @@ export const Documents: Paths[] = [
     heading: "Basics"
   },
   {
+    title: "⚠️ Disclaimer",
+    href: "/disclaimer",
+  },
+  {
     title: "🤝 How to Contribute",
     href: "/how-to-contribute",
   },
