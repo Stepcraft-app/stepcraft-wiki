@@ -19,74 +19,7 @@ export const Documents: Paths[] = [
   },
   {
     title: "🎯 Skills",
-    href: "/skills",
-    heading: "Character Development",
-    items: [
-      {
-        title: "Skills Overview",
-        href: "",
-      },
-      {
-        title: "⚔️ Combat",
-        href: "/individual/combat",
-      },
-      {
-        title: "🎣 Fishing",
-        href: "/individual/fishing",
-      },
-      {
-        title: "⛏️ Mining",
-        href: "/individual/mining",
-      },
-      {
-        title: "🪓 Woodcutting",
-        href: "/individual/woodcutting",
-      },
-      {
-        title: "🌿 Foraging",
-        href: "/individual/foraging",
-      },
-      {
-        title: "🏹 Hunting",
-        href: "/individual/hunting",
-      },
-      {
-        title: "🌾 Farming",
-        href: "/individual/farming",
-      },
-      {
-        title: "🍳 Cooking",
-        href: "/individual/cooking",
-      },
-      {
-        title: "🔨 Smithing",
-        href: "/individual/smithing",
-      },
-      {
-        title: "⚒️ Crafting",
-        href: "/individual/crafting",
-      },
-      {
-        title: "🪚 Carpentry",
-        href: "/individual/carpentry",
-      },
-      {
-        title: "💍 Trinketry",
-        href: "/individual/trinketry",
-      },
-      {
-        title: "⚗️ Alchemy",
-        href: "/individual/alchemy",
-      },
-      {
-        title: "🏃 Agility",
-        href: "/individual/agility",
-      },
-      {
-        title: "🤝 Reputation",
-        href: "/individual/reputation",
-      },
-    ]
+    href: "/skills",   
   },
   {
     spacer: true
