@@ -22,12 +22,6 @@ export default function Home() {
       </p>
 
       <div className="mb-12 grid grid-cols-2 gap-6 sm:grid-cols-4 lg:grid-cols-6 max-w-6xl">
-        <Link href="/docs/characters" className="group">
-          <div className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 border border-blue-200 dark:border-blue-800 transition-all hover:shadow-lg hover:scale-105">
-            <Image src="/assets/icons/character.png" alt="Characters" width={48} height={48} className="mb-3 group-hover:scale-110 transition-transform" />
-            <span className="text-sm font-semibold text-blue-700 dark:text-blue-300">Characters</span>
-          </div>
-        </Link>
         
         <Link href="/docs/skills" className="group">
           <div className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 border border-green-200 dark:border-green-800 transition-all hover:shadow-lg hover:scale-105">
