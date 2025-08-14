@@ -59,10 +59,7 @@ export const Documents: Paths[] = [
     title: "🌿 Resources & Materials",
     href: "/resources",
     items: [
-      {
-        title: "Resources Catalog",
-        href: "",
-      },
+      
       {
         title: "🐟 Fish",
         href: "#fish",
