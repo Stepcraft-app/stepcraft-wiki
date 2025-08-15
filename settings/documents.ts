@@ -28,11 +28,7 @@ export const Documents: Paths[] = [
     title: "📦 Items & Equipment",
     href: "/items",
     heading: "Gear & Inventory",
-    items: [
-      {
-        title: "Items Catalog",
-        href: "",
-      },
+    items: [      
       {
         title: "⚔️ Weapons",
         href: "#weapons",
@@ -93,11 +89,7 @@ export const Documents: Paths[] = [
     title: "🗺️ World & Locations",
     href: "/map",
     heading: "Exploration",
-    items: [
-      {
-        title: "World Map",
-        href: "",
-      },
+    items: [      
       {
         title: "🌊 Coastal Regions",
         href: "#coastal--water-regions",
@@ -123,11 +115,7 @@ export const Documents: Paths[] = [
   {
     title: "👹 Enemies & Combat",
     href: "/enemies",
-    items: [
-      {
-        title: "Enemy Bestiary",
-        href: "",
-      },
+    items: [      
       {
         title: "🟢 T0-T1 (Beginner)",
         href: "#enemy-tiers",
