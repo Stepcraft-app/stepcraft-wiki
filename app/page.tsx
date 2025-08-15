@@ -69,16 +69,6 @@ export default function Home() {
         >
           🚀 Get Started
         </Link>
-        <Link
-          href="/docs/characters"
-          className={buttonVariants({ 
-            variant: "outline", 
-            className: "px-10 py-4 text-lg font-semibold border-2 hover:bg-muted/50 transition-all", 
-            size: "lg" 
-          })}
-        >
-          📖 Browse Wiki
-        </Link>
       </div>
     </section>
   )
