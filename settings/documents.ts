@@ -117,18 +117,6 @@ export const Documents: Paths[] = [
     href: "/enemies",
     items: [      
       {
-        title: "🟢 T0-T1 (Beginner)",
-        href: "#enemy-tiers",
-      },
-      {
-        title: "🔵 T2-T3 (Intermediate)",
-        href: "#enemy-tiers",
-      },
-      {
-        title: "🔴 T4-T6 (Advanced)",
-        href: "#enemy-tiers",
-      },
-      {
         title: "🟢 Slimes",
         href: "#enemy-types",
       },
