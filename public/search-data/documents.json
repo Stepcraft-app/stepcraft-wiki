@@ -45,20 +45,16 @@
     "slug": "/enemies/individual/amethyst_golem",
     "title": "Amethyst Golem",
     "description": "Amethyst Golem - Golem enemy in Stepcraft",
-    "content": "# Amethyst Golem\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/amethyst_golem/golem.png\" alt=\"Amethyst Golem\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Ultimate adversaries representing the pinnacle of combat difficulty.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Golem\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 1900 |\n| **Attack (ATK)** | 370 |\n| **Defense (DEF)** | 110 |\n| **Type** | Golem |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~1200 HP, 525 ATK, 290 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Golem](/docs/enemies#golems) enemies.\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Golems](/docs/enemies#golems)\n* [Search All Enemies](/search)\n",
+    "content": "# Amethyst Golem\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/amethyst_golem/golem.png\" alt=\"Amethyst Golem\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Ultimate adversaries representing the pinnacle of combat difficulty.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Golem\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 1900 |\n| **Attack (ATK)** | 370 |\n| **Defense (DEF)** | 110 |\n| **Type** | Golem |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~1200 HP, 525 ATK, 290 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "amethyst golem ultimate adversaries representing the pinnacle of combat difficulty type: golem difficulty: hard enemy stats stat value------ -------health points hp 1900attack atk 370defense def 110type golem combat information recommended player stats for comfortable combat against this enemy players should have approximately: 1200 hp 525 atk 290 def related content similar enemies browse other golem enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse golems search all enemies",
+      "cleanContent": "amethyst golem ultimate adversaries representing the pinnacle of combat difficulty type: golem difficulty: hard enemy stats stat value------ -------health points hp 1900attack atk 370defense def 110type golem combat information recommended player stats for comfortable combat against this enemy players should have approximately: 1200 hp 525 atk 290 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -73,20 +69,16 @@
     "slug": "/enemies/individual/bat_rat",
     "title": "Bat Rat",
     "description": "Bat Rat - Rat enemy in Stepcraft",
-    "content": "# Bat Rat\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/bat_rat/rat.png\" alt=\"Bat Rat\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Intermediate enemies requiring upgraded equipment and tactical awareness.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Rat\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 280 |\n| **Attack (ATK)** | 95 |\n| **Defense (DEF)** | 28 |\n\n| **Type** | Rat |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~300 HP, 95 ATK, 60 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Rat](/docs/enemies#rats) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Rats](/docs/enemies#rats)\n* [Search All Enemies](/search)\n",
+    "content": "# Bat Rat\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/bat_rat/rat.png\" alt=\"Bat Rat\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Intermediate enemies requiring upgraded equipment and tactical awareness.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Rat\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 280 |\n| **Attack (ATK)** | 95 |\n| **Defense (DEF)** | 28 |\n\n| **Type** | Rat |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~300 HP, 95 ATK, 60 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "bat rat intermediate enemies requiring upgraded equipment and tactical awareness type: rat difficulty: medium enemy stats stat value------ -------health points hp 280attack atk 95defense def 28 type rat combat information recommended player stats for comfortable combat against this enemy players should have approximately: 300 hp 95 atk 60 def related content similar enemies browse other rat enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse rats search all enemies",
+      "cleanContent": "bat rat intermediate enemies requiring upgraded equipment and tactical awareness type: rat difficulty: medium enemy stats stat value------ -------health points hp 280attack atk 95defense def 28 type rat combat information recommended player stats for comfortable combat against this enemy players should have approximately: 300 hp 95 atk 60 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -101,20 +93,16 @@
     "slug": "/enemies/individual/black_ghost",
     "title": "Black Ghost",
     "description": "Black Ghost - Ghost enemy in Stepcraft",
-    "content": "# Black Ghost\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/black_ghost/ghost.png\" alt=\"Black Ghost\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Challenging enemies that demand high-quality gear and combat experience.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Ghost\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 520 |\n| **Attack (ATK)** | 130 |\n| **Defense (DEF)** | 38 |\n\n| **Type** | Ghost |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~480 HP, 175 ATK, 95 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Ghost](/docs/enemies#ghosts) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Ghosts](/docs/enemies#ghosts)\n* [Search All Enemies](/search)\n",
+    "content": "# Black Ghost\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/black_ghost/ghost.png\" alt=\"Black Ghost\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Challenging enemies that demand high-quality gear and combat experience.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Ghost\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 520 |\n| **Attack (ATK)** | 130 |\n| **Defense (DEF)** | 38 |\n\n| **Type** | Ghost |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~480 HP, 175 ATK, 95 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "black ghost challenging enemies that demand high-quality gear and combat experience type: ghost difficulty: medium enemy stats stat value------ -------health points hp 520attack atk 130defense def 38 type ghost combat information recommended player stats for comfortable combat against this enemy players should have approximately: 480 hp 175 atk 95 def related content similar enemies browse other ghost enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse ghosts search all enemies",
+      "cleanContent": "black ghost challenging enemies that demand high-quality gear and combat experience type: ghost difficulty: medium enemy stats stat value------ -------health points hp 520attack atk 130defense def 38 type ghost combat information recommended player stats for comfortable combat against this enemy players should have approximately: 480 hp 175 atk 95 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -129,20 +117,16 @@
     "slug": "/enemies/individual/blue_ghost",
     "title": "Blue Ghost",
     "description": "Blue Ghost - Ghost enemy in Stepcraft",
-    "content": "# Blue Ghost\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/blue_ghost/ghost.png\" alt=\"Blue Ghost\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Formidable foes requiring end-game equipment and advanced strategies.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Ghost\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 700 |\n| **Attack (ATK)** | 160 |\n| **Defense (DEF)** | 45 |\n\n| **Type** | Ghost |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~650 HP, 250 ATK, 130 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Ghost](/docs/enemies#ghosts) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Ghosts](/docs/enemies#ghosts)\n* [Search All Enemies](/search)\n",
+    "content": "# Blue Ghost\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/blue_ghost/ghost.png\" alt=\"Blue Ghost\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Formidable foes requiring end-game equipment and advanced strategies.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Ghost\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 700 |\n| **Attack (ATK)** | 160 |\n| **Defense (DEF)** | 45 |\n\n| **Type** | Ghost |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~650 HP, 250 ATK, 130 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "blue ghost formidable foes requiring end-game equipment and advanced strategies type: ghost difficulty: hard enemy stats stat value------ -------health points hp 700attack atk 160defense def 45 type ghost combat information recommended player stats for comfortable combat against this enemy players should have approximately: 650 hp 250 atk 130 def related content similar enemies browse other ghost enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse ghosts search all enemies",
+      "cleanContent": "blue ghost formidable foes requiring end-game equipment and advanced strategies type: ghost difficulty: hard enemy stats stat value------ -------health points hp 700attack atk 160defense def 45 type ghost combat information recommended player stats for comfortable combat against this enemy players should have approximately: 650 hp 250 atk 130 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -157,20 +141,16 @@
     "slug": "/enemies/individual/brown_mushroom",
     "title": "Brown Mushroom",
     "description": "Brown Mushroom - Mushroom enemy in Stepcraft",
-    "content": "# Brown Mushroom\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/brown_mushroom/mushroom.png\" alt=\"Brown Mushroom\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Basic enemies that require basic combat skills and decent equipment.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Mushroom\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Easy\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 150 |\n| **Attack (ATK)** | 55 |\n| **Defense (DEF)** | 18 |\n\n| **Type** | Mushroom |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~230 HP, 60 ATK, 38 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Mushroom](/docs/enemies#mushrooms) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Mushrooms](/docs/enemies#mushrooms)\n* [Search All Enemies](/search)\n",
+    "content": "# Brown Mushroom\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/brown_mushroom/mushroom.png\" alt=\"Brown Mushroom\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Basic enemies that require basic combat skills and decent equipment.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Mushroom\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Easy\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 150 |\n| **Attack (ATK)** | 55 |\n| **Defense (DEF)** | 18 |\n\n| **Type** | Mushroom |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~230 HP, 60 ATK, 38 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "brown mushroom basic enemies that require basic combat skills and decent equipment type: mushroom difficulty: easy enemy stats stat value------ -------health points hp 150attack atk 55defense def 18 type mushroom combat information recommended player stats for comfortable combat against this enemy players should have approximately: 230 hp 60 atk 38 def related content similar enemies browse other mushroom enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse mushrooms search all enemies",
+      "cleanContent": "brown mushroom basic enemies that require basic combat skills and decent equipment type: mushroom difficulty: easy enemy stats stat value------ -------health points hp 150attack atk 55defense def 18 type mushroom combat information recommended player stats for comfortable combat against this enemy players should have approximately: 230 hp 60 atk 38 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -185,20 +165,16 @@
     "slug": "/enemies/individual/clay_golem",
     "title": "Clay Golem",
     "description": "Clay Golem - Golem enemy in Stepcraft",
-    "content": "# Clay Golem\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/clay_golem/golem.png\" alt=\"Clay Golem\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Elite enemies that challenge even veteran players with advanced gear.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Golem\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 1300 |\n| **Attack (ATK)** | 240 |\n| **Defense (DEF)** | 75 |\n\n| **Type** | Golem |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~900 HP, 370 ATK, 180 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Golem](/docs/enemies#golems) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Golems](/docs/enemies#golems)\n* [Search All Enemies](/search)\n",
+    "content": "# Clay Golem\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/clay_golem/golem.png\" alt=\"Clay Golem\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Elite enemies that challenge even veteran players with advanced gear.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Golem\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 1300 |\n| **Attack (ATK)** | 240 |\n| **Defense (DEF)** | 75 |\n\n| **Type** | Golem |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~900 HP, 370 ATK, 180 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "clay golem elite enemies that challenge even veteran players with advanced gear type: golem difficulty: hard enemy stats stat value------ -------health points hp 1300attack atk 240defense def 75 type golem combat information recommended player stats for comfortable combat against this enemy players should have approximately: 900 hp 370 atk 180 def related content similar enemies browse other golem enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse golems search all enemies",
+      "cleanContent": "clay golem elite enemies that challenge even veteran players with advanced gear type: golem difficulty: hard enemy stats stat value------ -------health points hp 1300attack atk 240defense def 75 type golem combat information recommended player stats for comfortable combat against this enemy players should have approximately: 900 hp 370 atk 180 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -213,20 +189,16 @@
     "slug": "/enemies/individual/common_rat",
     "title": "Common Rat",
     "description": "Common Rat - Rat enemy in Stepcraft",
-    "content": "# Common Rat\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/common_rat/rat.png\" alt=\"Common Rat\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Intermediate enemies requiring upgraded equipment and tactical awareness.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Rat\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 220 |\n| **Attack (ATK)** | 85 |\n| **Defense (DEF)** | 22 |\n\n| **Type** | Rat |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~300 HP, 95 ATK, 60 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Rat](/docs/enemies#rats) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Rats](/docs/enemies#rats)\n* [Search All Enemies](/search)\n",
+    "content": "# Common Rat\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/common_rat/rat.png\" alt=\"Common Rat\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Intermediate enemies requiring upgraded equipment and tactical awareness.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Rat\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 220 |\n| **Attack (ATK)** | 85 |\n| **Defense (DEF)** | 22 |\n\n| **Type** | Rat |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~300 HP, 95 ATK, 60 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "common rat intermediate enemies requiring upgraded equipment and tactical awareness type: rat difficulty: medium enemy stats stat value------ -------health points hp 220attack atk 85defense def 22 type rat combat information recommended player stats for comfortable combat against this enemy players should have approximately: 300 hp 95 atk 60 def related content similar enemies browse other rat enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse rats search all enemies",
+      "cleanContent": "common rat intermediate enemies requiring upgraded equipment and tactical awareness type: rat difficulty: medium enemy stats stat value------ -------health points hp 220attack atk 85defense def 22 type rat combat information recommended player stats for comfortable combat against this enemy players should have approximately: 300 hp 95 atk 60 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -241,20 +213,16 @@
     "slug": "/enemies/individual/earth_lich",
     "title": "Earth Lich",
     "description": "Earth Lich - Lich enemy in Stepcraft",
-    "content": "# Earth Lich\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/earth_lich/lich.png\" alt=\"Earth Lich\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Formidable foes requiring end-game equipment and advanced strategies.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Lich\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 780 |\n| **Attack (ATK)** | 165 |\n| **Defense (DEF)** | 48 |\n\n| **Type** | Lich |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~650 HP, 250 ATK, 130 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Lich](/docs/enemies#lichs) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Lichs](/docs/enemies#lichs)\n* [Search All Enemies](/search)\n",
+    "content": "# Earth Lich\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/earth_lich/lich.png\" alt=\"Earth Lich\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Formidable foes requiring end-game equipment and advanced strategies.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Lich\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 780 |\n| **Attack (ATK)** | 165 |\n| **Defense (DEF)** | 48 |\n\n| **Type** | Lich |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~650 HP, 250 ATK, 130 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "earth lich formidable foes requiring end-game equipment and advanced strategies type: lich difficulty: hard enemy stats stat value------ -------health points hp 780attack atk 165defense def 48 type lich combat information recommended player stats for comfortable combat against this enemy players should have approximately: 650 hp 250 atk 130 def related content similar enemies browse other lich enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse lichs search all enemies",
+      "cleanContent": "earth lich formidable foes requiring end-game equipment and advanced strategies type: lich difficulty: hard enemy stats stat value------ -------health points hp 780attack atk 165defense def 48 type lich combat information recommended player stats for comfortable combat against this enemy players should have approximately: 650 hp 250 atk 130 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -269,20 +237,16 @@
     "slug": "/enemies/individual/flame_lich",
     "title": "Flame Lich",
     "description": "Flame Lich - Lich enemy in Stepcraft",
-    "content": "# Flame Lich\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/flame_lich/lich.png\" alt=\"Flame Lich\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Elite enemies that challenge even veteran players with advanced gear.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Lich\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 1100 |\n| **Attack (ATK)** | 220 |\n| **Defense (DEF)** | 65 |\n\n| **Type** | Lich |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~900 HP, 370 ATK, 180 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Lich](/docs/enemies#lichs) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Lichs](/docs/enemies#lichs)\n* [Search All Enemies](/search)\n",
+    "content": "# Flame Lich\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/flame_lich/lich.png\" alt=\"Flame Lich\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Elite enemies that challenge even veteran players with advanced gear.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Lich\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 1100 |\n| **Attack (ATK)** | 220 |\n| **Defense (DEF)** | 65 |\n\n| **Type** | Lich |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~900 HP, 370 ATK, 180 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "flame lich elite enemies that challenge even veteran players with advanced gear type: lich difficulty: hard enemy stats stat value------ -------health points hp 1100attack atk 220defense def 65 type lich combat information recommended player stats for comfortable combat against this enemy players should have approximately: 900 hp 370 atk 180 def related content similar enemies browse other lich enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse lichs search all enemies",
+      "cleanContent": "flame lich elite enemies that challenge even veteran players with advanced gear type: lich difficulty: hard enemy stats stat value------ -------health points hp 1100attack atk 220defense def 65 type lich combat information recommended player stats for comfortable combat against this enemy players should have approximately: 900 hp 370 atk 180 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -297,20 +261,16 @@
     "slug": "/enemies/individual/flame_slime",
     "title": "Flame Slime",
     "description": "Flame Slime - Slime enemy in Stepcraft",
-    "content": "# Flame Slime\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/flame_slime/slime.png\" alt=\"Flame Slime\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Challenging enemies that demand high-quality gear and combat experience.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Slime\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 480 |\n| **Attack (ATK)** | 125 |\n| **Defense (DEF)** | 36 |\n\n| **Type** | Slime |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~480 HP, 175 ATK, 95 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Slime](/docs/enemies#slimes) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Slimes](/docs/enemies#slimes)\n* [Search All Enemies](/search)\n",
+    "content": "# Flame Slime\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/flame_slime/slime.png\" alt=\"Flame Slime\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Challenging enemies that demand high-quality gear and combat experience.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Slime\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 480 |\n| **Attack (ATK)** | 125 |\n| **Defense (DEF)** | 36 |\n\n| **Type** | Slime |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~480 HP, 175 ATK, 95 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "flame slime challenging enemies that demand high-quality gear and combat experience type: slime difficulty: medium enemy stats stat value------ -------health points hp 480attack atk 125defense def 36 type slime combat information recommended player stats for comfortable combat against this enemy players should have approximately: 480 hp 175 atk 95 def related content similar enemies browse other slime enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse slimes search all enemies",
+      "cleanContent": "flame slime challenging enemies that demand high-quality gear and combat experience type: slime difficulty: medium enemy stats stat value------ -------health points hp 480attack atk 125defense def 36 type slime combat information recommended player stats for comfortable combat against this enemy players should have approximately: 480 hp 175 atk 95 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -325,20 +285,16 @@
     "slug": "/enemies/individual/ghost_slime",
     "title": "Ghost Slime",
     "description": "Ghost Slime - Slime enemy in Stepcraft",
-    "content": "# Ghost Slime\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/ghost_slime/slime.png\" alt=\"Ghost Slime\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Basic enemies that require basic combat skills and decent equipment.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Slime\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Easy\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 180 |\n| **Attack (ATK)** | 60 |\n| **Defense (DEF)** | 20 |\n\n| **Type** | Slime |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~230 HP, 60 ATK, 38 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Slime](/docs/enemies#slimes) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Slimes](/docs/enemies#slimes)\n* [Search All Enemies](/search)\n",
+    "content": "# Ghost Slime\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/ghost_slime/slime.png\" alt=\"Ghost Slime\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Basic enemies that require basic combat skills and decent equipment.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Slime\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Easy\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 180 |\n| **Attack (ATK)** | 60 |\n| **Defense (DEF)** | 20 |\n\n| **Type** | Slime |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~230 HP, 60 ATK, 38 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "ghost slime basic enemies that require basic combat skills and decent equipment type: slime difficulty: easy enemy stats stat value------ -------health points hp 180attack atk 60defense def 20 type slime combat information recommended player stats for comfortable combat against this enemy players should have approximately: 230 hp 60 atk 38 def related content similar enemies browse other slime enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse slimes search all enemies",
+      "cleanContent": "ghost slime basic enemies that require basic combat skills and decent equipment type: slime difficulty: easy enemy stats stat value------ -------health points hp 180attack atk 60defense def 20 type slime combat information recommended player stats for comfortable combat against this enemy players should have approximately: 230 hp 60 atk 38 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -353,20 +309,16 @@
     "slug": "/enemies/individual/green_slime",
     "title": "Green Slime",
     "description": "Green Slime - Slime enemy in Stepcraft",
-    "content": "# Green Slime\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/green_slime/slime.png\" alt=\"Green Slime\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Beginner-friendly enemies perfect for new players learning combat mechanics.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Slime\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Easy\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 60 |\n| **Attack (ATK)** | 10 |\n| **Defense (DEF)** | 3 |\n| **Type** | Slime |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~170 HP, 40 ATK, 25 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Slime](/docs/enemies#slimes) enemies.\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Slimes](/docs/enemies#slimes)\n* [Search All Enemies](/search)\n",
+    "content": "# Green Slime\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/green_slime/slime.png\" alt=\"Green Slime\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Beginner-friendly enemies perfect for new players learning combat mechanics.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Slime\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Easy\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 60 |\n| **Attack (ATK)** | 10 |\n| **Defense (DEF)** | 3 |\n| **Type** | Slime |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~170 HP, 40 ATK, 25 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "green slime beginner-friendly enemies perfect for new players learning combat mechanics type: slime difficulty: easy enemy stats stat value------ -------health points hp 60attack atk 10defense def 3type slime combat information recommended player stats for comfortable combat against this enemy players should have approximately: 170 hp 40 atk 25 def related content similar enemies browse other slime enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse slimes search all enemies",
+      "cleanContent": "green slime beginner-friendly enemies perfect for new players learning combat mechanics type: slime difficulty: easy enemy stats stat value------ -------health points hp 60attack atk 10defense def 3type slime combat information recommended player stats for comfortable combat against this enemy players should have approximately: 170 hp 40 atk 25 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -381,20 +333,16 @@
     "slug": "/enemies/individual/ice_lich",
     "title": "Ice Lich",
     "description": "Ice Lich - Lich enemy in Stepcraft",
-    "content": "# Ice Lich\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/ice_lich/lich.png\" alt=\"Ice Lich\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Formidable foes requiring end-game equipment and advanced strategies.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Lich\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 900 |\n| **Attack (ATK)** | 180 |\n| **Defense (DEF)** | 55 |\n\n| **Type** | Lich |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~650 HP, 250 ATK, 130 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Lich](/docs/enemies#lichs) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Lichs](/docs/enemies#lichs)\n* [Search All Enemies](/search)\n",
+    "content": "# Ice Lich\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/ice_lich/lich.png\" alt=\"Ice Lich\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Formidable foes requiring end-game equipment and advanced strategies.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Lich\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 900 |\n| **Attack (ATK)** | 180 |\n| **Defense (DEF)** | 55 |\n\n| **Type** | Lich |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~650 HP, 250 ATK, 130 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "ice lich formidable foes requiring end-game equipment and advanced strategies type: lich difficulty: hard enemy stats stat value------ -------health points hp 900attack atk 180defense def 55 type lich combat information recommended player stats for comfortable combat against this enemy players should have approximately: 650 hp 250 atk 130 def related content similar enemies browse other lich enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse lichs search all enemies",
+      "cleanContent": "ice lich formidable foes requiring end-game equipment and advanced strategies type: lich difficulty: hard enemy stats stat value------ -------health points hp 900attack atk 180defense def 55 type lich combat information recommended player stats for comfortable combat against this enemy players should have approximately: 650 hp 250 atk 130 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -409,20 +357,16 @@
     "slug": "/enemies/individual/metal_golem",
     "title": "Metal Golem",
     "description": "Metal Golem - Golem enemy in Stepcraft",
-    "content": "# Metal Golem\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/metal_golem/golem.png\" alt=\"Metal Golem\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Ultimate adversaries representing the pinnacle of combat difficulty.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Golem\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 1600 |\n| **Attack (ATK)** | 330 |\n| **Defense (DEF)** | 90 |\n\n| **Type** | Golem |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~1200 HP, 525 ATK, 290 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Golem](/docs/enemies#golems) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Golems](/docs/enemies#golems)\n* [Search All Enemies](/search)\n",
+    "content": "# Metal Golem\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/metal_golem/golem.png\" alt=\"Metal Golem\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Ultimate adversaries representing the pinnacle of combat difficulty.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Golem\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 1600 |\n| **Attack (ATK)** | 330 |\n| **Defense (DEF)** | 90 |\n\n| **Type** | Golem |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~1200 HP, 525 ATK, 290 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "metal golem ultimate adversaries representing the pinnacle of combat difficulty type: golem difficulty: hard enemy stats stat value------ -------health points hp 1600attack atk 330defense def 90 type golem combat information recommended player stats for comfortable combat against this enemy players should have approximately: 1200 hp 525 atk 290 def related content similar enemies browse other golem enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse golems search all enemies",
+      "cleanContent": "metal golem ultimate adversaries representing the pinnacle of combat difficulty type: golem difficulty: hard enemy stats stat value------ -------health points hp 1600attack atk 330defense def 90 type golem combat information recommended player stats for comfortable combat against this enemy players should have approximately: 1200 hp 525 atk 290 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -437,20 +381,16 @@
     "slug": "/enemies/individual/oak_ent",
     "title": "Oak Ent",
     "description": "Oak Ent - Ent enemy in Stepcraft",
-    "content": "# Oak Ent\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/oak_ent/ent.png\" alt=\"Oak Ent\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Intermediate enemies requiring upgraded equipment and tactical awareness.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Ent\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 350 |\n| **Attack (ATK)** | 90 |\n| **Defense (DEF)** | 30 |\n\n| **Type** | Ent |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~300 HP, 95 ATK, 60 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Ent](/docs/enemies#ents) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Ents](/docs/enemies#ents)\n* [Search All Enemies](/search)\n",
+    "content": "# Oak Ent\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/oak_ent/ent.png\" alt=\"Oak Ent\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Intermediate enemies requiring upgraded equipment and tactical awareness.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Ent\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 350 |\n| **Attack (ATK)** | 90 |\n| **Defense (DEF)** | 30 |\n\n| **Type** | Ent |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~300 HP, 95 ATK, 60 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "oak ent intermediate enemies requiring upgraded equipment and tactical awareness type: ent difficulty: medium enemy stats stat value------ -------health points hp 350attack atk 90defense def 30 type ent combat information recommended player stats for comfortable combat against this enemy players should have approximately: 300 hp 95 atk 60 def related content similar enemies browse other ent enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse ents search all enemies",
+      "cleanContent": "oak ent intermediate enemies requiring upgraded equipment and tactical awareness type: ent difficulty: medium enemy stats stat value------ -------health points hp 350attack atk 90defense def 30 type ent combat information recommended player stats for comfortable combat against this enemy players should have approximately: 300 hp 95 atk 60 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -465,20 +405,16 @@
     "slug": "/enemies/individual/pine_ent",
     "title": "Pine Ent",
     "description": "Pine Ent - Ent enemy in Stepcraft",
-    "content": "# Pine Ent\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/pine_ent/ent.png\" alt=\"Pine Ent\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Challenging enemies that demand high-quality gear and combat experience.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Ent\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 450 |\n| **Attack (ATK)** | 120 |\n| **Defense (DEF)** | 35 |\n\n| **Type** | Ent |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~480 HP, 175 ATK, 95 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Ent](/docs/enemies#ents) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Ents](/docs/enemies#ents)\n* [Search All Enemies](/search)\n",
+    "content": "# Pine Ent\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/pine_ent/ent.png\" alt=\"Pine Ent\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Challenging enemies that demand high-quality gear and combat experience.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Ent\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 450 |\n| **Attack (ATK)** | 120 |\n| **Defense (DEF)** | 35 |\n\n| **Type** | Ent |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~480 HP, 175 ATK, 95 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "pine ent challenging enemies that demand high-quality gear and combat experience type: ent difficulty: medium enemy stats stat value------ -------health points hp 450attack atk 120defense def 35 type ent combat information recommended player stats for comfortable combat against this enemy players should have approximately: 480 hp 175 atk 95 def related content similar enemies browse other ent enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse ents search all enemies",
+      "cleanContent": "pine ent challenging enemies that demand high-quality gear and combat experience type: ent difficulty: medium enemy stats stat value------ -------health points hp 450attack atk 120defense def 35 type ent combat information recommended player stats for comfortable combat against this enemy players should have approximately: 480 hp 175 atk 95 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -493,20 +429,16 @@
     "slug": "/enemies/individual/purple_mushroom",
     "title": "Purple Mushroom",
     "description": "Purple Mushroom - Mushroom enemy in Stepcraft",
-    "content": "# Purple Mushroom\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/purple_mushroom/mushroom.png\" alt=\"Purple Mushroom\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Basic enemies that require basic combat skills and decent equipment.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Mushroom\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Easy\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 190 |\n| **Attack (ATK)** | 65 |\n| **Defense (DEF)** | 22 |\n\n| **Type** | Mushroom |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~230 HP, 60 ATK, 38 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Mushroom](/docs/enemies#mushrooms) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Mushrooms](/docs/enemies#mushrooms)\n* [Search All Enemies](/search)\n",
+    "content": "# Purple Mushroom\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/purple_mushroom/mushroom.png\" alt=\"Purple Mushroom\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Basic enemies that require basic combat skills and decent equipment.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Mushroom\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Easy\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 190 |\n| **Attack (ATK)** | 65 |\n| **Defense (DEF)** | 22 |\n\n| **Type** | Mushroom |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~230 HP, 60 ATK, 38 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "purple mushroom basic enemies that require basic combat skills and decent equipment type: mushroom difficulty: easy enemy stats stat value------ -------health points hp 190attack atk 65defense def 22 type mushroom combat information recommended player stats for comfortable combat against this enemy players should have approximately: 230 hp 60 atk 38 def related content similar enemies browse other mushroom enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse mushrooms search all enemies",
+      "cleanContent": "purple mushroom basic enemies that require basic combat skills and decent equipment type: mushroom difficulty: easy enemy stats stat value------ -------health points hp 190attack atk 65defense def 22 type mushroom combat information recommended player stats for comfortable combat against this enemy players should have approximately: 230 hp 60 atk 38 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -521,20 +453,16 @@
     "slug": "/enemies/individual/red_ghost",
     "title": "Red Ghost",
     "description": "Red Ghost - Ghost enemy in Stepcraft",
-    "content": "# Red Ghost\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/red_ghost/ghost.png\" alt=\"Red Ghost\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Formidable foes requiring end-game equipment and advanced strategies.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Ghost\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 850 |\n| **Attack (ATK)** | 175 |\n| **Defense (DEF)** | 52 |\n\n| **Type** | Ghost |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~650 HP, 250 ATK, 130 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Ghost](/docs/enemies#ghosts) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Ghosts](/docs/enemies#ghosts)\n* [Search All Enemies](/search)\n",
+    "content": "# Red Ghost\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/red_ghost/ghost.png\" alt=\"Red Ghost\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Formidable foes requiring end-game equipment and advanced strategies.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Ghost\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Hard\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 850 |\n| **Attack (ATK)** | 175 |\n| **Defense (DEF)** | 52 |\n\n| **Type** | Ghost |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~650 HP, 250 ATK, 130 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "red ghost formidable foes requiring end-game equipment and advanced strategies type: ghost difficulty: hard enemy stats stat value------ -------health points hp 850attack atk 175defense def 52 type ghost combat information recommended player stats for comfortable combat against this enemy players should have approximately: 650 hp 250 atk 130 def related content similar enemies browse other ghost enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse ghosts search all enemies",
+      "cleanContent": "red ghost formidable foes requiring end-game equipment and advanced strategies type: ghost difficulty: hard enemy stats stat value------ -------health points hp 850attack atk 175defense def 52 type ghost combat information recommended player stats for comfortable combat against this enemy players should have approximately: 650 hp 250 atk 130 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -549,20 +477,16 @@
     "slug": "/enemies/individual/red_mushroom",
     "title": "Red Mushroom",
     "description": "Red Mushroom - Mushroom enemy in Stepcraft",
-    "content": "# Red Mushroom\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/red_mushroom/mushroom.png\" alt=\"Red Mushroom\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Beginner-friendly enemies perfect for new players learning combat mechanics.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Mushroom\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Easy\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 120 |\n| **Attack (ATK)** | 40 |\n| **Defense (DEF)** | 12 |\n\n| **Type** | Mushroom |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~170 HP, 40 ATK, 25 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Mushroom](/docs/enemies#mushrooms) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Mushrooms](/docs/enemies#mushrooms)\n* [Search All Enemies](/search)\n",
+    "content": "# Red Mushroom\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/red_mushroom/mushroom.png\" alt=\"Red Mushroom\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Beginner-friendly enemies perfect for new players learning combat mechanics.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Mushroom\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Easy\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 120 |\n| **Attack (ATK)** | 40 |\n| **Defense (DEF)** | 12 |\n\n| **Type** | Mushroom |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~170 HP, 40 ATK, 25 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "red mushroom beginner-friendly enemies perfect for new players learning combat mechanics type: mushroom difficulty: easy enemy stats stat value------ -------health points hp 120attack atk 40defense def 12 type mushroom combat information recommended player stats for comfortable combat against this enemy players should have approximately: 170 hp 40 atk 25 def related content similar enemies browse other mushroom enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse mushrooms search all enemies",
+      "cleanContent": "red mushroom beginner-friendly enemies perfect for new players learning combat mechanics type: mushroom difficulty: easy enemy stats stat value------ -------health points hp 120attack atk 40defense def 12 type mushroom combat information recommended player stats for comfortable combat against this enemy players should have approximately: 170 hp 40 atk 25 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -577,20 +501,16 @@
     "slug": "/enemies/individual/rotten_rat",
     "title": "Rotten Rat",
     "description": "Rotten Rat - Rat enemy in Stepcraft",
-    "content": "# Rotten Rat\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/rotten_rat/rat.png\" alt=\"Rotten Rat\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Challenging enemies that demand high-quality gear and combat experience.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Rat\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 420 |\n| **Attack (ATK)** | 115 |\n| **Defense (DEF)** | 32 |\n\n| **Type** | Rat |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~480 HP, 175 ATK, 95 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Rat](/docs/enemies#rats) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Rats](/docs/enemies#rats)\n* [Search All Enemies](/search)\n",
+    "content": "# Rotten Rat\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/rotten_rat/rat.png\" alt=\"Rotten Rat\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Challenging enemies that demand high-quality gear and combat experience.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Rat\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 420 |\n| **Attack (ATK)** | 115 |\n| **Defense (DEF)** | 32 |\n\n| **Type** | Rat |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~480 HP, 175 ATK, 95 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "rotten rat challenging enemies that demand high-quality gear and combat experience type: rat difficulty: medium enemy stats stat value------ -------health points hp 420attack atk 115defense def 32 type rat combat information recommended player stats for comfortable combat against this enemy players should have approximately: 480 hp 175 atk 95 def related content similar enemies browse other rat enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse rats search all enemies",
+      "cleanContent": "rotten rat challenging enemies that demand high-quality gear and combat experience type: rat difficulty: medium enemy stats stat value------ -------health points hp 420attack atk 115defense def 32 type rat combat information recommended player stats for comfortable combat against this enemy players should have approximately: 480 hp 175 atk 95 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
@@ -605,20 +525,16 @@
     "slug": "/enemies/individual/stick_ent",
     "title": "Stick Ent",
     "description": "Stick Ent - Ent enemy in Stepcraft",
-    "content": "# Stick Ent\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/stick_ent/ent.png\" alt=\"Stick Ent\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Intermediate enemies requiring upgraded equipment and tactical awareness.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Ent\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 280 |\n| **Attack (ATK)** | 80 |\n| **Defense (DEF)** | 25 |\n\n| **Type** | Ent |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~300 HP, 95 ATK, 60 DEF**\n\n## Related Content\n\n### Similar Enemies\n\nBrowse other [Ent](/docs/enemies#ents) enemies\n\n### Combat Resources\n\n* [Equipment and Gear](/docs/items)\n* [Combat Strategies](/docs/getting-started)\n\n## Navigation\n\n* [← Back to Enemies Catalog](/docs/enemies)\n* [Browse Ents](/docs/enemies#ents)\n* [Search All Enemies](/search)\n",
+    "content": "# Stick Ent\n\n<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/enemies/stick_ent/ent.png\" alt=\"Stick Ent\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Intermediate enemies requiring upgraded equipment and tactical awareness.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Type:** Ent\n        </span>\n\n        <span className=\"px-2 py-1 bg-red-100 dark:bg-red-900 rounded-md\">\n          **Difficulty:** Medium\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Enemy Stats\n\n| Stat | Value |\n|------|-------|\n| **Health Points (HP)** | 280 |\n| **Attack (ATK)** | 80 |\n| **Defense (DEF)** | 25 |\n\n| **Type** | Ent |\n\n## Combat Information\n\n### Recommended Player Stats\n\nFor comfortable combat against this enemy, players should have approximately:\n\n* **~300 HP, 95 ATK, 60 DEF**\n",
     "_searchMeta": {
-      "cleanContent": "stick ent intermediate enemies requiring upgraded equipment and tactical awareness type: ent difficulty: medium enemy stats stat value------ -------health points hp 280attack atk 80defense def 25 type ent combat information recommended player stats for comfortable combat against this enemy players should have approximately: 300 hp 95 atk 60 def related content similar enemies browse other ent enemies combat resources equipment and gear combat strategies navigation back to enemies catalog browse ents search all enemies",
+      "cleanContent": "stick ent intermediate enemies requiring upgraded equipment and tactical awareness type: ent difficulty: medium enemy stats stat value------ -------health points hp 280attack atk 80defense def 25 type ent combat information recommended player stats for comfortable combat against this enemy players should have approximately: 300 hp 95 atk 60 def",
       "headings": [
         "Enemy Stats",
-        "Combat Information",
-        "Related Content",
-        "Navigation"
+        "Combat Information"
       ],
       "keywords": [
         "Enemy Stats",
         "Combat Information",
-        "Related Content",
-        "Navigation",
         "Type:",
         "Difficulty:",
         "Health Points (HP)",
