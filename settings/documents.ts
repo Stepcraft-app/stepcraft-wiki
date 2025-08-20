@@ -22,6 +22,10 @@ export const Documents: Paths[] = [
     href: "/skills",   
   },
   {
+    title: "📜 Quests",
+    href: "/quests",
+  },
+  {
     spacer: true
   },
   {
