@@ -1,201 +1,192 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
-import { Documents } from "@/settings/documents"
-import { LuFileText, LuSearch } from "react-icons/lu"
+import { useEffect, useMemo, useRef, useState } from "react"
+import { LuSearch, LuX } from "react-icons/lu"
 
-import { advanceSearch, cn, debounce, highlight, search } from "@/lib/utils"
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+import { cn, debounce, highlight, searchItems, SearchResult } from "@/lib/utils"
 import { Input } from "@/components/ui/input"
-import { ScrollArea } from "@/components/ui/scroll-area"
 import Anchor from "@/components/navigation/anchor"
 
-interface Document {
-  title?: string
-  href?: string
-  spacer?: boolean
-  items?: Document[]
-  noLink?: boolean
-}
+const MIN_SEARCH_LENGTH = 3
 
 export default function Search() {
   const [searchedInput, setSearchedInput] = useState("")
   const [isOpen, setIsOpen] = useState(false)
-  const [filteredResults, setFilteredResults] = useState<search[]>([])
+  const [filteredResults, setFilteredResults] = useState<SearchResult[]>([])
   const [isLoading, setIsLoading] = useState(false)
+  const [isFocused, setIsFocused] = useState(false)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const resultsRef = useRef<HTMLDivElement>(null)
 
   const debouncedSearch = useMemo(
     () =>
       debounce((input) => {
         setIsLoading(true)
-        const results = advanceSearch(input.trim())
+        const results = searchItems(input.trim())
         setFilteredResults(results)
         setIsLoading(false)
-      }, 300),
+      }, 200),
     []
   )
 
+  const clearSearch = () => {
+    setSearchedInput("")
+    setIsOpen(false)
+    setIsFocused(false)
+  }
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (isOpen && event.key === "Enter" && filteredResults.length > 2) {
+      // Open search with Cmd+K or Ctrl+K
+      if ((event.metaKey || event.ctrlKey) && event.key === "k") {
+        event.preventDefault()
+        inputRef.current?.focus()
+        setIsFocused(true)
+        return
+      }
+
+      // Escape to close
+      if (event.key === "Escape") {
+        clearSearch()
+        inputRef.current?.blur()
+        return
+      }
+
+      // Enter to navigate to first result
+      if (isFocused && event.key === "Enter" && filteredResults.length > 0) {
         const selected = filteredResults[0]
-        if ("href" in selected) {
-          window.location.href = `/docs${selected.href}`
-          setIsOpen(false)
-        }
+        window.location.href = `/docs${selected.href}`
+        clearSearch()
       }
     }
 
     window.addEventListener("keydown", handleKeyDown)
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown)
-    }
-  }, [isOpen, filteredResults])
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [isFocused, filteredResults])
 
   useEffect(() => {
-    if (searchedInput.length >= 3) {
+    if (searchedInput.length >= MIN_SEARCH_LENGTH) {
+      // Search if input is at least 3 characters
       debouncedSearch(searchedInput)
-    } else {
+      setIsOpen(true)
+    } else if (searchedInput.length > 0) {
+      // Show message if input is 1-2 characters
       setFilteredResults([])
+      setIsOpen(true)
+    } else {
+      // Close dropdown if input is empty
+      setFilteredResults([])
+      setIsOpen(false)
     }
   }, [searchedInput, debouncedSearch])
 
-  function renderDocuments(
-    documents: Document[],
-    parentHref: string = "/docs"
-  ): React.ReactNode[] {
-    if (!Array.isArray(documents) || documents.length === 0) {
-      return []
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node
+      if (
+        resultsRef.current &&
+        !resultsRef.current.contains(target) &&
+        !inputRef.current?.contains(target)
+      ) {
+        setIsOpen(false)
+        setIsFocused(false)
+      }
     }
 
-    return documents.flatMap((doc) => {
-      if ("spacer" in doc && doc.spacer) {
-        return []
-      }
-
-      const href = doc.href ? `${parentHref}${doc.href}` : ""
-
-      return [
-        !doc.noLink && doc.href && (
-          <DialogClose key={href} asChild>
-            <Anchor
-              className={cn(
-                "flex w-full items-center gap-2.5 rounded-sm px-3 text-[15px] transition-all duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-900"
-              )}
-              href={href}
-            >
-              <div className="flex h-full w-fit items-center gap-1.5 py-3 whitespace-nowrap">
-                <LuFileText className="h-[1.1rem] w-[1.1rem]" /> {doc.title}
-              </div>
-            </Anchor>
-          </DialogClose>
-        ),
-
-        ...renderDocuments(
-          doc.items?.filter((item) => !item.noLink) || [],
-          `${href}`
-        ),
-      ]
-    })
-  }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
 
   return (
-    <div>
-      <Dialog
-        open={isOpen}
-        onOpenChange={(open) => {
-          setIsOpen(open)
-          if (!open) {
-            setTimeout(() => setSearchedInput(""), 200)
-          }
-        }}
-      >
-        <DialogTrigger asChild>
-          <div className="relative max-w-2xl flex-1 cursor-pointer">
-            <LuSearch className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-neutral-500 dark:text-neutral-400" />
-            <Input
-              className="bg-background h-10 w-full rounded-md border pr-4 pl-10 text-sm shadow md:w-full"
-              placeholder="Search"
-              type="search"
-            />
-          </div>
-        </DialogTrigger>
-        <DialogContent className="top-[45%] max-w-xs p-0 sm:top-[38%] sm:max-w-lg">
-          <DialogTitle className="sr-only">Search</DialogTitle>
-          <DialogHeader>
-            <input
-              value={searchedInput}
-              onChange={(e) => setSearchedInput(e.target.value)}
-              placeholder="Search..."
-              autoFocus
-              className="h-14 border-b bg-transparent px-4 text-[15px] outline-none"
-            />
-          </DialogHeader>
-          {searchedInput.length > 0 && searchedInput.length < 3 && (
-            <p className="text-warning mx-auto mt-2 text-sm">
-              Please enter at least 3 characters.
-            </p>
+    <div className="relative w-full flex-1">
+      <div className="relative">
+        <LuSearch className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-neutral-500 dark:text-neutral-400" />
+        <Input
+          ref={inputRef}
+          value={searchedInput}
+          onChange={(e) => {
+            const value = e.target.value
+            setSearchedInput(value)
+            // If input is cleared, close dropdown
+            if (value === "") {
+              setIsOpen(false)
+            }
+          }}
+          onFocus={() => {
+            setIsFocused(true)
+            if (searchedInput.length > 0) {
+              setIsOpen(true)
+            }
+          }}
+          className={cn(
+            "bg-background h-12 w-full rounded-lg border pr-12 pl-10 text-sm shadow-sm transition-all duration-200 md:w-full",
+            isFocused && "ring-primary/20 border-primary/30 ring-2",
+            "placeholder:text-neutral-500 dark:placeholder:text-neutral-400",
+            "[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none"
           )}
+          placeholder="Search the wiki... (⌘K)"
+          type="search"
+        />
+        {searchedInput ? (
+          <button
+            onClick={clearSearch}
+            className="absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200"
+            aria-label="Clear search"
+          >
+            <LuX className="h-4 w-4" />
+          </button>
+        ) : null}
+      </div>
+
+      {/* Search Results Dropdown */}
+      {isOpen ? (
+        <div
+          ref={resultsRef}
+          className="bg-background absolute top-full right-0 left-0 z-50 mt-1 max-h-[400px] overflow-y-auto rounded-lg border shadow-lg"
+        >
           {isLoading ? (
-            <p className="text-muted-foreground mx-auto mt-2 text-sm">
-              Searching...
-            </p>
-          ) : (
-            filteredResults.length === 0 &&
-            searchedInput.length >= 3 && (
-              <p className="text-muted-foreground mx-auto mt-2 text-sm">
-                No results found for{" "}
-                <span className="text-primary">{`"${searchedInput}"`}</span>
+            <div className="p-4 text-center">
+              <p className="text-muted-foreground text-sm leading-5">
+                Searching...
               </p>
-            )
-          )}
-          <ScrollArea className="max-h-[350px] w-full overflow-hidden">
-            <div className="flex w-full flex-col items-start px-1 pt-1 pb-4 sm:px-3">
-              {searchedInput
-                ? filteredResults.map((item) => {
-                    if ("href" in item) {
-                      return (
-                        <DialogClose key={item.href} asChild>
-                          <Anchor
-                            className={cn(
-                              "flex w-full max-w-[310px] flex-col gap-0.5 rounded-sm p-3 text-[15px] transition-all duration-300 hover:bg-neutral-100 sm:max-w-[480px] dark:hover:bg-neutral-900"
-                            )}
-                            href={`/docs${item.href}`}
-                          >
-                            <div className="flex h-full items-center gap-x-2">
-                              <LuFileText className="h-[1.1rem] w-[1.1rem]" />
-                              <span className="truncate">{item.title}</span>
-                            </div>
-                            {"snippet" in item && item.snippet && (
-                              <p
-                                className="truncate text-xs text-neutral-500 dark:text-neutral-400"
-                                dangerouslySetInnerHTML={{
-                                  __html: highlight(
-                                    item.snippet,
-                                    searchedInput
-                                  ),
-                                }}
-                              />
-                            )}
-                          </Anchor>
-                        </DialogClose>
-                      )
-                    }
-                    return null
-                  })
-                : renderDocuments(Documents)}
             </div>
-          </ScrollArea>
-        </DialogContent>
-      </Dialog>
+          ) : filteredResults.length === 0 ? (
+            <div className="p-4 text-center">
+              <p className="text-muted-foreground text-sm leading-5">
+                {searchedInput.length < MIN_SEARCH_LENGTH ? (
+                  "Please enter at least 3 characters."
+                ) : (
+                  <>
+                    No results found for{" "}
+                    <span className="text-primary font-medium">{`"${searchedInput}"`}</span>
+                  </>
+                )}
+              </p>
+            </div>
+          ) : (
+            <div className="p-2">
+              {filteredResults.map((item, index) => (
+                <Anchor
+                  key={item.href}
+                  className={cn(
+                    "hover:bg-accent hover:text-accent-foreground flex w-full items-center gap-2 rounded-md p-3 text-sm transition-all duration-200",
+                    index === 0 ? "bg-accent/50" : ""
+                  )}
+                  href={`/docs${item.href}`}
+                  onClick={clearSearch}
+                >
+                  <span
+                    className="truncate font-medium"
+                    dangerouslySetInnerHTML={{
+                      __html: highlight(item.title, searchedInput),
+                    }}
+                  />
+                </Anchor>
+              ))}
+            </div>
+          )}
+        </div>
+      ) : null}
     </div>
   )
 }
