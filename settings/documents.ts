@@ -2,152 +2,164 @@ import { Paths } from "@/lib/pageroutes"
 
 export const Documents: Paths[] = [
   {
-    title: "🚀 Getting Started",
+    title: "Getting Started",
     href: "/getting-started",
-    heading: "Basics"
   },
   {
-    title: "⚠️ Disclaimer",
+    title: "Disclaimer",
     href: "/disclaimer",
   },
   {
-    title: "🤝 How to Contribute",
+    title: "How to Contribute",
     href: "/how-to-contribute",
   },
   {
     spacer: true
   },
   {
-    title: "🎯 Skills",
+    title: "Skills",
     href: "/skills",   
   },
   {
-    title: "📜 Quests",
+    title: "Quests",
     href: "/quests",
   },
   {
-    spacer: true
-  },
-  {
-    title: "📦 Items & Equipment",
+    title: "Items & Equipment",
     href: "/items",
-    heading: "Gear & Inventory",
     items: [      
       {
-        title: "⚔️ Weapons",
-        href: "#weapons",
+        title: "Tools",
+        href: "#tools",
       },
       {
-        title: "🛡️ Armor",
+        title: "Potions",
+        href: "#potions",
+      },
+      {
+        title: "Rings",
+        href: "#rings",
+      },
+      {
+        title: "Amulets",
+        href: "#amulets",
+      },
+      {
+        title: "Armor",
         href: "#armor",
       },
       {
-        title: "💍 Jewelry",
-        href: "#jewelry",
+        title: "Weapons",
+        href: "#weapons",
       },
       {
-        title: "🧪 Consumables",
-        href: "#consumables",
+        title: "Quest Items",
+        href: "#quest-items",
       },
       {
-        title: "🔧 Tools",
-        href: "#tools",
+        title: "Jams",
+        href: "#jams",
       },
     ]
   },
   {
-    title: "🌿 Resources & Materials",
+    title: "Resources & Materials",
     href: "/resources",
     items: [
-      
       {
-        title: "🐟 Fish",
-        href: "#fish",
+        title: "Tool Parts",
+        href: "#tool-parts",
       },
       {
-        title: "🪨 Ores & Gems",
+        title: "Ores",
         href: "#ores",
       },
       {
-        title: "🪵 Wood & Logs",
+        title: "Gems",
+        href: "#gems",
+      },
+      {
+        title: "Bars",
+        href: "#bars",
+      },
+      {
+        title: "Logs",
         href: "#logs",
       },
       {
-        title: "🍎 Foraged Items",
+        title: "Planks",
+        href: "#planks",
+      },
+      {
+        title: "Handles",
+        href: "#handles",
+      },
+      {
+        title: "Fish",
+        href: "#fish",
+      },
+      {
+        title: "Farming",
+        href: "#farming",
+      },
+      {
+        title: "Ingredients",
+        href: "#ingredients",
+      },
+      {
+        title: "Foraging",
         href: "#foraging",
       },
       {
-        title: "🥩 Hunting Materials",
+        title: "Hunting",
         href: "#hunting",
       },
       {
-        title: "🌾 Farm Produce",
-        href: "#farming",
+        title: "Combat",
+        href: "#combat",
       },
     ]
   },
   {
-    spacer: true
-  },
-  {
-    title: "🗺️ World & Locations",
+    title: "World & Locations",
     href: "/map",
-    heading: "Exploration",
     items: [      
       {
-        title: "🌊 Coastal Regions",
+        title: "Overview",
+        href: "#overview",
+      },
+      {
+        title: "All Regions",
+        href: "#all-regions",
+      },
+      {
+        title: "Coastal & Water Regions",
         href: "#coastal--water-regions",
       },
       {
-        title: "⛰️ Mountain Areas",
+        title: "Mountain & Mining Regions",
         href: "#mountain--mining-regions",
       },
       {
-        title: "🏘️ Villages & Towns",
+        title: "Village & Civilized Areas",
         href: "#village--civilized-areas",
       },
       {
-        title: "🌳 Forests & Nature",
+        title: "Forest & Natural Areas",
         href: "#forest--natural-areas",
       },
       {
-        title: "⚠️ Dangerous Zones",
+        title: "Dangerous Areas",
         href: "#dangerous-areas",
+      },
+      {
+        title: "Activities by Skill",
+        href: "#activities-by-skill",
       },
     ]
   },
   {
-    title: "👹 Enemies & Combat",
+    title: "Enemies",
     href: "/enemies",
-    items: [      
-      {
-        title: "🟢 Slimes",
-        href: "#enemy-types",
-      },
-      {
-        title: "🍄 Mushrooms",
-        href: "#enemy-types",
-      },
-      {
-        title: "🌳 Ents",
-        href: "#enemy-types",
-      },
-      {
-        title: "🐀 Rats",
-        href: "#enemy-types",
-      },
-      {
-        title: "👻 Ghosts",
-        href: "#enemy-types",
-      },
-      {
-        title: "💀 Liches",
-        href: "#enemy-types",
-      },
-      {
-        title: "🗿 Golems",
-        href: "#enemy-types",
-      },
-    ]
   },
 ]
