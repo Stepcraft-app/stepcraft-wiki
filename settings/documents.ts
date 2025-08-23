@@ -18,11 +18,69 @@ export const Documents: Paths[] = [
   },
   {
     title: "Skills",
-    href: "/skills",   
-  },
-  {
-    title: "Quests",
-    href: "/quests",
+    href: "/skills",
+    items: [
+      {
+        title: "Agility",
+        href: "/individual/agility",
+      },
+      {
+        title: "Alchemy",
+        href: "/individual/alchemy",
+      },
+      {
+        title: "Carpentry",
+        href: "/individual/carpentry",
+      },
+      {
+        title: "Combat",
+        href: "/individual/combat",
+      },
+      {
+        title: "Cooking",
+        href: "/individual/cooking",
+      },
+      {
+        title: "Crafting",
+        href: "/individual/crafting",
+      },
+      {
+        title: "Farming",
+        href: "/individual/farming",
+      },
+      {
+        title: "Fishing",
+        href: "/individual/fishing",
+      },
+      {
+        title: "Foraging",
+        href: "/individual/foraging",
+      },
+      {
+        title: "Hunting",
+        href: "/individual/hunting",
+      },
+      {
+        title: "Logging",
+        href: "/individual/logging",
+      },
+      {
+        title: "Mining",
+        href: "/individual/mining",
+      },
+      {
+        title: "Reputation",
+        href: "/individual/reputation",
+      },
+      {
+        title: "Smithing",
+        href: "/individual/smithing",
+      },
+      {
+        title: "Trinketry",
+        href: "/individual/trinketry",
+      },
+    ]
   },
   {
     title: "Items & Equipment",
@@ -161,5 +219,9 @@ export const Documents: Paths[] = [
   {
     title: "Enemies",
     href: "/enemies",
+  },
+  {
+    title: "Quests",
+    href: "/quests",
   },
 ]

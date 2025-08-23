@@ -126,7 +126,7 @@
 
 .typography {
   @apply prose prose-zinc prose-td:align-middle prose-headings:scroll-mt-30 md:prose-headings:scroll-mt-20 prose-code:rounded-md prose-code:p-1 prose-code:leading-6 prose-code:before:content-none prose-code:after:content-none prose-pre:border prose-pre:bg-neutral-100 prose-img:rounded-md prose-img:border;
-  @apply prose-code:text-xs w-[85vw] !min-w-full pt-2 text-sm sm:mx-auto sm:w-full;
+  @apply prose-code:text-xs w-[85vw] !min-w-full pt-2 text-sm sm:w-full;
   @apply dark:prose-invert prose-code:text-neutral-800 dark:prose-code:bg-neutral-900 dark:prose-code:text-white dark:prose-pre:bg-neutral-900;
 }
 
@@ -181,6 +181,14 @@
 /* Global image override for all table contexts */
 table img {
   margin: 0 !important;
+}
+
+/* Ensure table content is left-aligned */
+.typography table th,
+.typography table td,
+.prose table th,
+.prose table td {
+  text-align: left !important;
 }
 
 /* Prevent iOS Safari from zooming in on input fields */
