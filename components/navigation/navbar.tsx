@@ -1,4 +1,5 @@
 import { Navigations } from "@/settings/navigation"
+import { Link } from "lib/transition"
 
 import { Settings } from "@/lib/meta"
 import { SheetClose } from "@/components/ui/sheet"
@@ -47,9 +48,9 @@ export function Navbar() {
         <div className="flex h-12 items-center justify-between px-2">
           <div className="flex items-center gap-3">
             <SheetLeft />
-            <div className="flex items-center">
+            <Link href="/" className="flex items-center">
               <span className="text-md font-semibold">{Settings.title}</span>
-            </div>
+            </Link>
           </div>
           <div className="flex items-center gap-2">
             <DiscordLink />

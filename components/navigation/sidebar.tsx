@@ -11,16 +11,15 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { Logo } from "@/components/navigation/logo"
-import { NavMenu } from "@/components/navigation/navbar"
 import PageMenu from "@/components/navigation/pagemenu"
 
 export function Sidebar() {
   return (
     <aside
-      className="sticky top-16 hidden h-[94.5vh] min-w-[280px] flex-[1] flex-col overflow-y-auto md:flex border-r border-border/40 bg-gradient-to-b from-background/95 to-muted/20"
+      className="sticky top-16 hidden h-[94.5vh] min-w-[280px] flex-[1] flex-col overflow-y-auto md:flex border-r border-border/30 bg-gradient-to-b from-background/95 via-background/98 to-muted/15 backdrop-blur-sm"
       aria-label="Page navigation"
     >      
-      <ScrollArea className="flex-1 px-2 py-4">
+      <ScrollArea className="flex-1 px-3 py-4">
         <PageMenu />
       </ScrollArea>
     </aside>
@@ -47,9 +46,6 @@ export function SheetLeft() {
           </SheetClose>
         </SheetHeader>
         <ScrollArea className="flex h-full flex-col gap-4 overflow-y-auto">
-          <div className="mx-0 mt-3 flex flex-col gap-2.5 px-5">
-            <NavMenu isSheet />
-          </div>
           <div className="mx-0 px-5">
             <PageMenu isSheet />
           </div>
