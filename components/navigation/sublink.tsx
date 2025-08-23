@@ -24,7 +24,7 @@ export default function SubLink(
 ) {
   const path = usePathname()
   const router = useRouter()
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     if (
@@ -45,8 +45,6 @@ export default function SubLink(
 
   // Check if this is a hash link on the current page
   const isCurrentPageHashLink = href.includes("#") && href.startsWith(path)
-  
-
 
   // Use native anchor for hash links to avoid transition library interference
   const Comp = isCurrentPageHashLink ? (
@@ -87,7 +85,7 @@ export default function SubLink(
     </a>
   ) : (
     <Anchor 
-      activeClassName="text-primary bg-primary/10 border-primary/20 shadow-sm" 
+      activeClassName="text-primary bg-primary/10 border-primary/20 shadow-sm"
       className="flex items-center gap-2 px-3 py-2 text-sm rounded-lg border border-transparent hover:bg-muted/60 hover:border-border/40 hover:shadow-sm transition-all duration-200 font-medium group"
       href={href}
       onClick={(e) => {

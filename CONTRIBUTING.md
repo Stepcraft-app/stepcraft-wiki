@@ -2,7 +2,7 @@
 
 Welcome to the Stepcraft Wiki community! We appreciate your interest in contributing to this knowledge base. This guide will help you get started with contributing effectively.
 
-## 🎯 Ways to Contribute
+## Ways to Contribute
 
 ### 1. Content Improvements
 - Fix typos, grammar, or formatting issues
@@ -21,7 +21,7 @@ Welcome to the Stepcraft Wiki community! We appreciate your interest in contribu
 - Suggest improvements to existing content
 - Request new documentation topics
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Quick Edits (Recommended for beginners)
 1. Navigate to any page on the wiki
@@ -31,7 +31,7 @@ Welcome to the Stepcraft Wiki community! We appreciate your interest in contribu
 5. Submit a pull request with a clear description
 
 
-## 📝 Content Guidelines
+## Content Guidelines
 
 ### Markdown Format
 All wiki pages use MDX (Markdown with JSX). Here's the basic structure:
@@ -94,7 +94,7 @@ Brief description of the item.
 - [Crafting Material](/docs/resources/individual/material)
 ```
 
-## 🔧 File Organization
+## File Organization
 
 ### Directory Structure
 ```
@@ -113,7 +113,7 @@ contents/docs/
 - Match in-game names when possible
 - Keep names concise but descriptive
 
-## ✅ Quality Standards
+## Quality Standards
 
 ### Before Submitting
 - [ ] Spell-check your content
@@ -128,7 +128,7 @@ contents/docs/
 - Mark outdated content clearly
 - Provide sources when possible
 
-## 🤝 Community Guidelines
+## Community Guidelines
 
 ### Be Respectful
 - Use friendly, helpful language
@@ -145,7 +145,7 @@ contents/docs/
 - Don't claim credit for others' work
 - Give proper attribution for images/data
 
-## 🛠 Technical Notes
+## Technical Notes
 
 ### Local Development (Optional)
 If you want to preview changes locally:
@@ -180,7 +180,7 @@ Use the "Give Feedback" link on any page to:
 - Suggest new content
 - Ask questions about game mechanics
 
-## 🏆 Recognition
+## Recognition
 
 Contributors are recognized through:
 - Git history and GitHub profiles
@@ -189,6 +189,6 @@ Contributors are recognized through:
 
 ---
 
-Thank you for helping make the Stepcraft Wiki better for everyone! 🎮
+Thank you for helping make the Stepcraft Wiki better for everyone!
 
 *Need help? Open an issue or reach out to the maintainers.*

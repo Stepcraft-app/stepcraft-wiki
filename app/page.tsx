@@ -1,7 +1,6 @@
 import { Link } from "lib/transition"
 import Image from "next/image"
 
-import { PageRoutes } from "@/lib/pageroutes"
 import { buttonVariants } from "@/components/ui/button"
 import { Sidebar } from "@/components/navigation/sidebar"
 
@@ -71,7 +70,7 @@ export default function Home() {
                 size: "lg" 
               })}
             >
-              🚀 Get Started
+              Get Started
             </Link>
           </div>
         </section>
