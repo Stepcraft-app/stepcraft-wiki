@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { GitHubLink } from "@/settings/navigation"
-import { LuArrowUpRight, LuGitBranch, LuMessageSquare, LuPenTool } from "react-icons/lu"
+import { LuArrowUpRight, LuMessageSquare, LuPenTool } from "react-icons/lu"
 
 import { cn } from "@/lib/utils"
 
@@ -24,13 +24,18 @@ export default function RightSideBar({ slug, title }: SideBarEdit) {
   // Enhanced GitHub URLs with better templates
   const feedbackUrl = `${GitHubLink.href}/issues/new?title=Feedback%20for%20"${encodeURIComponent(title)}"&labels=feedback&body=Page:%20${encodeURIComponent(currentUrl)}`
   
-  // Handle different file structures
-  const editUrl = `${GitHubLink.href}/edit/main/contents/docs/${slug.endsWith('.mdx') ? slug : `${slug}.mdx`}`
-  
-  // Alternative: edit the index.mdx if it's a directory
-  const editIndexUrl = `${GitHubLink.href}/edit/main/contents/docs/${slug}/index.mdx`
-  
-  const contributeUrl = `${GitHubLink.href}/fork`
+  // Generate edit URL with proper fallback logic to match getDocument behavior
+  // Individual pages are direct .mdx files (e.g., items/individual/blue_shield.mdx)
+  // Category/overview pages use index.mdx (e.g., items/index.mdx)
+  const editUrl = (() => {
+    // Check if this is an individual item page (contains '/individual/')
+    if (slug.includes('/individual/')) {
+      return `${GitHubLink.href}/edit/main/contents/docs/${slug}.mdx`
+    }
+    
+    // Category/overview pages use index.mdx
+    return `${GitHubLink.href}/edit/main/contents/docs/${slug}/index.mdx`
+  })()
 
   return (
     <div className="flex flex-col gap-3 pl-2">
@@ -50,7 +55,7 @@ export default function RightSideBar({ slug, title }: SideBarEdit) {
         </Link>
         
         <Link
-          href={editIndexUrl}
+          href={editUrl}
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
