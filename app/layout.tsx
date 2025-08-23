@@ -8,6 +8,7 @@ import { Navbar } from "@/components/navigation/navbar"
 import { Providers } from "@/components/providers"
 
 import "@/styles/globals.css"
+import { CookieConsentBanner } from "@/components/cookie-consent-banner"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -61,6 +62,7 @@ export default function RootLayout({
           <main className="h-auto">{children}</main>
           <Footer />
         </Providers>
+        <CookieConsentBanner />
       </body>
     </html>
   )

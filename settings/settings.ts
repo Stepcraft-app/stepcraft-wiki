@@ -1,8 +1,8 @@
 export const url = "https://stepcraft-wiki.vercel.app"
 export const siteicon = "/assets/icon.png"
 
-export const gtm = "GTM-XXXXXXX"
-export const gtmconnected = false
+export const gtm = "G-9RLC2XGHKE"
+export const gtmconnected = true
 
 export const sitename = "Stepcraft Wiki"
 export const description =
