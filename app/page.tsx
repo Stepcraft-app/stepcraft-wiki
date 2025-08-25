@@ -60,6 +60,13 @@ export default function Home() {
                 <span className="text-sm font-semibold text-red-700 dark:text-red-300">Enemies</span>
               </div>
             </Link>
+            
+            <Link href="/docs/quests" className="group">
+              <div className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950 dark:to-orange-900 border border-orange-200 dark:border-orange-800 transition-all hover:shadow-lg hover:scale-105">
+                <Image src="/assets/icons/quest.png" alt="Quests" width={48} height={48} className="mb-3 group-hover:scale-110 transition-transform" />
+                <span className="text-sm font-semibold text-orange-700 dark:text-orange-300">Quests</span>
+              </div>
+            </Link>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-6">
