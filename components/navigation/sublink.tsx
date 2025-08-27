@@ -30,10 +30,16 @@ export default function SubLink(
     if (
       isRoute(props) &&
       props.href &&
-      path !== props.href &&
-      path.includes(props.href)
+      path !== props.href
     ) {
-      setIsOpen(true)
+      // Only open if path is a direct child route (not deeply nested)
+      const expectedPrefix = props.href + '/'
+      const isDirectChild = path.startsWith(expectedPrefix) && 
+        !path.substring(expectedPrefix.length).includes('/')
+      
+      if (isDirectChild) {
+        setIsOpen(true)
+      }
     }
   }, [path, props])
 
