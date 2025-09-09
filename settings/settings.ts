@@ -1,4 +1,4 @@
-export const url = "https://stepcraft-wiki.vercel.app"
+export const url = "https://wiki.stepcraft.app"
 export const siteicon = "/assets/icon.png"
 
 export const gtm = "G-9RLC2XGHKE"
