@@ -3,22 +3,22 @@ import { Paths } from "@/lib/pageroutes"
 export const Documents: Paths[] = [
   {
     title: "Getting Started",
-    href: "/docs/getting-started",
+    href: "/getting-started",
   },
   {
     title: "Disclaimer",
-    href: "/docs/disclaimer",
+    href: "/disclaimer",
   },
   {
     title: "How to Contribute",
-    href: "/docs/how-to-contribute",
+    href: "/how-to-contribute",
   },
   {
     spacer: true
   },
   {
     title: "Skills",
-    href: "/docs/skills",
+    href: "/skills",
     items: [
       {
         title: "Agility",
@@ -84,7 +84,7 @@ export const Documents: Paths[] = [
   },
   {
     title: "Items & Equipment",
-    href: "/docs/items",
+    href: "/items",
     items: [      
       {
         title: "Tools",
@@ -122,7 +122,7 @@ export const Documents: Paths[] = [
   },
   {
     title: "Resources & Materials",
-    href: "/docs/resources",
+    href: "/resources",
     items: [
       {
         title: "Tool Parts",
@@ -180,7 +180,7 @@ export const Documents: Paths[] = [
   },
   {
     title: "World & Locations",
-    href: "/docs/map",
+    href: "/map",
     items: [      
       {
         title: "Overview",
@@ -218,10 +218,10 @@ export const Documents: Paths[] = [
   },
   {
     title: "Enemies",
-    href: "/docs/enemies",
+    href: "/enemies",
   },
   {
     title: "Quests",
-    href: "/docs/quests",
+    href: "/quests",
   },
 ]
