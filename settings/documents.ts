@@ -6,8 +6,8 @@ export const Documents: Paths[] = [
     href: "/getting-started",
   },
   {
-    title: "Disclaimer",
-    href: "/disclaimer",
+    title: "Step Bank",
+    href: "/step-bank",
   },
   {
     title: "How to Contribute",
