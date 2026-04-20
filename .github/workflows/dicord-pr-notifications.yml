@@ -1,0 +1,55 @@
+name: PR Discord Notifications
+
+on:
+  pull_request:
+    types:
+      - opened
+      - closed
+
+jobs:
+  notify-discord:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+
+    steps:
+      - name: Notify Discord when PR is opened
+        if: github.event.action == 'opened'
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          if [[ -z "$DISCORD_WEBHOOK_URL" ]]; then
+            echo "DISCORD_WEBHOOK_URL is not set; skipping."
+            exit 0
+          fi
+
+          jq -n \
+            --arg title "$PR_TITLE" \
+            --arg url "$PR_URL" \
+            --arg number "$PR_NUMBER" \
+            '{content: ("PR #" + $number + " opened: " + $title + "\n" + $url)}' \
+            | curl -fsSL -H "Content-Type: application/json" -d @- "$DISCORD_WEBHOOK_URL"
+
+      - name: Notify Discord when PR is merged
+        if: github.event.action == 'closed' && github.event.pull_request.merged == true
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          if [[ -z "$DISCORD_WEBHOOK_URL" ]]; then
+            echo "DISCORD_WEBHOOK_URL is not set; skipping."
+            exit 0
+          fi
+
+          jq -n \
+            --arg title "$PR_TITLE" \
+            --arg url "$PR_URL" \
+            --arg number "$PR_NUMBER" \
+            '{content: ("PR #" + $number + " merged: " + $title + "\n" + $url)}' \
+            | curl -fsSL -H "Content-Type: application/json" -d @- "$DISCORD_WEBHOOK_URL"
