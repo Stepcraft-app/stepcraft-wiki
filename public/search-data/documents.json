@@ -7764,6 +7764,30 @@
     }
   },
   {
+    "slug": "/resources/individual/cacao_pods",
+    "title": "Cacao pods",
+    "description": "",
+    "content": "<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/resources/foraging/cacao_pods.png\" alt=\"Cacao pods\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">A valuable resource used for crafting and trading in Stepcraft.</p>\n\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Category:** Foraging\n        </span>\n\n        <span className=\"px-2 py-1 bg-green-100 dark:bg-green-900 rounded-md\">\n          **Price:** 28 gold\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Found at\n\n* [Blooming Glade](/docs/map/individual/blooming_glade)\n* [Blooming Glade Outskirts](/docs/map/individual/blooming_glade_outskirts)\n\n## Obtained by Foraging\n\n**Level Requirement:** 30 | **XP Gained:** 40 | **Steps:** 100\n\n## Used in Recipes\n\nThis resource is used in the following crafting recipes:\n\n| Recipe | Skill | Level | XP | Produces |\n|--------|-------|-------|----|---------:|\n",
+    "_searchMeta": {
+      "cleanContent": "a valuable resource used for crafting and trading in stepcraft category: foraging price: 28 gold found at blooming glade blooming glade outskirts obtained by foraging level requirement: 30 xp gained: 40 steps: 100 used in recipes this resource is used in the following crafting recipes: recipe skill level xp produces-------- ------- ------- ---- ---------:",
+      "headings": [
+        "Found at",
+        "Obtained by Foraging",
+        "Used in Recipes"
+      ],
+      "keywords": [
+        "Found at",
+        "Obtained by Foraging",
+        "Used in Recipes",
+        "Category:",
+        "Price:",
+        "Level Requirement:",
+        "XP Gained:",
+        "Steps:"
+      ]
+    }
+  },
+  {
     "slug": "/resources/individual/carp",
     "title": "Carp",
     "description": "",
