@@ -7846,6 +7846,36 @@
     }
   },
   {
+    "slug": "/resources/individual/charcoal",
+    "title": "Charcoal",
+    "description": "",
+    "content": "<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/resources/smithing/charcoal.png\" alt=\"Charcoal\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">A supplementary resource used to smelt bars from ores.</p>\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Category:** Coal\n        </span>\n        \n        <span className=\"px-2 py-1 bg-green-100 dark:bg-green-900 rounded-md\">\n          **Price:** 19 gold\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Obtained by Smithing\n\n**Level Requirement:** - | **XP Gained:** 20-700  | **Steps:** 50-1750\n\n**Required Materials:**\n- 3x [Sticks](/docs/resources/individual/sticks) or \n- 1x [Birch Log](/docs/resources/individual/birch_log) or\n- 1x [Oak Log](/docs/resources/individual/oak_log) or\n- 1x [Maple Log](/docs/resources/individual/maple_log) or\n- 1x [Pine Log](/docs/resources/individual/pine_log) or\n- 1x [Redwood Log](/docs/resources/individual/redwood_log) or\n- 1x [Silverleaf Log](/docs/resources/individual/silverleaf_log_log) or\n- 1x [Eldritchwood Log](/docs/resources/individual/eldritchwood_log)\n\n## Used in Recipes\n\nThis resource is used in the following crafting recipes:\n\n| Recipe                                                    | Skill    | Level  | XP  |    Produces |\n| --------------------------------------------------------- | -------- | ------ | --- | ----------: |\n| **[Smelt Copper Bar](/docs/resources/individual/copper_bar)** | Smithing | Lv. 15 | 40  | 1x Copper Bar |\n| **[Smelt Iron Bar](/docs/resources/individual/iron_bar)** | Smithing | Lv. 30 | 80  | 1x Iron Bar |\n| **[Smelt Glass](/docs/resources/individual/glass)** | Smithing | Lv. 30 | 200  | 1x Glass |\n| **[Smelt Silver Bar](/docs/resources/individual/silver_bar)** | Smithing | Lv. 45 | 160  | 1x Silver Bar |\n| **[Smelt Gold Bar](/docs/resources/individual/gold_bar)** | Smithing | Lv. 60 | 320  | 1x Gold Bar |\n| **[Smelt Blue Bar](/docs/resources/individual/blue_bar)** | Smithing | Lv. 75 | 640 | 1x Blue Bar |\n| **[Smelt Red Bar](/docs/resources/individual/red_bar)** | Smithing | Lv. 90 | 1280 | 1x Red Bar |\n",
+    "_searchMeta": {
+      "cleanContent": "a supplementary resource used to smelt bars from ores category: coal price: 19 gold obtained by smithing level requirement: xp gained: 20-700 steps: 50-1750 required materials: 3x sticks or 1x birch log or 1x oak log or 1x maple log or 1x pine log or 1x redwood log or 1x silverleaf log or 1x eldritchwood log used in recipes this resource is used in the following crafting recipes: recipe skill level xp produces smelt copper bar smithing lv 15 40 1x copper bar smelt iron bar smithing lv 30 80 1x iron bar smelt glass smithing lv 30 200 1x glass smelt silver bar smithing lv 45 160 1x silver bar smelt gold bar smithing lv 60 320 1x gold bar smelt blue bar smithing lv 75 640 1x blue bar smelt red bar smithing lv 90 1280 1x red bar",
+      "headings": [
+        "Obtained by Smithing",
+        "Used in Recipes"
+      ],
+      "keywords": [
+        "Obtained by Smithing",
+        "Used in Recipes",
+        "Category:",
+        "Price:",
+        "Level Requirement:",
+        "XP Gained:",
+        "Steps:",
+        "Required Materials:",
+        "[Smelt Copper Bar](/docs/resources/individual/copper_bar)",
+        "[Smelt Iron Bar](/docs/resources/individual/iron_bar)",
+        "[Smelt Glass](/docs/resources/individual/glass)",
+        "[Smelt Silver Bar](/docs/resources/individual/silver_bar)",
+        "[Smelt Gold Bar](/docs/resources/individual/gold_bar)",
+        "[Smelt Blue Bar](/docs/resources/individual/blue_bar)",
+        "[Smelt Red Bar](/docs/resources/individual/red_bar)"
+      ]
+    }
+  },
+  {
     "slug": "/resources/individual/chattahoochee_bass",
     "title": "Chattahoochee Bass",
     "description": "",
@@ -8113,6 +8143,32 @@
         "Steps:",
         "[Popcorn](#)",
         "[Taco](#)"
+      ]
+    }
+  },
+  {
+    "slug": "/resources/individual/cotton",
+    "title": "Cotton",
+    "description": "",
+    "content": "<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/resources/farming/cotton.png\" alt=\"Cotton\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">A resource used for crafting and trading in Stepcraft.</p>\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Category:** Farming\n        </span>\n        \n        <span className=\"px-2 py-1 bg-green-100 dark:bg-green-900 rounded-md\">\n          **Price:** ?? gold\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Found at\n\n- [Blooming Glade](/docs/map/individual/blooming_glade)\n\n## Obtained by Farming\n\n**Level Requirement:** 15 | **XP Gained:** 20 | **Steps:** 75 | **Tool Required:** Copper\n\n\n\n## Used in Recipes\n\nThis resource is used in the following crafting recipes:\n\n| Recipe | Skill | Level | XP | Produces |\n|--------|-------|-------|----|---------:|\n| **[Teddy Bear](/docs/items/individual/teddy_bear)** | Crafting | Lv. 15 | 280 | Teddy Bear |\n",
+    "_searchMeta": {
+      "cleanContent": "a resource used for crafting and trading in stepcraft category: farming price: gold found at blooming glade obtained by farming level requirement: 15 xp gained: 20 steps: 75 tool required: copper used in recipes this resource is used in the following crafting recipes: recipe skill level xp produces-------- ------- ------- ---- ---------:teddy bear crafting lv 15 280 teddy bear",
+      "headings": [
+        "Found at",
+        "Obtained by Farming",
+        "Used in Recipes"
+      ],
+      "keywords": [
+        "Found at",
+        "Obtained by Farming",
+        "Used in Recipes",
+        "Category:",
+        "Price:",
+        "Level Requirement:",
+        "XP Gained:",
+        "Steps:",
+        "Tool Required:",
+        "[Teddy Bear](/docs/items/individual/teddy_bear)"
       ]
     }
   },
@@ -8791,6 +8847,27 @@
         "XP Gained:",
         "Steps:",
         "[Garlic Bread](#)"
+      ]
+    }
+  },
+  {
+    "slug": "/resources/individual/glass",
+    "title": "Glass",
+    "description": "",
+    "content": "<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/resources/smithing/glass.png\" alt=\"Glass\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">Refined material.</p>\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Category:** ??\n        </span>\n        \n        <span className=\"px-2 py-1 bg-green-100 dark:bg-green-900 rounded-md\">\n          **Price:** 255 gold\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Obtained by Smithing\n**Level Requirement:** 30 | **XP Gained:** 200 | **Steps:** 300\n\n\n**Required Materials:**\n- 5x [Sand](/docs/resources/individual/sand)\n- 1x [Charcoal](/docs/resources/individual/charcoal)\n\n",
+    "_searchMeta": {
+      "cleanContent": "refined material category: price: 255 gold obtained by smithing level requirement: 30 xp gained: 200 steps: 300 required materials: 5x sand 1x charcoal",
+      "headings": [
+        "Obtained by Smithing"
+      ],
+      "keywords": [
+        "Obtained by Smithing",
+        "Category:",
+        "Price:",
+        "Level Requirement:",
+        "XP Gained:",
+        "Steps:",
+        "Required Materials:"
       ]
     }
   },
@@ -10196,6 +10273,31 @@
         "Category:",
         "Price:",
         "[Puff Bait](/docs/resources/individual/puff_bait)"
+      ]
+    }
+  },
+  {
+    "slug": "/resources/individual/pumpkin",
+    "title": "Pumpkin",
+    "description": "",
+    "content": "<div className=\"flex items-start gap-6 mb-8\">\n  <div className=\"flex-shrink-0\">\n    <img src=\"/assets/resources/farming/pumpkin.png\" alt=\"Pumpkin\" className=\"w-24 h-24 border rounded-lg\" />\n  </div>\n  <div className=\"flex-1\">\n    <div className=\"space-y-2\">\n      <p className=\"text-lg text-muted-foreground\">A seasonal resource used for crafting and trading in Stepcraft.</p>\n      <div className=\"flex flex-wrap gap-4 text-sm\">\n        <span className=\"px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded-md\">\n          **Category:** Farming\n        </span>\n        \n        <span className=\"px-2 py-1 bg-green-100 dark:bg-green-900 rounded-md\">\n          **Price:** ?? gold\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n## Found at\n\n- [Blooming Glade](/docs/map/individual/blooming_glade)\n\n## Obtained by Farming\n\n**Level Requirement:** 30 | **XP Gained:** 50 | **Steps:** 100 | **Tool Required:** None\n\n\n\n## Used in Recipes\n\nThis resource is used in the following crafting recipes:\n\n| Recipe | Skill | Level | XP | Produces |\n|--------|-------|-------|----|---------:|\n",
+    "_searchMeta": {
+      "cleanContent": "a seasonal resource used for crafting and trading in stepcraft category: farming price: gold found at blooming glade obtained by farming level requirement: 30 xp gained: 50 steps: 100 tool required: none used in recipes this resource is used in the following crafting recipes: recipe skill level xp produces",
+      "headings": [
+        "Found at",
+        "Obtained by Farming",
+        "Used in Recipes"
+      ],
+      "keywords": [
+        "Found at",
+        "Obtained by Farming",
+        "Used in Recipes",
+        "Category:",
+        "Price:",
+        "Level Requirement:",
+        "XP Gained:",
+        "Steps:",
+        "Tool Required:"
       ]
     }
   },
