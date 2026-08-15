@@ -4,7 +4,7 @@
   "private": false,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run validate-links && next build",
     "start": "next start",
     "lint": "npx lint . --quiet",
     "lint:fix": "npx lint . --fix --quiet",
@@ -12,7 +12,8 @@
     "format:check": "npx prettier --check .",
     "clean": "npm run lint:fix && npm run format && npm run format:check",
     "update": "npx npm-check-updates -u && npm install && npm run clean",
-    "generate-content-json": "tsx scripts/content.ts"
+    "generate-content-json": "tsx scripts/content.ts",
+    "validate-links": "node scripts/validate-links.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^15.4.2",

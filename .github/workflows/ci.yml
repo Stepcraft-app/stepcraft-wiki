@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Validate internal documentation links
+        run: npm run validate-links
+
       - name: Compile TypeScript
         run: npx tsc --project tsconfig.scripts.json
 
